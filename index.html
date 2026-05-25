@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amy's Daily Digest — Sunday, May 25, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eaf2fb; --paper-2: #dce8f4; --paper-3: #c5d6ea;
+    --ink: #0c1f3a; --ink-2: #283f64; --ink-3: #5f7894; --rule: #0c1f3a;
+    --terracotta: #2563c4; --terracotta-deep: #1a4a99;
+    --forest: #1f6f8b; --gold: #5677b0; --sun: #6aa6e8;
+    --serif: "IBM Plex Mono", Menlo, ui-monospace, monospace;
+    --mono: "JetBrains Mono", Menlo, ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body { font-family: var(--serif); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; background-image: radial-gradient(rgba(12,31,58,.045) 1px, transparent 1px); background-size: 4px 4px; }
+  .digest { max-width: 1240px; margin: 0 auto; padding: 48px 56px 96px; }
+
+  /* Masthead */
+  .masthead { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 24px; padding-bottom: 14px; border-bottom: 3px double var(--rule); }
+  .masthead .left, .masthead .right { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); display: flex; flex-direction: column; gap: 4px; }
+  .masthead .left { align-items: flex-start; }
+  .masthead .right { align-items: flex-end; text-align: right; }
+  .wordmark { font-family: var(--serif); font-weight: 600; font-size: 38px; line-height: 1; letter-spacing: -.03em; text-align: center; }
+  .wordmark .amy { font-style: italic; font-weight: 500; }
+  .wordmark .digest-word { font-weight: 700; letter-spacing: -.02em; }
+  .submast { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); padding: 8px 0; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+  .submast .vol { display: flex; gap: 18px; flex-wrap: wrap; }
+  .submast .dot { color: var(--terracotta); }
+
+  /* Greeting */
+  .greeting { padding: 36px 0 28px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: end; border-bottom: 1px solid var(--rule); }
+  .greeting h1 { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.15; letter-spacing: -.02em; margin: 0; color: var(--ink); }
+  .greeting h1 .signature { font-style: italic; font-weight: 700; color: var(--terracotta-deep); }
+  .greeting .meta { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); line-height: 1.8; }
+  .greeting .meta b { color: var(--ink); font-weight: 600; }
+
+  /* Sections */
+  .section { padding: 32px 0; border-bottom: 1px solid var(--rule); }
+  .kicker { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+  .kicker .label { font-family: var(--mono); font-size: 18px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); font-weight: 600; display: flex; align-items: center; gap: 16px; }
+  .kicker .label::before { content: ""; width: 32px; height: 1px; background: var(--ink); }
+  .kicker .label .num { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 28px; letter-spacing: 0; text-transform: none; color: var(--terracotta); }
+  .kicker .tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Stories */
+  .top-row { display: grid; grid-template-columns: 1.7fr 1fr; gap: 56px; }
+  .stories { display: flex; flex-direction: column; }
+  .story { display: grid; grid-template-columns: 200px 1fr; gap: 22px; padding: 22px 0; border-top: 1px solid var(--ink); }
+  .story:first-child { border-top: none; padding-top: 0; grid-template-columns: 1fr; padding-bottom: 28px; }
+  .story-img { background: var(--paper-3); border: 1px solid var(--ink); position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .story:first-child .story-img { aspect-ratio: 16/8; }
+  .story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .story-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(26,22,18,.08) 8px, rgba(26,22,18,.08) 9px); pointer-events: none; }
+  .story-img.has-photo::before { display: none; }
+  .story-img .caption { position: absolute; inset: auto 8px 8px 8px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); padding: 3px 6px; border: 1px solid var(--ink); display: inline-block; width: fit-content; }
+  .story-body { display: flex; flex-direction: column; gap: 6px; }
+  .story-cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
+  .story-headline { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.2; letter-spacing: -.015em; margin: 0; color: var(--ink); }
+  .story:first-child .story-headline { font-size: 26px; }
+  .story-deck { font-family: var(--serif); font-style: italic; font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 4px 0 0; }
+  .story-meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .story-meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+  .story-meta a:hover { color: var(--terracotta-deep); border-color: var(--terracotta-deep); }
+  .bias-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; padding: 2px 7px; border: 1px solid var(--ink); color: var(--ink); text-transform: uppercase; background: var(--paper-2); }
+  .bias-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--forest); display: inline-block; }
+
+  /* Weather */
+  .weather { border: 1px solid var(--ink); background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 100%); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .weather-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+  .weather-head .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+  .weather-head .place { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink); }
+  .weather-now { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; }
+  .temp { font-family: var(--serif); font-weight: 600; font-size: 60px; line-height: .95; letter-spacing: -.05em; color: var(--ink); display: flex; align-items: flex-start; }
+  .temp .deg { font-size: 28px; font-weight: 500; margin-top: 8px; color: var(--terracotta); }
+  .sun-glyph { width: 90px; height: 90px; position: relative; }
+  .sun-glyph .core { position: absolute; inset: 22%; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px var(--paper-2), 0 0 0 5px var(--gold); }
+  .sun-glyph::before { content: ""; position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--sun) 0deg 6deg, transparent 6deg 45deg, var(--sun) 45deg 51deg, transparent 51deg 90deg, var(--sun) 90deg 96deg, transparent 96deg 135deg, var(--sun) 135deg 141deg, transparent 141deg 180deg, var(--sun) 180deg 186deg, transparent 186deg 225deg, var(--sun) 225deg 231deg, transparent 231deg 270deg, var(--sun) 270deg 276deg, transparent 276deg 315deg, var(--sun) 315deg 321deg, transparent 321deg 360deg); -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%); mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%); }
+  .weather-cond { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ink-2); margin-top: -4px; }
+  .weather-cond b { font-style: normal; font-weight: 600; color: var(--ink); }
+  .weather-hours { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--ink); background: var(--paper); }
+  .hour { text-align: center; padding: 8px 0; border-right: 1px solid var(--ink-3); display: flex; flex-direction: column; gap: 4px; }
+  .hour:last-child { border-right: none; }
+  .hour .h { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .hour .t { font-family: var(--serif); font-size: 17px; font-weight: 600; }
+  .hour .ic { font-size: 14px; }
+  .weather-advice { border-top: 1px dashed var(--ink-3); padding-top: 14px; }
+  .advice-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .advice-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .advice-list li { font-family: var(--serif); font-size: 13.5px; line-height: 1.35; display: grid; grid-template-columns: 22px 1fr; gap: 4px; color: var(--ink); }
+  .advice-list li .mark { font-family: var(--mono); font-weight: 600; color: var(--terracotta); font-size: 13px; }
+
+  /* Tech */
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--ink); }
+  .tech-card { padding: 22px 24px 22px 0; border-right: 1px solid var(--ink); display: flex; flex-direction: column; gap: 8px; }
+  .tech-card + .tech-card { padding-left: 24px; }
+  .tech-card:last-child { border-right: none; padding-right: 0; }
+  .tech-img { aspect-ratio: 16/9; background: var(--paper-3); border: 1px solid var(--ink); overflow: hidden; margin-bottom: 4px; position: relative; }
+  .tech-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tech-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(26,22,18,.06) 8px, rgba(26,22,18,.06) 9px); pointer-events: none; }
+  .tech-img.has-photo::before { display: none; }
+  .tech-num { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 500; color: var(--terracotta); line-height: 1; }
+  .tech-card h3 { font-family: var(--serif); font-weight: 600; font-size: 15.5px; line-height: 1.25; letter-spacing: -.015em; margin: 2px 0 0; color: var(--ink); }
+  .tech-card p { font-family: var(--serif); font-size: 14px; line-height: 1.45; color: var(--ink-2); margin: 2px 0 0; }
+  .tech-card .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; }
+  .tech-card .src a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; padding-bottom: 1px; }
+
+  /* Events */
+  .events-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .events-col { padding: 0; }
+  .events-col + .events-col { border-left: 1px solid var(--ink); padding-left: 36px; }
+  .events-col:first-child { padding-right: 36px; }
+  .events-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  .events-head h2 { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: -.02em; margin: 0; color: var(--ink); }
+  .events-head h2 b { font-weight: 700; color: var(--terracotta-deep); }
+  .events-head .span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+  .event { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; padding: 14px 0; border-top: 1px solid var(--ink-3); align-items: start; }
+  .event-date { text-align: center; border: 1px solid var(--ink); padding: 6px 4px; background: var(--paper-2); }
+  .event-date .day { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+  .event-date .num { font-family: var(--serif); font-weight: 700; font-size: 28px; line-height: 1; color: var(--ink); margin-top: 2px; }
+  .event-body h4 { font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.2; margin: 0 0 4px; color: var(--ink); }
+  .event-body p { font-family: var(--serif); font-style: italic; font-size: 13.5px; color: var(--ink-2); margin: 0; line-height: 1.35; }
+  .event-meta { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); text-align: right; padding-top: 4px; line-height: 1.6; }
+  .event-meta .pin { color: var(--forest); font-weight: 600; }
+
+  /* Health */
+  .health-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); }
+  .health-col { padding: 22px 24px; border-right: 1px solid var(--ink); }
+  .health-col:first-child { padding-left: 0; }
+  .health-col:last-child { border-right: none; padding-right: 0; }
+  .health-col .icon-frame { width: 56px; height: 56px; border: 1px solid var(--ink); background: var(--paper-2); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 26px; color: var(--terracotta); }
+  .health-col h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; letter-spacing: -.015em; margin: 0 0 6px; color: var(--ink); }
+  .health-col .sub { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .health-col p { font-family: var(--serif); font-size: 14.5px; line-height: 1.5; color: var(--ink-2); margin: 0 0 12px; }
+  .health-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .health-list li { font-family: var(--serif); font-size: 14px; line-height: 1.4; display: grid; grid-template-columns: 18px 1fr; align-items: baseline; }
+  .health-list li::before { content: "+"; font-family: var(--mono); color: var(--terracotta); font-weight: 600; }
+  .health-list li b { color: var(--ink); font-weight: 600; }
+
+  /* Discoveries */
+  .lower-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; }
+  .discovery { display: flex; flex-direction: column; gap: 0; }
+  .feat { border: 1px solid var(--ink); background: var(--paper-2); }
+  .feat-img { aspect-ratio: 16/7; background: var(--paper-3); border-bottom: 1px solid var(--ink); position: relative; overflow: hidden; }
+  .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .feat-img::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 40%, rgba(63,90,69,.18), transparent 40%), radial-gradient(circle at 70% 60%, rgba(179,85,47,.14), transparent 50%), repeating-linear-gradient(135deg, transparent 0 12px, rgba(26,22,18,.05) 12px 13px); pointer-events: none; }
+  .feat-img.has-photo::before { display: none; }
+  .feat-img .caption { position: absolute; bottom: 10px; left: 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); padding: 4px 7px; border: 1px solid var(--ink); }
+  .feat-body { padding: 20px 22px 22px; }
+  .feat-body .cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--forest); font-weight: 600; }
+  .feat-body h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.25; letter-spacing: -.015em; margin: 6px 0; color: var(--ink); }
+  .feat-body p { font-family: var(--serif); font-style: italic; font-size: 15px; line-height: 1.45; color: var(--ink-2); margin: 0; }
+  .feat-body .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 12px; }
+  .feat-body .src a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; padding-bottom: 1px; }
+  .discovery-more { margin-top: 16px; display: flex; flex-direction: column; }
+  .discovery-mini { display: grid; grid-template-columns: auto 1fr; gap: 14px; padding: 12px 0; border-top: 1px dashed var(--ink-3); }
+  .discovery-mini:first-child { border-top: none; }
+  .discovery-mini .field { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--forest); font-weight: 600; align-self: start; padding-top: 4px; min-width: 100px; }
+  .discovery-mini h4 { font-family: var(--serif); font-weight: 600; font-size: 15.5px; line-height: 1.25; margin: 0; color: var(--ink); }
+  .discovery-mini p { font-family: var(--serif); font-size: 13.5px; line-height: 1.4; color: var(--ink-2); margin: 4px 0 0; font-style: italic; }
+
+  /* Long reads */
+  .longreads { display: flex; flex-direction: column; }
+  .longread { padding: 18px 0; border-top: 1px solid var(--ink-3); display: grid; grid-template-columns: 88px 1fr; gap: 18px; }
+  .longread:first-child { border-top: none; padding-top: 0; }
+  .longread.no-thumb { grid-template-columns: 1fr; }
+  .longread-img { aspect-ratio: 1/1; background: var(--paper-3); border: 1px solid var(--ink); position: relative; overflow: hidden; }
+  .longread-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .longread-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0 6px, rgba(26,22,18,.08) 6px 7px); pointer-events: none; }
+  .longread-img.has-photo::before { display: none; }
+  .longread-pub { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
+  .longread h4 { font-family: var(--serif); font-weight: 600; font-size: 17px; line-height: 1.2; margin: 4px 0; color: var(--ink); }
+  .longread p { font-family: var(--serif); font-style: italic; font-size: 13.5px; line-height: 1.35; color: var(--ink-2); margin: 0; }
+  .longread .meta { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; display: flex; gap: 12px; }
+
+  /* Colophon */
+  .colophon { margin-top: 40px; padding: 24px 0 0; border-top: 3px double var(--rule); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+  .colophon b { color: var(--ink); font-weight: 600; display: block; margin-bottom: 6px; }
+  .colophon .right { text-align: right; }
+  .colophon .center { text-align: center; }
+
+  /* Interactive */
+  .read-toggle { background: none; border: 1px solid var(--ink); padding: 4px 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; color: var(--ink); transition: background 120ms; }
+  .read-toggle:hover { background: var(--paper-3); }
+  .read-toggle.on { background: var(--ink); color: var(--paper); }
+  .scope-tabs { display: inline-flex; border: 1px solid var(--ink); }
+  .scope-tabs button { background: none; border: none; padding: 6px 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); cursor: pointer; border-right: 1px solid var(--ink); }
+  .scope-tabs button:last-child { border-right: none; }
+  .scope-tabs button.on { background: var(--ink); color: var(--paper); }
+
+  /* Dark */
+  body[data-theme="charcoal"] { --paper: #0c1a2e; --paper-2: #142540; --paper-3: #1e3257; --ink: #e6f0fb; --ink-2: #b9cce6; --ink-3: #7a92b7; --rule: #e6f0fb; --terracotta: #6aa6e8; --terracotta-deep: #9ec4f0; --forest: #7fbacc; --gold: #aac0e0; --sun: #9ec4f0; }
+  body.hide-weather-advice .weather-advice { display: none; }
+
+  /* Tweaks */
+  .tweaks-btn { position: fixed; right: 16px; bottom: 16px; z-index: 100; appearance: none; border: 1px solid var(--ink); background: var(--paper-2); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; cursor: pointer; }
+  .tweaks-btn:hover { background: var(--paper-3); }
+  .twk-panel { position: fixed; right: 16px; bottom: 16px; z-index: 200; width: 280px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; background: rgba(250,249,247,.95); color: #29261b; -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); border: .5px solid rgba(255,255,255,.6); border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,.2); font: 11.5px/1.4 ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
+  .twk-hd { display: flex; align-items: center; justify-content: space-between; padding: 10px 8px 10px 14px; cursor: move; user-select: none; border-bottom: 1px solid rgba(0,0,0,.08); }
+  .twk-hd b { font-size: 12px; font-weight: 600; }
+  .twk-x { appearance: none; border: 0; background: transparent; color: rgba(41,38,27,.55); width: 22px; height: 22px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .twk-x:hover { background: rgba(0,0,0,.06); }
+  .twk-body { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
+  .twk-sect { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(41,38,27,.45); padding: 6px 0 2px; }
+  .twk-row { display: flex; flex-direction: column; gap: 5px; }
+  .twk-row-h { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
+  .twk-lbl { font-weight: 500; color: rgba(41,38,27,.72); }
+  .twk-field { appearance: none; width: 100%; height: 26px; padding: 0 8px; border: .5px solid rgba(0,0,0,.12); border-radius: 7px; background: rgba(255,255,255,.7); color: inherit; font: inherit; outline: none; }
+  .twk-seg { position: relative; display: flex; padding: 2px; border-radius: 8px; background: rgba(0,0,0,.06); }
+  .twk-seg-thumb { position: absolute; top: 2px; bottom: 2px; border-radius: 6px; background: rgba(255,255,255,.9); box-shadow: 0 1px 2px rgba(0,0,0,.12); transition: left .15s, width .15s; }
+  .twk-seg button { position: relative; z-index: 1; flex: 1; border: 0; background: transparent; color: inherit; font: inherit; font-weight: 500; min-height: 22px; border-radius: 6px; cursor: pointer; padding: 4px 6px; }
+  .twk-toggle { position: relative; width: 32px; height: 18px; border: 0; border-radius: 999px; background: rgba(0,0,0,.15); transition: background .15s; cursor: pointer; padding: 0; flex-shrink: 0; }
+  .twk-toggle[data-on="1"] { background: #34c759; }
+  .twk-toggle i { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: transform .15s; display: block; }
+  .twk-toggle[data-on="1"] i { transform: translateX(14px); }
+  .twk-chips { display: flex; gap: 6px; }
+  .twk-chip { position: relative; flex: 1; height: 46px; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.12); transition: transform .12s; }
+  .twk-chip:hover { transform: translateY(-1px); }
+  .twk-chip[data-on="1"] { box-shadow: 0 0 0 2px rgba(0,0,0,.8); }
+
+  @media (max-width: 900px) {
+    .digest { padding: 24px 20px 64px; }
+    .masthead, .greeting, .top-row, .tech-grid, .events-row, .health-row, .lower-row, .colophon { grid-template-columns: 1fr; }
+    .masthead .left, .masthead .right { align-items: flex-start; }
+    .events-col + .events-col { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 24px; margin-top: 8px; }
+    .events-col:first-child { padding-right: 0; }
+    .tech-card { border-right: none; border-top: 1px solid var(--ink); padding: 22px 0; }
+    .tech-card + .tech-card { padding-left: 0; }
+    .tech-card:first-child { border-top: none; }
+    .health-col { border-right: none; border-top: 1px solid var(--ink); padding: 22px 0; }
+    .health-col:first-child { border-top: none; }
+    .colophon .right, .colophon .center { text-align: left; }
+    .submast { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script type="text/babel">
+const { useState, useMemo, useEffect, useRef, useCallback } = React;
+
+// ── Live data pulled May 25, 2026 ─────────────────────────────────────────────
+const DIGEST = {
+  date: new Date(2026, 4, 25),
+  edition: "Vol. III · No. 145",
+  location: "Brooklyn, NY",
+  weatherStrip: "79°F · Sunny · Memorial Day · UV 9 · AQI 38",
+
+  topStories: [
+    {
+      category: "Diplomacy · Lead",
+      headline: "Iran-U.S. peace talks advance with draft 60-day ceasefire memo",
+      deck: "A draft memorandum circulated between U.S. and Iranian negotiators outlines a 60-day cessation of hostilities — the most concrete diplomatic step yet. Iranian officials acknowledge \"frequent changes\" in American positions complicate the process, but both sides signal real progress as Trump honored fallen troops in Memorial Day remarks.",
+      source: "CBS News",
+      bias: "Center",
+      read: "5 min",
+      url: "https://www.cbsnews.com/news/iran-peace-deal-draft-memo-white-house/",
+      img: "images/story1.jpg",
+      caption: "U.S.-Iran negotiations"
+    },
+    {
+      category: "Religion · Tech Policy",
+      headline: "Pope Leo's AI encyclical calls on world governments to \"disarm\" artificial intelligence",
+      deck: "\"Magnifica Humanitas\" — Pope Leo's first major encyclical — urges binding international frameworks governing AI before the technology reshapes civilization beyond recovery. The Vatican consulted AI researchers and ethicists for months. The document is expected to shape G7 and UN AI governance discussions this summer.",
+      source: "CBS News / ABC News",
+      bias: "Center",
+      read: "6 min",
+      url: "https://abcnews.go.com/International/wireStory/pope-calls-robust-regulation-ai-manifesto-ponders-future-133279924",
+      img: "images/story2.jpg",
+      caption: "Pope Leo, Vatican City"
+    },
+    {
+      category: "Rescue · International",
+      headline: "Seven trapped in Laos cave — Thai rescue veterans join the effort",
+      deck: "Seven Laotian villagers searching for gold have been underground for five days after flash floods sealed the cave system. Thailand's elite cave rescue team — veterans of the 2018 Tham Luang operation — have joined the extraction effort. Engineers are drilling access routes and pumping floodwater.",
+      source: "CBS News",
+      bias: "Center",
+      read: "4 min",
+      url: "https://www.cbsnews.com/news/laos-cave-thai-rescue-seven-trapped/",
+      img: "images/story3.jpg",
+      caption: "Rescue operations, Laos"
+    }
+  ],
+
+  weather: {
+    now: 79, condition: "Sunny", feels: 81, high: 84, low: 66,
+    sunrise: "5:29a", sunset: "8:16p",
+    hours: [
+      { h: "Now", t: 79, ic: "☀" }, { h: "2p", t: 84, ic: "☀" },
+      { h: "5p", t: 82, ic: "⛅" }, { h: "8p", t: 74, ic: "🌤" },
+      { h: "11p", t: 68, ic: "🌙" }
+    ],
+    advice: [
+      { mark: "→", text: "Perfect BBQ weather — light clothes, it stays warm into the evening." },
+      { mark: "→", text: "UV index 9 peaks at noon. SPF 50 if you're spending time outside." },
+      { mark: "→", text: "Humidity rises after 6pm — a light linen layer for the evening works." },
+      { mark: "→", text: "No rain all weekend. Clear skies through Tuesday." }
+    ]
+  },
+
+  tech: [
+    {
+      num: "01",
+      headline: "Anthropic says it's about to have its first profitable quarter",
+      deck: "One of AI's most watched labs is approaching profitability for the first time, driven by surging enterprise demand for the Claude API. The milestone validates the commercial viability of safety-focused AI development amid fierce competition with OpenAI and Google.",
+      source: "TechCrunch",
+      read: "5 min",
+      url: "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
+      img: "images/tech1.jpg"
+    },
+    {
+      num: "02",
+      headline: "Google's Gemini Spark agent can browse the web and write code autonomously",
+      deck: "Google unveiled Gemini Spark, an AI agent that executes complex multi-step tasks end-to-end — browsing, coding, and managing files on a user's behalf. Experts call it a significant leap in agentic AI and the most direct challenge yet to OpenAI's operator-style agents.",
+      source: "CBS News",
+      read: "4 min",
+      url: "https://www.cbsnews.com/news/google-gemini-spark-ai-agent/",
+      img: "images/tech2.jpg"
+    },
+    {
+      num: "03",
+      headline: "ClickUp's mass layoff signals AI reshaping the productivity software workforce",
+      deck: "ClickUp's significant workforce reduction reflects a sector-wide reckoning: AI automation is changing how productivity companies staff their operations. Analysts see it as a bellwether for the broader SaaS industry as AI tools absorb functions once handled by people.",
+      source: "TechCrunch",
+      read: "6 min",
+      url: "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
+      img: "images/tech3.jpg"
+    }
+  ],
+
+  nycEvents: [
+    {
+      day: "Sun", num: 25,
+      title: "Memorial Day Rooftop BBQ — The Ivory on Park",
+      blurb: "Grilled favorites, skyline views, and holiday-weekend ambiance at one of Brooklyn's best rooftop spots. Festive, social, and a perfect way to spend the afternoon.",
+      where: "Bushwick, BK", time: "3p–9p", price: "$25+",
+      url: "https://www.eventbrite.com/e/buns-burgers-memorial-day-bbq-monday-may-25th-rooftop-brooklyn-tickets-1987266238816"
+    },
+    {
+      day: "Tue", num: 27,
+      title: "15th Annual Bushwick Collective Block Party",
+      blurb: "Brooklyn's beloved street-art celebration returns for its 15th year — murals, live vendors, food, and music in one of the city's most vibrant creative districts. Arrive early.",
+      where: "Bushwick, BK", time: "10a–6p", price: "Ticketed",
+      url: "https://www.eventbrite.com/e/15th-annual-bushwick-collective-block-party-tickets-1988055115367"
+    },
+    {
+      day: "Tue", num: 27,
+      title: "High Line Plant Sale — Rooted in Resilience",
+      blurb: "A horticultural marketplace on the elevated High Line featuring curated plants and botanical vendors, with scenic open-air views above the West Side streets.",
+      where: "Chelsea, Manhattan", time: "11a–5p", price: "Free entry",
+      url: "https://www.eventbrite.com/e/rooted-in-resilience-high-line-plant-sale-tickets-1988856414073"
+    },
+    {
+      day: "Tue", num: 27,
+      title: "Colombiana Rooftop Party — The DL",
+      blurb: "An elevated evening at one of Manhattan's most scenic rooftops — Colombian music, culture, and sweeping skyline views with festive entertainment throughout.",
+      where: "Lower East Side", time: "5p–late", price: "$20+",
+      url: "https://www.eventbrite.com/e/colombiana-rooftop-party-tickets-1988569917153"
+    },
+    {
+      day: "Tue", num: 27,
+      title: "106 & Park vs. TikTok Hits — Late-Night Party",
+      blurb: "Free-entry late-night dance party blending 2000s hip-hop and R&B nostalgia with current TikTok-era hits. RSVP guarantees complimentary entry to this high-energy night.",
+      where: "Out of Ordinary, NY", time: "11p–late", price: "Free w/ RSVP",
+      url: "https://www.eventbrite.com/e/106-park-vs-tiktok-hits-party-experience-everyone-free-entry-with-rsvp-tickets-1988872298584"
+    }
+  ],
+
+  worldEvents: [
+    {
+      day: "Sun", num: 25,
+      title: "Iran-U.S. ceasefire draft memo circulated to both sides",
+      blurb: "A 60-day cessation-of-hostilities framework is now on the table after back-channel negotiations. Secretary Rubio signaled \"significant progress\" as Trump honored Memorial Day.",
+      where: "Washington / Tehran", time: "Ongoing", price: "—"
+    },
+    {
+      day: "Sun", num: 25,
+      title: "Pope Leo's AI encyclical \"Magnifica Humanitas\" released",
+      blurb: "The Catholic Church's most detailed engagement yet with technology ethics calls for global binding AI regulation. Expected to shape UN and G7 governance debates this summer.",
+      where: "Vatican City", time: "Issued Friday", price: "—"
+    },
+    {
+      day: "Sun", num: 25,
+      title: "Laos cave rescue: Thai elite team joins five-day operation",
+      blurb: "Seven villagers trapped by flash flooding after searching for gold. Thailand's 2018 Tham Luang veterans are drilling access routes and pumping water from the cave system.",
+      where: "Laos", time: "Day 5", price: "—"
+    },
+    {
+      day: "Mon", num: 26,
+      title: "Mexico to auction land where cartel leader El Mencho was killed",
+      blurb: "Property inside a country club where Jalisco New Generation Cartel leader El Mencho was killed in February goes to auction — part of a broad government campaign to reclaim organized-crime assets.",
+      where: "Jalisco, Mexico", time: "This week", price: "—"
+    },
+    {
+      day: "Sun", num: 25,
+      title: "Three killed as minibus strikes elephant in Uganda national park",
+      blurb: "A fatal collision at Murchison Falls National Park has prompted safety reviews across Uganda's wildlife preserves, which logged a record 1.2 million visitors last year.",
+      where: "Murchison Falls, UG", time: "Yesterday", price: "—"
+    }
+  ],
+
+  health: {
+    eat: {
+      title: "On the plate",
+      sub: "2026 Dietary Guidelines update",
+      copy: "The new federal guidelines, updated this year, emphasize whole foods and consistent eating patterns over strict macronutrient targets. Key focus: cut ultra-processed foods, increase fiber, and eat more plant-forward meals. Science is also walking back decades of full-fat dairy alarm — recent evidence shows neutral to protective cardiovascular effects.",
+      list: [
+        { b: "Try", text: "Full-fat Greek yogurt with berries — science now backs it." },
+        { b: "Limit", text: "Ultra-processed snacks — the 2026 guidelines call them out specifically." },
+        { b: "Stack", text: "Legumes + whole grains at one meal today for fiber and slow protein." }
+      ]
+    },
+    move: {
+      title: "Moving body",
+      sub: "Memorial Day prescription",
+      copy: "A sunny 79°F day is ideal for an outdoor zone-2 session. Prospect Park's outer loop is 3.35 miles with the wind at your back on the second half. If the BBQ is calling first, 15 of WebMD's curated Pilates moves can be done on any flat surface in 25 minutes — strong evidence for lower-back relief and posture.",
+      list: [
+        { b: "Outdoor", text: "35-min easy run or brisk walk; keep heart rate at 60–70% max." },
+        { b: "Indoor", text: "15 Pilates moves focusing on core, hip flexors, and posture." },
+        { b: "Evening", text: "10-min legs-up-the-wall before bed — aids circulation after standing." }
+      ]
+    },
+    supps: {
+      title: "Supplements",
+      sub: "What's relevant this week",
+      copy: "The FDA this month approved the first once-daily oral Wegovy pill — the GLP-1 medication semaglutide now comes in tablet form for adults with obesity. For everyone else, sleep optimization remains the highest-ROI lever: magnesium and melatonin timing matters more than dose.",
+      list: [
+        { b: "New: Oral Wegovy", text: "FDA-approved GLP-1 pill — ask your clinician if relevant." },
+        { b: "Magnesium glycinate", text: "300 mg 60 min before bed — backed by sleep research." },
+        { b: "Vitamin D₃", text: "2,000 IU with a fat-containing meal (pair with eggs or avocado)." }
+      ]
+    }
+  },
+
+  discoveries: {
+    feature: {
+      cat: "Cover discovery · Physics / Materials",
+      caption: "Science News — gold surface research",
+      headline: "Physics finally explains why gold never tarnishes — and it could unlock corrosion-resistant materials",
+      deck: "Scientists have mapped the atomic mechanism behind gold's famous inertness: the metal's surface undergoes a rapid rearrangement that prevents oxygen from bonding — unlike copper, silver, or iron. The findings, published this month, could inform next-generation corrosion-resistant coatings at the nano scale.",
+      source: "Science News",
+      url: "https://www.sciencenews.org/article/physics-explains-gold-shiny-oxidize",
+      img: "images/science1.webp"
+    },
+    more: [
+      {
+        field: "Neuroscience",
+        title: "Ultrasound aimed at the brain shows significant relief for Parkinson's tremors",
+        deck: "A non-invasive ultrasound technique targeting specific brain regions is reducing motor symptoms in early trials — without the risks of surgical deep-brain stimulation. Larger multi-center trials are now planned.",
+        url: "https://www.sciencenews.org/article/parkinsons-ultrasound-brain-shake-pain"
+      },
+      {
+        field: "Quantum physics",
+        title: "\"Butterfly molecule\" finally observed, closing a 20-year prediction gap",
+        deck: "Physicists observed giant Rydberg-atom molecules whose electron orbits at extraordinary distance — just as theorized since the early 2000s. These could serve as ultra-sensitive quantum electric-field probes.",
+        url: "https://phys.org/news/2026-05-butterfly-molecule-year-quantum-zoo.html"
+      },
+      {
+        field: "Epidemiology",
+        title: "Rare Ebola strain in Congo exposes critical gaps in global disease surveillance",
+        deck: "A rare variant emerging in the DRC reveals that variant surveillance — not just outbreak response — needs urgent investment. The WHO is monitoring closely.",
+        url: "https://www.sciencenews.org/article/congo-ebola-rare-strain-gaps-readiness"
+      }
+    ]
+  },
+
+  longreads: [
+    {
+      pub: "Smithsonian Magazine",
+      headline: "Melting mountain ice is revealing ancient secrets — archaeologists are racing the clock",
+      deck: "Ice patches in Norway's highlands are surrendering Bronze Age and Stone Age artifacts as glaciers retreat. Objects preserved for millennia can degrade within weeks of exposure.",
+      author: "by Anna Fiorentino",
+      read: "16 min",
+      url: "https://www.smithsonianmag.com/science-nature/melting-mountain-ice-is-bringing-ancient-secrets-to-the-surface-archaeologists-are-racing-to-find-the-artifacts-before-theyre-lost-to-time-180988777/",
+      img: "images/longread1.jpg"
+    },
+    {
+      pub: "Smithsonian Magazine",
+      headline: "The Caribbean Jewish community that smuggled gunpowder to the American Revolution",
+      deck: "A new exhibition spotlights the Jewish community on St. Eustatius who covertly supplied Patriots with gunpowder — so effectively that British Admiral Rodney condemned the island as a \"nest of vipers.\"",
+      author: "by Smithsonian Staff",
+      read: "12 min",
+      url: "https://www.smithsonianmag.com/history/this-jewish-community-in-the-caribbean-smuggled-gunpowder-to-the-patriots-during-the-revolution-180988740/",
+      img: "images/longread2.jpg"
+    },
+    {
+      pub: "National Geographic",
+      headline: "Inside the search for the lost Inca citadel of Ancocagua",
+      deck: "Archaeologists are combining colonial manuscripts, satellite imagery, and high-altitude fieldwork in Peru to find a legendary citadel that vanished after the Spanish conquest. If found, it could rival Machu Picchu.",
+      author: "by Nat Geo Explorers",
+      read: "14 min",
+      url: "https://www.nationalgeographic.com/history/article/inca-lost-citadel-ancocagua-peru",
+      img: ""
+    },
+    {
+      pub: "National Geographic",
+      headline: "A new T. rex of the seas — scientists describe a fearsome mosasaur species",
+      deck: "Paleontologists have named a massive new Late Cretaceous mosasaur built for ambush predation of sharks and other marine reptiles. The discovery reshapes our picture of ancient ocean ecosystems.",
+      author: "by Nat Geo Science",
+      read: "10 min",
+      url: "https://www.nationalgeographic.com/science/article/tylosaurus-rex-mosasaur",
+      img: ""
+    }
+  ]
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function timeOfDay(h) {
+  if (h < 5) return "night"; if (h < 12) return "morning";
+  if (h < 17) return "afternoon"; if (h < 21) return "evening"; return "night";
+}
+function formatDate(d) {
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
+
+// ── Img: simple local-file image, no fallback needed ─────────────────────────
+function Img({ src, alt }) {
+  if (!src) return null;
+  return <img src={src} alt={alt || ""} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />;
+}
+
+// ── Masthead ──────────────────────────────────────────────────────────────────
+function Masthead() {
+  return (
+    <header>
+      <div className="masthead">
+        <div className="left"><span>{DIGEST.edition}</span><span>{DIGEST.location}</span></div>
+        <div className="wordmark"><span className="amy">Amy's</span>{" "}<span className="digest-word">Daily Digest</span></div>
+        <div className="right"><span>{formatDate(DIGEST.date)}</span><span>Curated · 6:00 AM ET</span></div>
+      </div>
+      <div className="submast">
+        <div className="vol">
+          {["Top stories","· Weather","· Technology","· This week","· Health","· Discoveries","· Long reads"].map((s,i)=><span key={i}>{s}</span>)}
+        </div>
+        <div style={{ display:"flex", gap:18, alignItems:"center" }}>
+          <span style={{ color:"var(--terracotta)" }}>●</span>
+          <span>{DIGEST.weatherStrip}</span>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+// ── Greeting ──────────────────────────────────────────────────────────────────
+function Greeting({ tod, name }) {
+  return (
+    <section className="greeting">
+      <h1>Good {tod}, <span className="signature">{name}.</span></h1>
+      <div className="meta">
+        <div><b>Today</b> · Memorial Day, May 25 2026</div>
+        <div><b>Today's read time</b> · about 28 minutes</div>
+        <div><b>New since yesterday</b> · 11 stories</div>
+        <div><b>Mood for today</b> · reflective &amp; rested</div>
+      </div>
+    </section>
+  );
+}
+
+// ── Story ─────────────────────────────────────────────────────────────────────
+function Story({ s, isLead }) {
+  const [read, setRead] = useState(false);
+  return (
+    <article className={"story" + (isLead ? " lead" : "")}>
+      <div className="story-img has-photo">
+        <Img src={s.img} alt={s.headline} />
+        <span className="caption">{s.source}</span>
+      </div>
+      <div className="story-body">
+        <div className="story-cat">{s.category}</div>
+        <h3 className="story-headline">{s.headline}</h3>
+        {s.deck && <p className="story-deck">{s.deck}</p>}
+        <div className="story-meta">
+          <span className="bias-pill"><span className="bias-dot"></span>{s.bias} · {s.source}</span>
+          <span>{s.read} read</span>
+          <a href={s.url} target="_blank" rel="noopener">Open source ↗</a>
+          <button className={"read-toggle" + (read ? " on" : "")} onClick={() => setRead(!read)}>
+            {read ? "✓ Read" : "Mark read"}
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+// ── Weather ───────────────────────────────────────────────────────────────────
+function WeatherCard() {
+  const w = DIGEST.weather;
+  return (
+    <aside className="weather">
+      <div className="weather-head">
+        <span className="tag">Weather · Memorial Day</span>
+        <span className="place">New York · Brooklyn</span>
+      </div>
+      <div className="weather-now">
+        <div>
+          <div className="temp">{w.now}<span className="deg">°F</span></div>
+          <div className="weather-cond"><b>{w.condition}.</b> Feels like {w.feels}°. High {w.high}, low {w.low}.</div>
+        </div>
+        <div className="sun-glyph"><div className="core" /></div>
+      </div>
+      <div className="weather-hours">
+        {w.hours.map((h,i) => (
+          <div className="hour" key={i}>
+            <span className="h">{h.h}</span><span className="ic">{h.ic}</span><span className="t">{h.t}°</span>
+          </div>
+        ))}
+      </div>
+      <div className="weather-advice">
+        <div className="advice-title">What to wear / bring</div>
+        <ul className="advice-list">
+          {w.advice.map((a,i) => <li key={i}><span className="mark">{a.mark}</span><span>{a.text}</span></li>)}
+        </ul>
+        <div style={{ marginTop:12, fontFamily:"var(--mono)", fontSize:10, letterSpacing:"0.12em", textTransform:"uppercase", color:"var(--ink-3)", display:"flex", justifyContent:"space-between" }}>
+          <span>↑ Sunrise {w.sunrise}</span><span>↓ Sunset {w.sunset}</span>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+// ── Top row ───────────────────────────────────────────────────────────────────
+function TopRow() {
+  return (
+    <section className="section">
+      <div className="kicker">
+        <div className="label"><span className="num">i.</span>Top stories · today</div>
+        <div className="tag">Pulled from CBS News · ABC News · TechCrunch</div>
+      </div>
+      <div className="top-row">
+        <div className="stories">{DIGEST.topStories.map((s,i) => <Story key={i} s={s} isLead={i===0} />)}</div>
+        <WeatherCard />
+      </div>
+    </section>
+  );
+}
+
+// ── Technology ────────────────────────────────────────────────────────────────
+function TechSection() {
+  return (
+    <section className="section">
+      <div className="kicker">
+        <div className="label"><span className="num">ii.</span>Technology · today</div>
+        <div className="tag">TechCrunch · CBS News · May 25 2026</div>
+      </div>
+      <div className="tech-grid">
+        {DIGEST.tech.map((t,i) => (
+          <article className="tech-card" key={i}>
+            <div className="tech-img has-photo">
+              <Img src={t.img} alt={t.headline} />
+            </div>
+            <div className="tech-num">{t.num}</div>
+            <h3>{t.headline}</h3>
+            <p>{t.deck}</p>
+            <div className="src">
+              <span><a href={t.url} target="_blank" rel="noopener">{t.source} ↗</a></span>
+              <span>{t.read}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ── Events ────────────────────────────────────────────────────────────────────
+function EventList({ items }) {
+  return (
+    <div>
+      {items.map((e,i) => (
+        <div className="event" key={i}>
+          <div className="event-date"><div className="day">{e.day}</div><div className="num">{e.num}</div></div>
+          <div className="event-body">
+            <h4>{e.url ? <a href={e.url} target="_blank" rel="noopener" style={{ color:"inherit", textDecoration:"none", borderBottom:"1px solid var(--ink-3)" }}>{e.title}</a> : e.title}</h4>
+            <p>{e.blurb}</p>
+          </div>
+          <div className="event-meta">
+            <div className="pin">{e.where}</div>
+            <div>{e.time}</div>
+            <div>{e.price}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EventsSection() {
+  const [scope, setScope] = useState("both");
+  return (
+    <section className="section">
+      <div className="kicker">
+        <div className="label"><span className="num">iii.</span>This week · May 25–31</div>
+        <div className="scope-tabs">
+          {["nyc","world","both"].map(s => (
+            <button key={s} className={scope===s?"on":""} onClick={() => setScope(s)}>{s.toUpperCase()}</button>
+          ))}
+        </div>
+      </div>
+      <div className="events-row">
+        {(scope==="nyc"||scope==="both") && (
+          <div className="events-col">
+            <div className="events-head">
+              <h2><b>New York</b> <em>— happening near you</em></h2>
+              <span className="span">via Eventbrite</span>
+            </div>
+            <EventList items={DIGEST.nycEvents} />
+          </div>
+        )}
+        {(scope==="world"||scope==="both") && (
+          <div className="events-col">
+            <div className="events-head">
+              <h2><b>The world</b> <em>— at a glance</em></h2>
+              <span className="span">via CBS News</span>
+            </div>
+            <EventList items={DIGEST.worldEvents} />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+// ── Health ────────────────────────────────────────────────────────────────────
+function HealthSection() {
+  const cols = [
+    { ...DIGEST.health.eat, glyph: "e" },
+    { ...DIGEST.health.move, glyph: "m" },
+    { ...DIGEST.health.supps, glyph: "s" }
+  ];
+  return (
+    <section className="section">
+      <div className="kicker">
+        <div className="label"><span className="num">iv.</span>The health desk · personal</div>
+        <div className="tag">WebMD · Healthline · FDA · May 2026 — Not medical advice</div>
+      </div>
+      <div className="health-row">
+        {cols.map((c,i) => (
+          <div className="health-col" key={i}>
+            <div className="icon-frame">{c.glyph}</div>
+            <h3>{c.title}</h3>
+            <div className="sub">{c.sub}</div>
+            <p>{c.copy}</p>
+            <ul className="health-list">
+              {c.list.map((l,j) => <li key={j}><span><b>{l.b}.</b> {l.text}</span></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ── Discoveries + Long reads ──────────────────────────────────────────────────
+function DiscoveriesAndReads() {
+  const d = DIGEST.discoveries;
+  return (
+    <section className="section">
+      <div className="kicker">
+        <div className="label"><span className="num">v.</span>New discoveries &amp; the long read</div>
+        <div className="tag">Science News · Phys.org · Smithsonian · Nat Geo</div>
+      </div>
+      <div className="lower-row">
+        <div className="discovery">
+          <article className="feat">
+            <div className="feat-img has-photo">
+              <Img src={d.feature.img} alt={d.feature.headline} />
+              <span className="caption">{d.feature.source}</span>
+            </div>
+            <div className="feat-body">
+              <div className="cat">{d.feature.cat}</div>
+              <h3>{d.feature.headline}</h3>
+              <p>{d.feature.deck}</p>
+              <div className="src"><a href={d.feature.url} target="_blank" rel="noopener">{d.feature.source} ↗</a> · 7 min read</div>
+            </div>
+          </article>
+          <div className="discovery-more">
+            {d.more.map((m,i) => (
+              <div className="discovery-mini" key={i}>
+                <div className="field">{m.field}</div>
+                <div>
+                  <h4>{m.url ? <a href={m.url} target="_blank" rel="noopener" style={{ color:"inherit", textDecoration:"none" }}>{m.title}</a> : m.title}</h4>
+                  <p>{m.deck}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="longreads">
+          <div style={{ fontFamily:"var(--mono)", fontSize:11, letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--ink)", fontWeight:600, marginBottom:10 }}>
+            Saved for the weekend
+          </div>
+          {DIGEST.longreads.map((l,i) => (
+            <article className={"longread" + (!l.img ? " no-thumb" : "")} key={i}>
+              {l.img && (
+                <div className="longread-img has-photo">
+                  <Img src={l.img} alt={l.headline} />
+                </div>
+              )}
+              <div>
+                <div className="longread-pub">{l.pub}</div>
+                <h4><a href={l.url} target="_blank" rel="noopener" style={{ color:"inherit", textDecoration:"none" }}>{l.headline}</a></h4>
+                <p>{l.deck}</p>
+                <div className="meta"><span>{l.author}</span><span>· {l.read}</span></div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Colophon ──────────────────────────────────────────────────────────────────
+function Colophon() {
+  return (
+    <footer className="colophon">
+      <div><b>Daily Digest</b>Delivered every morning at 6:00 AM ET.<br />Curated, never auto-generated.</div>
+      <div className="center"><b>Today's edition</b>Vol. III · No. 145 · May 25, 2026<br />Sources: CBS, ABC, TechCrunch, Eventbrite,<br />Science News, Phys.org, Smithsonian, Nat Geo</div>
+      <div className="right"><b>Tomorrow</b>Memorial Day observed · markets closed<br />Weekend edition · long reads emphasized</div>
+    </footer>
+  );
+}
+
+// ── Tweaks ────────────────────────────────────────────────────────────────────
+const ACCENT_MAP = {
+  "#2563c4": { accent:"#2563c4", deep:"#1a4a99" },
+  "#3c8dbc": { accent:"#3c8dbc", deep:"#246a8e" },
+  "#1f6f8b": { accent:"#1f6f8b", deep:"#13556e" },
+  "#5b6fb5": { accent:"#5b6fb5", deep:"#3f5293" }
+};
+
+function TweaksPanel({ t, setTweak, onClose }) {
+  return (
+    <div className="twk-panel">
+      <div className="twk-hd">
+        <b>Tweaks</b>
+        <button className="twk-x" onClick={onClose}>✕</button>
+      </div>
+      <div className="twk-body">
+        <div className="twk-sect">Reader</div>
+        <div className="twk-row"><div className="twk-lbl">Name</div>
+          <input className="twk-field" type="text" value={t.name} onChange={e => setTweak("name", e.target.value)} />
+        </div>
+        <div className="twk-row"><div className="twk-lbl">Greeting</div>
+          <select className="twk-field" value={t.timeOfDay} onChange={e => setTweak("timeOfDay", e.target.value)}>
+            <option value="auto">Auto (by clock)</option>
+            <option value="morning">Good morning</option>
+            <option value="afternoon">Good afternoon</option>
+            <option value="evening">Good evening</option>
+          </select>
+        </div>
+        <div className="twk-sect">Paper</div>
+        <div className="twk-row"><div className="twk-lbl">Theme</div>
+          <div className="twk-seg">
+            <div className="twk-seg-thumb" style={{ left: t.theme==="paper"?"2px":"calc(50% + 0px)", width:"calc(50% - 4px)" }} />
+            {["paper","charcoal"].map(v => (
+              <button key={v} onClick={() => setTweak("theme", v)} style={{ position:"relative",zIndex:1,flex:1,border:0,background:"transparent",font:"inherit",fontWeight:500,padding:"4px 6px",cursor:"pointer",borderRadius:6 }}>
+                {v.charAt(0).toUpperCase()+v.slice(1)}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="twk-row"><div className="twk-lbl">Accent</div>
+          <div className="twk-chips">
+            {["#2563c4","#3c8dbc","#1f6f8b","#5b6fb5"].map(a => (
+              <button key={a} className="twk-chip" data-on={t.accent===a?"1":"0"} onClick={() => setTweak("accent", a)} style={{ background: a }}>
+                {t.accent===a && <svg viewBox="0 0 14 14" style={{ position:"absolute",top:6,left:6,width:13,height:13 }}><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke="#fff"/></svg>}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="twk-sect">Sections</div>
+        <div className="twk-row twk-row-h">
+          <div className="twk-lbl">Weather advice</div>
+          <button type="button" className="twk-toggle" data-on={t.showWeatherAdvice?"1":"0"} onClick={() => setTweak("showWeatherAdvice", !t.showWeatherAdvice)}><i /></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── App ───────────────────────────────────────────────────────────────────────
+function App() {
+  const [tweaks, setTweaksState] = useState({ name:"Amy", timeOfDay:"auto", accent:"#2563c4", theme:"paper", showWeatherAdvice:true });
+  const [panelOpen, setPanelOpen] = useState(false);
+  const setTweak = (k, v) => setTweaksState(p => ({ ...p, [k]: v }));
+
+  const tod = useMemo(() => {
+    if (tweaks.timeOfDay !== "auto") return tweaks.timeOfDay;
+    return timeOfDay(new Date().getHours());
+  }, [tweaks.timeOfDay]);
+
+  useEffect(() => {
+    document.body.dataset.theme = tweaks.theme;
+    const a = ACCENT_MAP[tweaks.accent] || ACCENT_MAP["#2563c4"];
+    document.body.style.setProperty("--terracotta", a.accent);
+    document.body.style.setProperty("--terracotta-deep", a.deep);
+  }, [tweaks.theme, tweaks.accent]);
+
+  useEffect(() => {
+    document.body.classList.toggle("hide-weather-advice", !tweaks.showWeatherAdvice);
+  }, [tweaks.showWeatherAdvice]);
+
+  return (
+    <div className="digest">
+      <Masthead />
+      <Greeting tod={tod} name={tweaks.name || "Amy"} />
+      <TopRow />
+      <TechSection />
+      <EventsSection />
+      <HealthSection />
+      <DiscoveriesAndReads />
+      <Colophon />
+      {panelOpen
+        ? <TweaksPanel t={tweaks} setTweak={setTweak} onClose={() => setPanelOpen(false)} />
+        : <button className="tweaks-btn" onClick={() => setPanelOpen(true)}>Tweaks ⚙</button>
+      }
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
