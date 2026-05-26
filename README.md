@@ -1,8 +1,8 @@
-# 🌸 Amy's Daily Digest
+# 🌸 My Daily Digest
 
 Hiiiiii! Welcome to my little corner of the internet ✨
 
-This is a personal pet project I built entirely with **Claude Code** — Anthropic's AI coding assistant — as a way to explore what it feels like to have the news curated *just for you*, in a way that actually matches how you want to read it.
+This is a personal pet project I built entirely with **Claude Code** — as a way to explore what it feels like to have the news curated *just for you*, in a way that actually matches how you want to read it.
 
 ---
 
