@@ -454,238 +454,314 @@ const DIGEST = {
   date: new Date(2026, 4, 25),
   edition: "Vol. III · No. 145",
   location: "Manhattan, NY",
-  weatherStrip: "79°F · Sunny · Memorial Day · UV 9 · AQI 38",
+  weatherStrip: "64°F · Clear · UV 4 · Manhattan",
 
   topStories: [
     {
-      category: "Diplomacy · Lead",
-      headline: "Iran-U.S. peace talks advance with draft 60-day ceasefire memo",
-      deck: "A draft memorandum circulated between U.S. and Iranian negotiators outlines a 60-day cessation of hostilities — the most concrete diplomatic step yet. Iranian officials acknowledge \"frequent changes\" in American positions complicate the process, but both sides signal real progress as Trump honored fallen troops in Memorial Day remarks.",
-      source: "CBS News",
-      bias: "Center",
-      read: "5 min",
-      url: "https://www.cbsnews.com/news/iran-peace-deal-draft-memo-white-house/",
-      img: "images/story1.jpg",
-      caption: "U.S.-Iran negotiations"
+        "category": "World Affairs · Breaking",
+        "headline": "U.S. Launches New Strikes on Southern Iran Even as Peace Talks Resume in Doha.",
+        "deck": "U.S. Central Command announced fresh strikes on Iranian missile launch sites and patrol boats in the Persian Gulf, framing the action as self-defense — even as Iranian negotiators sat down with American counterparts in Qatar. The simultaneous diplomacy and bombardment signals how volatile and contradictory the path to a ceasefire remains, with oil markets and the Strait of Hormuz both hanging in the balance.",
+        "source": "BBC News / NYT",
+        "bias": "Center",
+        "read": "6 min",
+        "url": "https://www.nytimes.com/live/2026/05/25/world/iran-war-trump",
+        "img": "",
+        "caption": "U.S. strikes southern Iran as Doha talks begin"
     },
     {
-      category: "Religion · Tech Policy",
-      headline: "Pope Leo's AI encyclical calls on world governments to \"disarm\" artificial intelligence",
-      deck: "\"Magnifica Humanitas\" — Pope Leo's first major encyclical — urges binding international frameworks governing AI before the technology reshapes civilization beyond recovery. The Vatican consulted AI researchers and ethicists for months. The document is expected to shape G7 and UN AI governance discussions this summer.",
-      source: "CBS News / ABC News",
-      bias: "Center",
-      read: "6 min",
-      url: "https://abcnews.go.com/International/wireStory/pope-calls-robust-regulation-ai-manifesto-ponders-future-133279924",
-      img: "images/story2.jpg",
-      caption: "Pope Leo, Vatican City"
+        "category": "U.S. News · Diplomacy",
+        "headline": "Iran Says a Deal With the U.S. Is Not Imminent, Citing 'Frequent Changes' in American Positions.",
+        "deck": "Tehran acknowledged that the broad shape of a potential agreement is emerging but warned that unresolved obstacles and shifting U.S. demands are slowing progress — even as Secretary of State Rubio suggested a deal could come as soon as Monday. The standoff matters globally because any resolution would directly affect oil prices, the reopening of the Strait of Hormuz, and broader Middle East stability.",
+        "source": "BBC News / CBS News",
+        "bias": "Center",
+        "read": "5 min",
+        "url": "https://www.bbc.com/news/articles/cglpp2yk336o?at_medium=RSS&at_campaign=rss",
+        "img": "",
+        "caption": "Iran-U.S. nuclear and ceasefire negotiations in Doha"
     },
     {
-      category: "Rescue · International",
-      headline: "Seven trapped in Laos cave — Thai rescue veterans join the effort",
-      deck: "Seven Laotian villagers searching for gold have been underground for five days after flash floods sealed the cave system. Thailand's elite cave rescue team — veterans of the 2018 Tham Luang operation — have joined the extraction effort. Engineers are drilling access routes and pumping floodwater.",
-      source: "CBS News",
-      bias: "Center",
-      read: "4 min",
-      url: "https://www.cbsnews.com/news/laos-cave-thai-rescue-seven-trapped/",
-      img: "images/story3.jpg",
-      caption: "Rescue operations, Laos"
+        "category": "U.S. News · Public Safety",
+        "headline": "Explosion Threat at California Chemical Leak Site Declared 'Eliminated' After Overnight Operation.",
+        "deck": "Emergency crews in Garden Grove, Orange County completed an overnight intervention at a GKN Aerospace facility holding roughly 7,000 gallons of methyl methacrylate — a highly volatile plastic-producing chemical — and officials say the risk of a catastrophic blast has been neutralized. The five-day ordeal forced residential evacuations and raised fresh questions about industrial chemical storage safety near dense communities.",
+        "source": "CBS News",
+        "bias": "Center",
+        "read": "4 min",
+        "url": "https://www.cbsnews.com/live-updates/california-chemical-leak-orange-county-garden-grove-emergency-day-5/",
+        "img": "",
+        "caption": "Garden Grove chemical tank emergency, day 5"
     }
-  ],
+],
 
   weather: {
-    now: 79, condition: "Sunny", feels: 81, high: 84, low: 66,
-    sunrise: "5:29a", sunset: "8:16p",
-    hours: [
-      { h: "Now", t: 79, ic: "☀" }, { h: "2p", t: 84, ic: "☀" },
-      { h: "5p", t: 82, ic: "⛅" }, { h: "8p", t: 74, ic: "🌤" },
-      { h: "11p", t: 68, ic: "🌙" }
+    "now": 64,
+    "condition": "Clear",
+    "feels": 66,
+    "high": 75,
+    "low": 55,
+    "uv": 4,
+    "sunrise": "5:30a",
+    "sunset": "8:15p",
+    "hours": [
+        {
+            "h": "Now",
+            "t": 66,
+            "ic": "☀"
+        },
+        {
+            "h": "+2h",
+            "t": 64,
+            "ic": "☀"
+        },
+        {
+            "h": "+5h",
+            "t": 64,
+            "ic": "☀"
+        },
+        {
+            "h": "+8h",
+            "t": 64,
+            "ic": "☀"
+        },
+        {
+            "h": "+11h",
+            "t": 64,
+            "ic": "☀"
+        }
     ],
-    advice: [
-      { mark: "→", text: "Perfect BBQ weather — light clothes, it stays warm into the evening." },
-      { mark: "→", text: "UV index 9 peaks at noon. SPF 50 if you're spending time outside." },
-      { mark: "→", text: "Humidity rises after 6pm — a light linen layer for the evening works." },
-      { mark: "→", text: "No rain all weekend. Clear skies through Tuesday." }
+    "advice": [
+        {
+            "mark": "→",
+            "text": "Clear skies and a comfortable 64°F this morning make it ideal for walking or running before the day warms — step out before 9 a.m. to get the best of it before the midday heat builds toward 75°F."
+        },
+        {
+            "mark": "→",
+            "text": "UV index hits 4 (moderate) by late morning — enough to warrant SPF 30+ on your face and neck if you're spending more than 30 minutes outside, especially in open areas like Central Park or the Hudson River Greenway."
+        },
+        {
+            "mark": "→",
+            "text": "Temperatures dip to 55°F tonight, so bring or wear a light layer — a linen jacket or light zip — if you plan to be out after sunset at 8:15 p.m. for Memorial Day weekend festivities."
+        },
+        {
+            "mark": "→",
+            "text": "No rain in the forecast today, so this is an excellent day for outdoor dining, rooftop bars, or a picnic in the park — book or arrive early as Memorial Day crowds will be heavy across Manhattan green spaces."
+        }
     ]
-  },
+},
 
   tech: [
     {
-      num: "01",
-      headline: "Anthropic says it's about to have its first profitable quarter",
-      deck: "One of AI's most watched labs is approaching profitability for the first time, driven by surging enterprise demand for the Claude API. The milestone validates the commercial viability of safety-focused AI development amid fierce competition with OpenAI and Google.",
-      source: "TechCrunch",
-      read: "5 min",
-      url: "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
-      img: "images/tech1.jpg"
+        "num": "01",
+        "headline": "ClickUp Replaces Hundreds of Employees With Thousands of AI Agents in Mass Layoff.",
+        "deck": "The nine-year-old productivity startup's decision to swap human workers for AI agents at scale is one of the most concrete examples yet of a major tech company restructuring its workforce around automation rather than just augmenting it. It forces a pointed question for every knowledge worker: at what pace, and in what roles, does AI stop being a tool and start being a replacement?",
+        "source": "TechCrunch",
+        "read": "5 min",
+        "url": "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
+        "img": ""
     },
     {
-      num: "02",
-      headline: "Google's Gemini Spark agent can browse the web and write code autonomously",
-      deck: "Google unveiled Gemini Spark, an AI agent that executes complex multi-step tasks end-to-end — browsing, coding, and managing files on a user's behalf. Experts call it a significant leap in agentic AI and the most direct challenge yet to OpenAI's operator-style agents.",
-      source: "CBS News",
-      read: "4 min",
-      url: "https://www.cbsnews.com/news/google-gemini-spark-ai-agent/",
-      img: "images/tech2.jpg"
+        "num": "02",
+        "headline": "Pope Leo's 42,000-Word AI Encyclical Is Really a Warning About Power and Democracy.",
+        "deck": "Pope Leo XIV's sweeping document — which invokes Gandalf and calls for 'disarming' AI — uses artificial intelligence as a vehicle to diagnose what he sees as a deeper civilizational crisis: unchecked concentrated power, eroding democratic institutions, and a tech elite remaking the world in its own image. At 42,300 words, it is one of the most substantial papal interventions in a contemporary political issue in modern history.",
+        "source": "TechCrunch / Ars Technica",
+        "read": "7 min",
+        "url": "https://techcrunch.com/2026/05/25/the-popes-ai-encyclical-isnt-really-about-ai/",
+        "img": ""
     },
     {
-      num: "03",
-      headline: "ClickUp's mass layoff signals AI reshaping the productivity software workforce",
-      deck: "ClickUp's significant workforce reduction reflects a sector-wide reckoning: AI automation is changing how productivity companies staff their operations. Analysts see it as a bellwether for the broader SaaS industry as AI tools absorb functions once handled by people.",
-      source: "TechCrunch",
-      read: "6 min",
-      url: "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
-      img: "images/tech3.jpg"
+        "num": "03",
+        "headline": "Ferrari Unveils Its First EV — the Luce — Designed With Jony Ive and Marc Newson.",
+        "deck": "After months of teasers, Ferrari has revealed the full design of the Luce, its debut electric vehicle, created in collaboration with former Apple design chief Jony Ive and industrial designer Marc Newson through their LoveFrom studio. The partnership is significant beyond the car itself — it represents one of the highest-profile post-Apple commissions for Ive and signals that legacy luxury automakers are betting on cultural cachet, not just range specs, to sell EVs.",
+        "source": "The Verge",
+        "read": "4 min",
+        "url": "https://www.theverge.com/transportation/937066/ferrari-luce-ev-jony-ive-marc-newson-lovefrom",
+        "img": ""
     }
-  ],
+],
 
   nycEvents: [
     {
-      day: "Sun", num: 25,
-      title: "Memorial Day Rooftop BBQ — The Ivory on Park",
-      blurb: "Grilled favorites, skyline views, and holiday-weekend ambiance at one of Brooklyn's best rooftop spots. Festive, social, and a perfect way to spend the afternoon.",
-      where: "Bushwick, BK", time: "3p–9p", price: "$25+",
-      url: "https://www.eventbrite.com/e/buns-burgers-memorial-day-bbq-monday-may-25th-rooftop-brooklyn-tickets-1987266238816"
+        "day": "Mon",
+        "num": 25,
+        "title": "Memorial Day in Central Park",
+        "blurb": "The park is in peak late-spring form — lawns open, rowboats on the lake, and free Shakespeare in the Park season underway. Memorial Day draws big crowds to Sheep Meadow and the Great Lawn; arrive before 11 a.m. for a prime spot. A perfect low-cost way to mark the holiday with clear skies and a 75°F high.",
+        "where": "Central Park, Manhattan",
+        "time": "All day",
+        "price": "Free",
+        "url": "https://www.centralparknyc.org"
     },
     {
-      day: "Tue", num: 27,
-      title: "15th Annual Bushwick Collective Block Party",
-      blurb: "Brooklyn's beloved street-art celebration returns for its 15th year — murals, live vendors, food, and music in one of the city's most vibrant creative districts. Arrive early.",
-      where: "Bushwick, BK", time: "10a–6p", price: "Ticketed",
-      url: "https://www.eventbrite.com/e/15th-annual-bushwick-collective-block-party-tickets-1988055115367"
+        "day": "Mon",
+        "num": 25,
+        "title": "Brooklyn Cyclones Opening Weekend Series",
+        "blurb": "The Cyclones are playing their early-season home series at MCU Park in Coney Island — an unbeatable Memorial Day tradition combining minor-league baseball, ocean breezes, and Nathan's Famous next door. The short subway ride from Manhattan makes it an easy half-day outing.",
+        "where": "Coney Island, Brooklyn",
+        "time": "1:00 PM",
+        "price": "$14+",
+        "url": "https://www.milb.com/brooklyn"
     },
     {
-      day: "Tue", num: 27,
-      title: "High Line Plant Sale — Rooted in Resilience",
-      blurb: "A horticultural marketplace on the elevated High Line featuring curated plants and botanical vendors, with scenic open-air views above the West Side streets.",
-      where: "Chelsea, Manhattan", time: "11a–5p", price: "Free entry",
-      url: "https://www.eventbrite.com/e/rooted-in-resilience-high-line-plant-sale-tickets-1988856414073"
+        "day": "Mon",
+        "num": 25,
+        "title": "Fleet Week NYC — Ship Tours on the Hudson",
+        "blurb": "Fleet Week New York runs through the Memorial Day holiday weekend, with U.S. Navy, Coast Guard, and allied vessels docked along the Hudson River and open for free public tours. It's one of the few chances New Yorkers get to walk the decks of active military ships, and the waterfront views are spectacular on a clear day.",
+        "where": "Intrepid Sea, Air & Space Museum Pier, Midtown West",
+        "time": "8:00 AM – 5:00 PM",
+        "price": "Free",
+        "url": "https://www.fleetweeknewyork.com"
     }
-  ],
+],
 
   worldEvents: [
     {
-      day: "Sun", num: 25,
-      title: "Iran-U.S. ceasefire draft memo circulated to both sides",
-      blurb: "A 60-day cessation-of-hostilities framework is now on the table after back-channel negotiations. Secretary Rubio signaled \"significant progress\" as Trump honored Memorial Day.",
-      where: "Washington / Tehran", time: "Ongoing", price: "—"
+        "day": "Mon",
+        "num": 25,
+        "title": "Iran-U.S. Peace Talks Resume in Doha",
+        "blurb": "Iranian officials traveled to Qatar on Monday for a new round of negotiations aimed at ending the ongoing U.S.-Iran conflict, even as American forces conducted fresh strikes on the Iranian coast — a tense and contradictory backdrop that underscores how fragile the diplomatic track remains.",
+        "where": "Doha, Qatar",
+        "time": "Ongoing",
+        "price": "—"
     },
     {
-      day: "Sun", num: 25,
-      title: "Pope Leo's AI encyclical \"Magnifica Humanitas\" released",
-      blurb: "The Catholic Church's most detailed engagement yet with technology ethics calls for global binding AI regulation. Expected to shape UN and G7 governance debates this summer.",
-      where: "Vatican City", time: "Issued Friday", price: "—"
+        "day": "Mon",
+        "num": 25,
+        "title": "UK Records Hottest May Day in History at 34°C",
+        "blurb": "Britain shattered its May temperature record on Monday, hitting 34°C (93°F) just a day after recording its warmest May night ever — a stark data point in an accelerating pattern of climate extremes that scientists say is reshaping European summers permanently.",
+        "where": "London, United Kingdom",
+        "time": "Ongoing",
+        "price": "—"
     },
     {
-      day: "Sun", num: 25,
-      title: "Laos cave rescue: Thai elite team joins five-day operation",
-      blurb: "Seven villagers trapped by flash flooding after searching for gold. Thailand's 2018 Tham Luang veterans are drilling access routes and pumping water from the cave system.",
-      where: "Laos", time: "Day 5", price: "—"
+        "day": "Mon",
+        "num": 25,
+        "title": "Congo's Bundibugyo Ebola Outbreak Grows Amid Readiness Gaps",
+        "blurb": "A rare strain of Ebola — the Bundibugyo variant — is spreading in the Democratic Republic of Congo, exposing significant holes in the country's public health infrastructure despite years of preparation for more common strains. Responders are falling back on traditional containment tactics while scientists race to develop new tools specific to this variant.",
+        "where": "Bundibugyo, DR Congo",
+        "time": "Ongoing",
+        "price": "—"
     }
-  ],
+],
 
   health: {
-    eat: {
-      title: "On the plate",
-      sub: "2026 Dietary Guidelines update",
-      copy: "The new federal guidelines emphasize whole foods and consistent eating patterns over strict macronutrient targets. Key focus: cut ultra-processed foods, increase fiber, and eat more plant-forward meals. Science is also walking back decades of full-fat dairy alarm — recent evidence shows neutral to protective cardiovascular effects.",
-      list: [
-        { b: "Try", text: "Full-fat Greek yogurt with berries — science now backs it." },
-        { b: "Limit", text: "Ultra-processed snacks — the 2026 guidelines call them out specifically." },
-        { b: "Stack", text: "Legumes + whole grains at one meal today for fiber and slow protein." }
-      ]
+    "eat": {
+        "title": "On the plate",
+        "sub": "May 2026 eating",
+        "copy": "New York's Union Square and Brooklyn farmers' markets are brimming with late-spring produce right now — strawberries, asparagus, ramps, and tender lettuce are all at peak season and locally sourced. May is an ideal time to shift toward lighter, plant-forward meals that match both the warming weather and the body's natural seasonal rhythms. Eating with the season also reduces your food's carbon footprint at a time when supply chains are under global stress.",
+        "list": [
+            {
+                "b": "Try",
+                "text": "Local strawberries from the farmers' market — they're sweeter and more nutrient-dense than shipped varieties and are at absolute peak right now in the Northeast."
+            },
+            {
+                "b": "Limit",
+                "text": "Heavy, protein-dense lunches on warm days — they slow afternoon energy and are harder to digest when body temperature is already elevated."
+            },
+            {
+                "b": "Add",
+                "text": "Fresh asparagus and peas to dinners this week; both are exceptional sources of folate, fiber, and prebiotic compounds, and won't be this fresh again until next spring."
+            }
+        ]
     },
-    move: {
-      title: "Moving body",
-      sub: "Memorial Day prescription",
-      copy: "A sunny 79°F day is ideal for an outdoor zone-2 session. Central Park's outer loop is 6.1 miles with great shade on the east side. If the BBQ is calling first, 15 of WebMD's curated Pilates moves can be done on any flat surface in 25 minutes — strong evidence for lower-back relief and posture.",
-      list: [
-        { b: "Outdoor", text: "35-min easy run or brisk walk; keep heart rate at 60–70% max." },
-        { b: "Indoor", text: "15 Pilates moves focusing on core, hip flexors, and posture." },
-        { b: "Evening", text: "10-min legs-up-the-wall before bed — aids circulation after standing." }
-      ]
+    "move": {
+        "title": "Moving body",
+        "sub": "Today's recommendation",
+        "copy": "Today's clear skies and 64°F morning temperature represent near-perfect conditions for outdoor cardio in Manhattan — low humidity, no wind, and enough cool air to push harder without overheating. With sunset at 8:15 p.m., you also have a rare long Memorial Day evening for an after-dinner walk along the Hudson or East River esplanade. Take advantage of the holiday; the park paths will be lively but manageable if you go early.",
+        "list": [
+            {
+                "b": "Outdoor",
+                "text": "A 5–8 mile run or bike ride along the Hudson River Greenway from Battery Park to the George Washington Bridge — flat, car-free, and spectacular on a clear morning."
+            },
+            {
+                "b": "Indoor",
+                "text": "If the Memorial Day crowds feel overwhelming, a yoga or Pilates class in the late afternoon resets the nervous system and stretches out any weekend tightness."
+            },
+            {
+                "b": "Evening",
+                "text": "A 30-minute walk after dinner as temperatures cool to the low 60s — light, social, and one of the best natural aids for digestion and sleep quality."
+            }
+        ]
     },
-    supps: {
-      title: "Supplements",
-      sub: "What's relevant this week",
-      copy: "The FDA this month approved the first once-daily oral Wegovy pill — the GLP-1 medication semaglutide now comes in tablet form for adults with obesity. For everyone else, sleep optimization remains the highest-ROI lever: magnesium and melatonin timing matters more than dose.",
-      list: [
-        { b: "New: Oral Wegovy", text: "FDA-approved GLP-1 pill — ask your clinician if relevant." },
-        { b: "Magnesium glycinate", text: "300 mg 60 min before bed — backed by sleep research." },
-        { b: "Vitamin D₃", text: "2,000 IU with a fat-containing meal (pair with eggs or avocado)." }
-      ]
+    "supps": {
+        "title": "Supplements",
+        "sub": "This week",
+        "copy": "With UV index reaching moderate levels daily and more outdoor time in the cards through late May, it's worth revisiting your vitamin D status — counterintuitively, many New Yorkers remain deficient even in summer due to sunscreen use and indoor lifestyles. The social media and screen-time debate reignited this week by top medical bodies is also a timely nudge to audit your own evening blue-light exposure, which directly affects melatonin and sleep quality.",
+        "list": [
+            {
+                "b": "Priority",
+                "text": "Vitamin D3 (1,000–2,000 IU with a fat-containing meal at breakfast) — critical for immune function, mood regulation, and bone health, especially if you spend most daylight hours indoors."
+            },
+            {
+                "b": "Consider",
+                "text": "Magnesium glycinate (200–400 mg in the evening) — supports sleep quality, muscle recovery after increased outdoor activity, and stress regulation heading into a busy holiday week."
+            },
+            {
+                "b": "Note",
+                "text": "Skip the supplement and just get 15–20 minutes of direct midday sun without sunscreen on your arms if possible — it's the most bioavailable D3 source available on a clear May day like today."
+            }
+        ]
     }
-  },
+},
 
   discoveries: {
-    feature: {
-      cat: "Cover discovery · Physics / Materials",
-      caption: "Science News — gold surface research",
-      headline: "Physics finally explains why gold never tarnishes — and it could unlock corrosion-resistant materials",
-      deck: "Scientists have mapped the atomic mechanism behind gold's famous inertness: the metal's surface undergoes a rapid rearrangement that prevents oxygen from bonding — unlike copper, silver, or iron. The findings could inform next-generation corrosion-resistant coatings at the nano scale.",
-      source: "Science News",
-      url: "https://www.sciencenews.org/article/physics-explains-gold-shiny-oxidize",
-      img: "images/science1.webp"
+    "feature": {
+        "cat": "Cover discovery · Physics",
+        "headline": "Gold Never Tarnishes — and Physicists Have Finally Explained Why at the Atomic Level.",
+        "deck": "New research reveals that when oxygen approaches gold's surface, the metal's atoms perform a rapid structural rearrangement that prevents the oxidation reaction from taking hold — a fundamentally different response from metals like copper or iron, which corrode readily. Understanding this mechanism at the quantum level could open pathways to engineering other metals with gold-like resistance, with implications for electronics, medicine, and infrastructure.",
+        "source": "Science News",
+        "url": "https://www.sciencenews.org/article/physics-explains-gold-shiny-oxidize",
+        "img": "",
+        "caption": "Atomic surface dynamics explain gold's permanent luster"
     },
-    more: [
-      {
-        field: "Neuroscience",
-        title: "Ultrasound aimed at the brain shows significant relief for Parkinson's tremors",
-        deck: "A non-invasive ultrasound technique targeting specific brain regions is reducing motor symptoms in early trials — without the risks of surgical deep-brain stimulation.",
-        url: "https://www.sciencenews.org/article/parkinsons-ultrasound-brain-shake-pain"
-      },
-      {
-        field: "Quantum physics",
-        title: "\"Butterfly molecule\" finally observed, closing a 20-year prediction gap",
-        deck: "Physicists observed giant Rydberg-atom molecules whose electron orbits at extraordinary distance — just as theorized since the early 2000s. These could serve as ultra-sensitive quantum probes.",
-        url: "https://phys.org/news/2026-05-butterfly-molecule-year-quantum-zoo.html"
-      },
-      {
-        field: "Epidemiology",
-        title: "Rare Ebola strain in Congo exposes critical gaps in global disease surveillance",
-        deck: "A rare variant emerging in the DRC reveals that variant surveillance — not just outbreak response — needs urgent investment. The WHO is monitoring closely.",
-        url: "https://www.sciencenews.org/article/congo-ebola-rare-strain-gaps-readiness"
-      }
+    "more": [
+        {
+            "field": "Epidemiology",
+            "title": "Rare Bundibugyo Ebola Strain Exposes Critical Gaps in Congo's Outbreak Readiness.",
+            "deck": "Congo's public health system, built largely around the more common Zaire Ebola strain, is struggling to contain a growing outbreak of the rarer Bundibugyo variant — highlighting how preparedness infrastructure optimized for one pathogen can still leave populations dangerously exposed.",
+            "url": "https://www.sciencenews.org/article/congo-ebola-rare-strain-gaps-readiness"
+        },
+        {
+            "field": "Quantum Physics",
+            "title": "A Gravity-Inclusive Rewrite of Quantum Mechanics Could Point Toward a Theory of Everything.",
+            "deck": "Physicists are exploring a radical reformulation that incorporates gravity directly into quantum mechanics, potentially resolving the century-long incompatibility between general relativity and quantum theory — and suggesting that time itself may have a fundamental fuzziness at the smallest scales.",
+            "url": "https://www.newscientist.com/article/2526507-does-gravity-create-reality-a-shocking-path-to-a-theory-of-everything/"
+        },
+        {
+            "field": "Archaeology / Medicine",
+            "title": "Microscopic Residue on Ming Dynasty Surgical Tools Reveals First Evidence of Controlled Chemical Anesthesia in Ancient China.",
+            "deck": "Analysis of scissors and tweezers from a 14th–15th century tomb in Jiangyin found traces of a highly toxic compound applied in controlled doses as an anesthetic — pushing back evidence for sophisticated surgical pain management in China by centuries and reframing our understanding of Ming-era medicine.",
+            "url": "https://phys.org/news/2026-05-ancient-anesthetic-reveals-ming-china.html"
+        }
     ]
-  },
+},
 
   longreads: [
     {
-      pub: "Smithsonian Magazine",
-      headline: "Melting mountain ice is revealing ancient secrets — archaeologists are racing the clock",
-      deck: "Ice patches in Norway's highlands are surrendering Bronze Age and Stone Age artifacts as glaciers retreat. Objects preserved for millennia can degrade within weeks of exposure.",
-      author: "by Anna Fiorentino",
-      read: "16 min",
-      url: "https://www.smithsonianmag.com/science-nature/melting-mountain-ice-is-bringing-ancient-secrets-to-the-surface-archaeologists-are-racing-to-find-the-artifacts-before-theyre-lost-to-time-180988777/",
-      img: "images/longread1.jpg"
+        "pub": "The Atlantic",
+        "headline": "Pope Leo's Unsettling Vision of the AI Future.",
+        "deck": "A deep reading of the new papal encyclical 'Magnifica Humanitas' — which uses AI as a lens to confront concentrated power, the erosion of democracy, and a tech class reshaping civilization — and why its alarm lands harder than its offered hope.",
+        "author": "by The Atlantic Staff",
+        "read": "14 min",
+        "url": "https://www.theatlantic.com/ideas/2026/05/pope-leo-ai-encyclical-magnifica-humanitas/687294/?utm_source=feed",
+        "img": ""
     },
     {
-      pub: "Smithsonian Magazine",
-      headline: "The Caribbean Jewish community that smuggled gunpowder to the American Revolution",
-      deck: "A new exhibition spotlights the Jewish community on St. Eustatius who covertly supplied Patriots with gunpowder — so effectively that British Admiral Rodney condemned the island as a \"nest of vipers.\"",
-      author: "by Smithsonian Staff",
-      read: "12 min",
-      url: "https://www.smithsonianmag.com/history/this-jewish-community-in-the-caribbean-smuggled-gunpowder-to-the-patriots-during-the-revolution-180988740/",
-      img: "images/longread2.jpg"
+        "pub": "Smithsonian Magazine",
+        "headline": "America's Most Endangered Historic Places, Revealed as the Nation Turns 250.",
+        "deck": "From a forgotten Revolutionary War battlefield to a civil rights-era safe haven, the National Trust for Historic Preservation's new list surfaces the places America is on the verge of losing forever — a timely reckoning on the eve of the semiquincentennial.",
+        "author": "by Smithsonian Staff",
+        "read": "10 min",
+        "url": "https://www.smithsonianmag.com/smart-news/to-mark-americas-250th-birthday-see-the-countrys-most-endangered-places-that-youve-probably-never-heard-of-180988789/",
+        "img": ""
     },
     {
-      pub: "National Geographic",
-      headline: "Inside the search for the lost Inca citadel of Ancocagua",
-      deck: "Archaeologists are combining colonial manuscripts, satellite imagery, and high-altitude fieldwork in Peru to find a legendary citadel that vanished after the Spanish conquest.",
-      author: "by Nat Geo Explorers",
-      read: "14 min",
-      url: "https://www.nationalgeographic.com/history/article/inca-lost-citadel-ancocagua-peru",
-      img: ""
-    },
-    {
-      pub: "National Geographic",
-      headline: "A new T. rex of the seas — scientists describe a fearsome mosasaur species",
-      deck: "Paleontologists have named a massive new Late Cretaceous mosasaur built for ambush predation of sharks and other marine reptiles.",
-      author: "by Nat Geo Science",
-      read: "10 min",
-      url: "https://www.nationalgeographic.com/science/article/tylosaurus-rex-mosasaur",
-      img: ""
+        "pub": "The Atlantic",
+        "headline": "The Enhanced Games Were Bigger — But Not Better.",
+        "deck": "A ringside account of the debut Enhanced Games — where doping is not just permitted but celebrated — and what the spectacle reveals about the gap between chemically augmented performance and the thing that actually makes sport worth watching.",
+        "author": "by The Atlantic Staff",
+        "read": "11 min",
+        "url": "https://www.theatlantic.com/culture/2026/05/enhanced-games-sports-doping/687296/?utm_source=feed",
+        "img": ""
     }
-  ]
+]
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
