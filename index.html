@@ -9,233 +9,435 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #eaf2fb; --paper-2: #dce8f4; --paper-3: #c5d6ea;
-    --ink: #0c1f3a; --ink-2: #283f64; --ink-3: #5f7894; --rule: #0c1f3a;
-    --terracotta: #2563c4; --terracotta-deep: #1a4a99;
-    --forest: #1f6f8b; --gold: #5677b0; --sun: #6aa6e8;
+    --paper: #fffaf3;
+    --paper-2: #fdf2e4;
+    --paper-3: #f5e6d0;
+    --ink: #3d2a44;
+    --ink-2: #6b5172;
+    --ink-3: #a896ad;
+    --rule: #3d2a44;
+
+    --pink-bg: #ffe3ec;
+    --pink-soft: #fff0f4;
+    --pink-ink: #c64a7a;
+    --pink-deep: #9a3460;
+
+    --sky-bg: #d9ecff;
+    --sky-soft: #ecf5ff;
+    --sky-ink: #3a7dbf;
+    --sky-deep: #245a92;
+
+    --lav-bg: #e6dcfa;
+    --lav-soft: #f1ebfc;
+    --lav-ink: #7a55c9;
+    --lav-deep: #563594;
+
+    --mint-bg: #d4f0dc;
+    --mint-soft: #e8f7ec;
+    --mint-ink: #3e9c5e;
+    --mint-deep: #2a7444;
+
+    --peach-bg: #ffdcc7;
+    --peach-soft: #fff0e3;
+    --peach-ink: #d76a3a;
+    --peach-deep: #a04a22;
+
+    --butter-bg: #fff1b8;
+    --butter-soft: #fff8db;
+    --butter-ink: #c79520;
+    --butter-deep: #8e6912;
+
+    --terracotta: var(--pink-ink);
+    --terracotta-deep: var(--pink-deep);
+    --forest: var(--mint-deep);
+    --gold: var(--butter-ink);
+    --sun: #ffd66a;
+
     --serif: "IBM Plex Mono", Menlo, ui-monospace, monospace;
     --mono: "JetBrains Mono", Menlo, ui-monospace, monospace;
   }
+
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
-  body { font-family: var(--serif); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; background-image: radial-gradient(rgba(12,31,58,.045) 1px, transparent 1px); background-size: 4px 4px; }
-  .digest { max-width: 1240px; margin: 0 auto; padding: 48px 56px 96px; }
+  body {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-image: radial-gradient(rgba(61,42,68,0.06) 1px, transparent 1.4px);
+    background-size: 14px 14px;
+  }
+  .digest { max-width: 1240px; margin: 0 auto; padding: 28px 56px 96px; position: relative; }
 
-  /* Masthead */
-  .masthead { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 24px; padding-bottom: 14px; border-bottom: 3px double var(--rule); }
-  .masthead .left, .masthead .right { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); display: flex; flex-direction: column; gap: 4px; }
+  /* ── Masthead ── */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 24px;
+    padding-bottom: 12px;
+    border-bottom: 4px double var(--rule);
+    position: relative;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -8px;
+    height: 2px;
+    background-image: radial-gradient(circle, var(--pink-ink) 1.2px, transparent 1.6px);
+    background-size: 10px 2px;
+    background-repeat: repeat-x;
+  }
+  .masthead .left, .masthead .right {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
   .masthead .left { align-items: flex-start; }
   .masthead .right { align-items: flex-end; text-align: right; }
-  .wordmark { font-family: var(--serif); font-weight: 600; font-size: 38px; line-height: 1; letter-spacing: -.03em; text-align: center; }
-  .wordmark .amy { font-style: italic; font-weight: 500; }
-  .wordmark .digest-word { font-weight: 700; letter-spacing: -.02em; }
-  .submast { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); padding: 8px 0; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
-  .submast .vol { display: flex; gap: 18px; flex-wrap: wrap; }
-  .submast .dot { color: var(--terracotta); }
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -.03em;
+    text-align: center;
+  }
+  .wordmark .digest-word { font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
 
-  /* Greeting */
-  .greeting { padding: 36px 0 28px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: end; border-bottom: 1px solid var(--rule); }
-  .greeting h1 { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.15; letter-spacing: -.02em; margin: 0; color: var(--ink); }
-  .greeting h1 .signature { font-style: italic; font-weight: 700; color: var(--terracotta-deep); }
-  .greeting .meta { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); line-height: 1.8; }
+  /* ── Greeting ── */
+  .greeting {
+    padding: 28px 0 24px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 56px;
+    align-items: end;
+    border-bottom: 2px dashed var(--ink);
+  }
+  .greeting h1 { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.15; letter-spacing: -.02em; margin: 0; color: var(--ink); text-wrap: balance; }
+  .greeting h1 .signature { font-style: italic; font-weight: 700; color: var(--pink-ink); background: var(--pink-bg); padding: 0 8px; border-radius: 6px; }
+  .greeting .meta { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); line-height: 1.7; }
   .greeting .meta b { color: var(--ink); font-weight: 600; }
 
-  /* Sections */
-  .section { padding: 32px 0; border-bottom: 1px solid var(--rule); }
-  .kicker { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
-  .kicker .label { font-family: var(--mono); font-size: 18px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink); font-weight: 600; display: flex; align-items: center; gap: 16px; }
-  .kicker .label::before { content: ""; width: 32px; height: 1px; background: var(--ink); }
-  .kicker .label .num { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 28px; letter-spacing: 0; text-transform: none; color: var(--terracotta); }
+  /* ── Section primitive ── */
+  .section {
+    padding: 32px 0;
+    border-bottom: 2px dotted var(--ink);
+    --accent: var(--ink);
+    --accent-deep: var(--ink);
+    --accent-bg: var(--paper-2);
+    --accent-soft: var(--paper);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section.theme-pink   { --accent: var(--pink-ink);   --accent-deep: var(--pink-deep);   --accent-bg: var(--pink-bg);   --accent-soft: var(--pink-soft); }
+  .section.theme-sky    { --accent: var(--sky-ink);    --accent-deep: var(--sky-deep);    --accent-bg: var(--sky-bg);    --accent-soft: var(--sky-soft); }
+  .section.theme-lav    { --accent: var(--lav-ink);    --accent-deep: var(--lav-deep);    --accent-bg: var(--lav-bg);    --accent-soft: var(--lav-soft); }
+  .section.theme-mint   { --accent: var(--mint-ink);   --accent-deep: var(--mint-deep);   --accent-bg: var(--mint-bg);   --accent-soft: var(--mint-soft); }
+  .section.theme-peach  { --accent: var(--peach-ink);  --accent-deep: var(--peach-deep);  --accent-bg: var(--peach-bg);  --accent-soft: var(--peach-soft); }
+  .section.theme-butter { --accent: var(--butter-ink); --accent-deep: var(--butter-deep); --accent-bg: var(--butter-bg); --accent-soft: var(--butter-soft); }
+
+  .kicker { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+  .kicker .label {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .kicker .label::before {
+    content: "";
+    width: 30px;
+    height: 6px;
+    background-image: radial-gradient(circle, var(--accent) 1.6px, transparent 2px);
+    background-size: 8px 6px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .kicker .label .glyph { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 0; }
+  .kicker .label .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--accent);
+    background: var(--accent-bg);
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
   .kicker .tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
 
-  /* Stories */
+  /* ── Top stories + weather ── */
   .top-row { display: grid; grid-template-columns: 1.7fr 1fr; gap: 56px; }
   .stories { display: flex; flex-direction: column; }
-  .story { display: grid; grid-template-columns: 200px 1fr; gap: 22px; padding: 22px 0; border-top: 1px solid var(--ink); }
+  .story {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 22px;
+    padding: 22px 0;
+    border-top: 2px dotted var(--accent);
+  }
+  .story:nth-child(odd) { border-top-style: dashed; }
   .story:first-child { border-top: none; padding-top: 0; grid-template-columns: 1fr; padding-bottom: 28px; }
-  .story-img { background: var(--paper-3); border: 1px solid var(--ink); position: relative; aspect-ratio: 4/3; overflow: hidden; }
-  .story:first-child .story-img { aspect-ratio: 16/8; }
-  .story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .story-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(26,22,18,.08) 8px, rgba(26,22,18,.08) 9px); pointer-events: none; }
+  .story-img {
+    background: var(--accent-bg);
+    border: 1.5px dashed var(--accent);
+    border-radius: 14px;
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+  .story:first-child .story-img { aspect-ratio: 16/8; border-style: solid; border-radius: 18px; }
+  .story-img::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(61,42,68,.06) 10px, rgba(61,42,68,.06) 11px);
+    pointer-events: none;
+  }
   .story-img.has-photo::before { display: none; }
-  .story-img .caption { position: absolute; inset: auto 8px 8px 8px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); padding: 3px 6px; border: 1px solid var(--ink); display: inline-block; width: fit-content; }
+  .story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .story-img .caption {
+    position: absolute;
+    inset: auto 8px 8px 8px;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    background: var(--paper);
+    padding: 4px 8px;
+    border: 1.5px dotted var(--accent);
+    border-radius: 999px;
+    display: inline-block;
+    width: fit-content;
+  }
   .story-body { display: flex; flex-direction: column; gap: 6px; }
-  .story-cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
-  .story-headline { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.2; letter-spacing: -.015em; margin: 0; color: var(--ink); }
+  .story-cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; }
+  .story-headline { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.2; letter-spacing: -.015em; margin: 0; color: var(--ink); text-wrap: balance; }
   .story:first-child .story-headline { font-size: 26px; }
   .story-deck { font-family: var(--serif); font-style: italic; font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 4px 0 0; }
   .story-meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-  .story-meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
-  .story-meta a:hover { color: var(--terracotta-deep); border-color: var(--terracotta-deep); }
-  .bias-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; padding: 2px 7px; border: 1px solid var(--ink); color: var(--ink); text-transform: uppercase; background: var(--paper-2); }
-  .bias-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--forest); display: inline-block; }
+  .story-meta a { color: var(--ink); text-decoration: none; border-bottom: 1.5px dotted var(--accent); padding-bottom: 1px; }
+  .story-meta a:hover { color: var(--accent-deep); border-bottom-style: solid; }
+  .bias-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; padding: 3px 9px; border: 1.5px dotted var(--accent); color: var(--accent-deep); text-transform: uppercase; background: var(--accent-soft); border-radius: 999px; }
+  .bias-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint-ink); display: inline-block; }
 
-  /* Weather */
-  .weather { border: 1px solid var(--ink); background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 100%); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
-  .weather-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
-  .weather-head .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+  /* ── Weather ── */
+  .weather {
+    border: 2px solid var(--sky-ink);
+    border-radius: 18px;
+    background: linear-gradient(180deg, var(--sky-bg) 0%, var(--sky-soft) 100%);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+  .weather::before {
+    content: "";
+    position: absolute; inset: 6px;
+    border: 1.5px dotted var(--sky-ink);
+    border-radius: 12px;
+    pointer-events: none;
+  }
+  .weather-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px dashed var(--sky-ink); padding-bottom: 10px; position: relative; z-index: 1; }
+  .weather-head .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--sky-deep); }
   .weather-head .place { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink); }
-  .weather-now { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; }
-  .temp { font-family: var(--serif); font-weight: 600; font-size: 60px; line-height: .95; letter-spacing: -.05em; color: var(--ink); display: flex; align-items: flex-start; }
-  .temp .deg { font-size: 28px; font-weight: 500; margin-top: 8px; color: var(--terracotta); }
+  .weather-now { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; position: relative; z-index: 1; }
+  .temp { font-family: var(--serif); font-weight: 700; font-size: 60px; line-height: .95; letter-spacing: -.05em; color: var(--sky-deep); display: flex; align-items: flex-start; }
+  .temp .deg { font-size: 28px; font-weight: 500; margin-top: 8px; color: var(--peach-ink); }
   .sun-glyph { width: 90px; height: 90px; position: relative; }
-  .sun-glyph .core { position: absolute; inset: 22%; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px var(--paper-2), 0 0 0 5px var(--gold); }
-  .sun-glyph::before { content: ""; position: absolute; inset: 0; background: conic-gradient(from 0deg, var(--sun) 0deg 6deg, transparent 6deg 45deg, var(--sun) 45deg 51deg, transparent 51deg 90deg, var(--sun) 90deg 96deg, transparent 96deg 135deg, var(--sun) 135deg 141deg, transparent 141deg 180deg, var(--sun) 180deg 186deg, transparent 186deg 225deg, var(--sun) 225deg 231deg, transparent 231deg 270deg, var(--sun) 270deg 276deg, transparent 276deg 315deg, var(--sun) 315deg 321deg, transparent 321deg 360deg); -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%); mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%); }
-  .weather-cond { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ink-2); margin-top: -4px; }
-  .weather-cond b { font-style: normal; font-weight: 600; color: var(--ink); }
-  .weather-hours { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--ink); background: var(--paper); }
-  .hour { text-align: center; padding: 8px 0; border-right: 1px solid var(--ink-3); display: flex; flex-direction: column; gap: 4px; }
+  .sun-glyph .core { position: absolute; inset: 22%; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px var(--sky-soft), 0 0 0 5.5px var(--peach-ink); }
+  .sun-glyph::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: conic-gradient(from 0deg, var(--peach-ink) 0deg 6deg, transparent 6deg 45deg, var(--peach-ink) 45deg 51deg, transparent 51deg 90deg, var(--peach-ink) 90deg 96deg, transparent 96deg 135deg, var(--peach-ink) 135deg 141deg, transparent 141deg 180deg, var(--peach-ink) 180deg 186deg, transparent 186deg 225deg, var(--peach-ink) 225deg 231deg, transparent 231deg 270deg, var(--peach-ink) 270deg 276deg, transparent 276deg 315deg, var(--peach-ink) 315deg 321deg, transparent 321deg 360deg);
+    -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%);
+            mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%);
+  }
+  .weather-cond { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--sky-deep); margin-top: -4px; }
+  .weather-cond b { font-style: normal; font-weight: 700; color: var(--ink); }
+  .weather-hours { display: grid; grid-template-columns: repeat(5, 1fr); border: 1.5px dotted var(--sky-ink); border-radius: 10px; background: var(--paper); overflow: hidden; position: relative; z-index: 1; }
+  .hour { text-align: center; padding: 10px 0; border-right: 1.5px dotted var(--sky-ink); display: flex; flex-direction: column; gap: 4px; }
   .hour:last-child { border-right: none; }
-  .hour .h { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
-  .hour .t { font-family: var(--serif); font-size: 17px; font-weight: 600; }
+  .hour .h { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--sky-deep); }
+  .hour .t { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--ink); }
   .hour .ic { font-size: 14px; }
-  .weather-advice { border-top: 1px dashed var(--ink-3); padding-top: 14px; }
-  .advice-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .weather-advice { border-top: 2px dashed var(--sky-ink); padding-top: 14px; position: relative; z-index: 1; }
+  .advice-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--sky-deep); margin-bottom: 8px; }
   .advice-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-  .advice-list li { font-family: var(--serif); font-size: 13.5px; line-height: 1.35; display: grid; grid-template-columns: 22px 1fr; gap: 4px; color: var(--ink); }
-  .advice-list li .mark { font-family: var(--mono); font-weight: 600; color: var(--terracotta); font-size: 13px; }
+  .advice-list li { font-family: var(--serif); font-size: 14px; line-height: 1.35; display: grid; grid-template-columns: 22px 1fr; gap: 4px; color: var(--ink); }
+  .advice-list li .mark { font-family: var(--mono); font-weight: 700; color: var(--sky-ink); font-size: 13px; padding-top: 2px; }
 
-  /* Tech */
-  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--ink); }
-  .tech-card { padding: 22px 24px 22px 0; border-right: 1px solid var(--ink); display: flex; flex-direction: column; gap: 8px; }
-  .tech-card + .tech-card { padding-left: 24px; }
-  .tech-card:last-child { border-right: none; padding-right: 0; }
-  .tech-img { aspect-ratio: 16/9; background: var(--paper-3); border: 1px solid var(--ink); overflow: hidden; margin-bottom: 4px; position: relative; }
-  .tech-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tech-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(26,22,18,.06) 8px, rgba(26,22,18,.06) 9px); pointer-events: none; }
-  .tech-img.has-photo::before { display: none; }
-  .tech-num { font-family: var(--serif); font-style: italic; font-size: 24px; font-weight: 500; color: var(--terracotta); line-height: 1; }
-  .tech-card h3 { font-family: var(--serif); font-weight: 600; font-size: 15.5px; line-height: 1.25; letter-spacing: -.015em; margin: 2px 0 0; color: var(--ink); }
+  /* ── Tech ── */
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 3px dotted var(--accent); padding-top: 22px; }
+  .tech-card { padding: 20px 22px; background: var(--accent-soft); border: 1.5px dashed var(--accent); border-radius: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tech-card:nth-child(2) { border-style: solid; background: var(--accent-bg); }
+  .tech-num { font-family: var(--serif); font-style: italic; font-size: 28px; font-weight: 700; color: var(--accent); line-height: 1; background: var(--paper); width: fit-content; padding: 4px 12px; border-radius: 999px; border: 1.5px dotted var(--accent); }
+  .tech-card h3 { font-family: var(--serif); font-weight: 600; font-size: 16.5px; line-height: 1.25; letter-spacing: -.015em; margin: 4px 0 0; color: var(--ink); text-wrap: balance; }
   .tech-card p { font-family: var(--serif); font-size: 14px; line-height: 1.45; color: var(--ink-2); margin: 2px 0 0; }
-  .tech-card .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; }
-  .tech-card .src a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; padding-bottom: 1px; }
+  .tech-card .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; }
+  .tech-card .src a { color: var(--accent-deep); border-bottom: 1.5px dotted var(--accent); text-decoration: none; padding-bottom: 1px; }
 
-  /* Events */
+  /* ── Events ── */
   .events-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
   .events-col { padding: 0; }
-  .events-col + .events-col { border-left: 1px solid var(--ink); padding-left: 36px; }
+  .events-col + .events-col { border-left: 2px dotted var(--accent); padding-left: 36px; }
   .events-col:first-child { padding-right: 36px; }
   .events-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
-  .events-head h2 { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: -.02em; margin: 0; color: var(--ink); }
-  .events-head h2 b { font-weight: 700; color: var(--terracotta-deep); }
-  .events-head .span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
-  .event { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; padding: 14px 0; border-top: 1px solid var(--ink-3); align-items: start; }
-  .event-date { text-align: center; border: 1px solid var(--ink); padding: 6px 4px; background: var(--paper-2); }
-  .event-date .day { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
-  .event-date .num { font-family: var(--serif); font-weight: 700; font-size: 28px; line-height: 1; color: var(--ink); margin-top: 2px; }
+  .events-head h2 { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: -.02em; margin: 0; color: var(--ink); display: flex; align-items: center; gap: 12px; }
+  .events-head h2 .head-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 0; }
+  .events-head h2 b { font-weight: 700; color: var(--accent-deep); }
+  .events-head .span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-bg); padding: 4px 10px; border-radius: 999px; }
+  .event { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; padding: 14px 0; border-top: 1.5px dashed var(--accent); align-items: start; }
+  .event:nth-child(even) { border-top-style: dotted; border-top-width: 2px; }
+  .event-date { text-align: center; border: 1.5px dotted var(--accent); border-radius: 10px; padding: 6px 4px; background: var(--accent-bg); }
+  .event-date .day { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); }
+  .event-date .num { font-family: var(--serif); font-weight: 700; font-size: 28px; line-height: 1; color: var(--accent-deep); margin-top: 2px; }
   .event-body h4 { font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.2; margin: 0 0 4px; color: var(--ink); }
   .event-body p { font-family: var(--serif); font-style: italic; font-size: 13.5px; color: var(--ink-2); margin: 0; line-height: 1.35; }
   .event-meta { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); text-align: right; padding-top: 4px; line-height: 1.6; }
-  .event-meta .pin { color: var(--forest); font-weight: 600; }
+  .event-meta .pin { color: var(--accent-deep); font-weight: 700; }
 
-  /* Health */
-  .health-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); }
-  .health-col { padding: 22px 24px; border-right: 1px solid var(--ink); }
-  .health-col:first-child { padding-left: 0; }
-  .health-col:last-child { border-right: none; padding-right: 0; }
-  .health-col .icon-frame { width: 56px; height: 56px; border: 1px solid var(--ink); background: var(--paper-2); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 26px; color: var(--terracotta); }
+  /* ── Health ── */
+  .health-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; border-top: 3px dotted var(--accent); padding-top: 22px; }
+  .health-col { padding: 22px; background: var(--accent-soft); border: 1.5px dashed var(--accent); border-radius: 16px; }
+  .health-col:nth-child(2) { background: var(--accent-bg); border-style: dotted; border-width: 2px; }
+  .health-col .icon-frame { width: 68px; height: 68px; background: var(--accent-bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
   .health-col h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; letter-spacing: -.015em; margin: 0 0 6px; color: var(--ink); }
-  .health-col .sub { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .health-col .sub { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
   .health-col p { font-family: var(--serif); font-size: 14.5px; line-height: 1.5; color: var(--ink-2); margin: 0 0 12px; }
   .health-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
   .health-list li { font-family: var(--serif); font-size: 14px; line-height: 1.4; display: grid; grid-template-columns: 18px 1fr; align-items: baseline; }
-  .health-list li::before { content: "+"; font-family: var(--mono); color: var(--terracotta); font-weight: 600; }
+  .health-list li::before { content: "●"; font-family: var(--mono); color: var(--accent); font-weight: 700; font-size: 9px; padding-top: 4px; }
   .health-list li b { color: var(--ink); font-weight: 600; }
 
-  /* Discoveries */
+  /* ── Discoveries ── */
   .lower-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; }
-  .discovery { display: flex; flex-direction: column; gap: 0; }
-  .feat { border: 1px solid var(--ink); background: var(--paper-2); }
-  .feat-img { aspect-ratio: 16/7; background: var(--paper-3); border-bottom: 1px solid var(--ink); position: relative; overflow: hidden; }
-  .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .feat-img::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 40%, rgba(63,90,69,.18), transparent 40%), radial-gradient(circle at 70% 60%, rgba(179,85,47,.14), transparent 50%), repeating-linear-gradient(135deg, transparent 0 12px, rgba(26,22,18,.05) 12px 13px); pointer-events: none; }
-  .feat-img.has-photo::before { display: none; }
-  .feat-img .caption { position: absolute; bottom: 10px; left: 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); padding: 4px 7px; border: 1px solid var(--ink); }
-  .feat-body { padding: 20px 22px 22px; }
-  .feat-body .cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--forest); font-weight: 600; }
-  .feat-body h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.25; letter-spacing: -.015em; margin: 6px 0; color: var(--ink); }
-  .feat-body p { font-family: var(--serif); font-style: italic; font-size: 15px; line-height: 1.45; color: var(--ink-2); margin: 0; }
-  .feat-body .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 12px; }
-  .feat-body .src a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; padding-bottom: 1px; }
+  .discovery { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .discovery .feat { border: 2px solid var(--accent); background: var(--accent-soft); border-radius: 18px; overflow: hidden; }
+  .discovery .feat-img { aspect-ratio: 16/7; background: var(--accent-bg); border-bottom: 2px dotted var(--accent); position: relative; overflow: hidden; }
+  .discovery .feat-img::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 40%, rgba(199,149,32,.20), transparent 40%), radial-gradient(circle at 70% 60%, rgba(215,106,58,.15), transparent 50%), repeating-linear-gradient(135deg, transparent 0 12px, rgba(61,42,68,.06) 12px 13px); pointer-events: none; }
+  .discovery .feat-img.has-photo::before { display: none; }
+  .discovery .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .discovery .feat-img .caption { position: absolute; bottom: 10px; left: 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-deep); background: var(--paper); padding: 4px 8px; border: 1.5px dotted var(--accent); border-radius: 999px; }
+  .discovery .feat-body { padding: 20px 22px 22px; }
+  .discovery .feat-body .cat { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-deep); font-weight: 700; }
+  .discovery .feat-body h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.25; letter-spacing: -.015em; margin: 6px 0; color: var(--ink); text-wrap: balance; }
+  .discovery .feat-body p { font-family: var(--serif); font-style: italic; font-size: 15px; line-height: 1.45; color: var(--ink-2); margin: 0; }
+  .discovery .feat-body .src { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); margin-top: 12px; }
+  .discovery .feat-body .src a { color: var(--accent-deep); border-bottom: 1.5px dotted var(--accent); text-decoration: none; padding-bottom: 1px; }
   .discovery-more { margin-top: 16px; display: flex; flex-direction: column; }
-  .discovery-mini { display: grid; grid-template-columns: auto 1fr; gap: 14px; padding: 12px 0; border-top: 1px dashed var(--ink-3); }
+  .discovery-mini { display: grid; grid-template-columns: auto 1fr; gap: 14px; padding: 12px 0; border-top: 2px dotted var(--accent); }
   .discovery-mini:first-child { border-top: none; }
-  .discovery-mini .field { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--forest); font-weight: 600; align-self: start; padding-top: 4px; min-width: 100px; }
-  .discovery-mini h4 { font-family: var(--serif); font-weight: 600; font-size: 15.5px; line-height: 1.25; margin: 0; color: var(--ink); }
+  .discovery-mini .field { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); font-weight: 700; background: var(--accent-bg); align-self: start; padding: 4px 10px; border-radius: 999px; min-width: 100px; text-align: center; }
+  .discovery-mini h4 { font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.25; margin: 0; color: var(--ink); }
   .discovery-mini p { font-family: var(--serif); font-size: 13.5px; line-height: 1.4; color: var(--ink-2); margin: 4px 0 0; font-style: italic; }
 
-  /* Long reads */
-  .longreads { display: flex; flex-direction: column; }
-  .longread { padding: 18px 0; border-top: 1px solid var(--ink-3); display: grid; grid-template-columns: 88px 1fr; gap: 18px; }
+  /* ── Long reads ── */
+  .longreads {
+    display: flex; flex-direction: column; gap: 0;
+    --accent: var(--lav-ink);
+    --accent-deep: var(--lav-deep);
+    --accent-bg: var(--lav-bg);
+    --accent-soft: var(--lav-soft);
+    background: var(--lav-soft);
+    border: 2px dashed var(--lav-ink);
+    border-radius: 18px;
+    padding: 18px 20px;
+  }
+  .longreads-label { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--lav-deep); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .longreads-label .head-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; line-height: 0; }
+  .longread { padding: 18px 0; border-top: 2px dotted var(--lav-ink); display: grid; grid-template-columns: 88px 1fr; gap: 18px; }
   .longread:first-child { border-top: none; padding-top: 0; }
   .longread.no-thumb { grid-template-columns: 1fr; }
-  .longread-img { aspect-ratio: 1/1; background: var(--paper-3); border: 1px solid var(--ink); position: relative; overflow: hidden; }
+  .longread-img { aspect-ratio: 1/1; background: var(--lav-bg); border: 1.5px solid var(--lav-ink); border-radius: 12px; position: relative; overflow: hidden; }
   .longread-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .longread-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0 6px, rgba(26,22,18,.08) 6px 7px); pointer-events: none; }
+  .longread-img::before { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent 0 6px, rgba(86,53,148,.10) 6px 7px); pointer-events: none; }
   .longread-img.has-photo::before { display: none; }
-  .longread-pub { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
-  .longread h4 { font-family: var(--serif); font-weight: 600; font-size: 17px; line-height: 1.2; margin: 4px 0; color: var(--ink); }
+  .longread-pub { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--lav-deep); font-weight: 700; background: var(--lav-bg); padding: 3px 9px; border-radius: 999px; width: fit-content; }
+  .longread h4 { font-family: var(--serif); font-weight: 600; font-size: 17px; line-height: 1.2; margin: 6px 0 4px; color: var(--ink); text-wrap: balance; }
   .longread p { font-family: var(--serif); font-style: italic; font-size: 13.5px; line-height: 1.35; color: var(--ink-2); margin: 0; }
   .longread .meta { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; display: flex; gap: 12px; }
 
-  /* Colophon */
-  .colophon { margin-top: 40px; padding: 24px 0 0; border-top: 3px double var(--rule); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
-  .colophon b { color: var(--ink); font-weight: 600; display: block; margin-bottom: 6px; }
+  /* ── Colophon ── */
+  .colophon { margin-top: 40px; padding: 24px 0 0; border-top: 4px double var(--ink); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); position: relative; }
+  .colophon::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 10px; height: 3px;
+    background-image: radial-gradient(circle, var(--pink-ink) 1.2px, transparent 1.6px), radial-gradient(circle, var(--mint-ink) 1.2px, transparent 1.6px);
+    background-size: 14px 3px, 14px 3px;
+    background-position: 0 0, 7px 0;
+    background-repeat: repeat-x, repeat-x;
+  }
+  .colophon b { color: var(--ink); font-weight: 700; display: block; margin-bottom: 6px; }
   .colophon .right { text-align: right; }
-  .colophon .center { text-align: center; }
+  .colophon .center { text-align: center; color: var(--lav-deep); }
+  .colophon .center b { color: var(--lav-deep); }
 
-  /* Interactive */
-  .read-toggle { background: none; border: 1px solid var(--ink); padding: 4px 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; color: var(--ink); transition: background 120ms; }
-  .read-toggle:hover { background: var(--paper-3); }
-  .read-toggle.on { background: var(--ink); color: var(--paper); }
-  .scope-tabs { display: inline-flex; border: 1px solid var(--ink); }
-  .scope-tabs button { background: none; border: none; padding: 6px 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); cursor: pointer; border-right: 1px solid var(--ink); }
-  .scope-tabs button:last-child { border-right: none; }
-  .scope-tabs button.on { background: var(--ink); color: var(--paper); }
+  /* ── Interactive ── */
+  .read-toggle { background: var(--paper); border: 1.5px dotted var(--accent); padding: 4px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; color: var(--accent-deep); border-radius: 999px; transition: background 120ms ease, color 120ms ease; }
+  .read-toggle:hover { background: var(--accent-bg); }
+  .read-toggle.on { background: var(--accent); color: var(--paper); border-style: solid; }
+  .scope-tabs { display: inline-flex; border: 1.5px dotted var(--accent); background: var(--paper); border-radius: 999px; overflow: hidden; padding: 2px; gap: 2px; }
+  .scope-tabs button { background: none; border: none; padding: 6px 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); cursor: pointer; border-radius: 999px; }
+  .scope-tabs button.on { background: var(--accent); color: var(--paper); }
 
-  /* Dark */
-  body[data-theme="charcoal"] { --paper: #0c1a2e; --paper-2: #142540; --paper-3: #1e3257; --ink: #e6f0fb; --ink-2: #b9cce6; --ink-3: #7a92b7; --rule: #e6f0fb; --terracotta: #6aa6e8; --terracotta-deep: #9ec4f0; --forest: #7fbacc; --gold: #aac0e0; --sun: #9ec4f0; }
+  /* ── Dark theme ── */
+  body[data-theme="charcoal"] {
+    --paper: #2a1f30; --paper-2: #382a40; --paper-3: #483651;
+    --ink: #fdf2e4; --ink-2: #d8c4d4; --ink-3: #a896ad; --rule: #fdf2e4;
+    --pink-soft: #4a2a3a; --sky-soft: #2a3a4f; --lav-soft: #382e52;
+    --mint-soft: #294238; --peach-soft: #4a3325; --butter-soft: #4a3d1f;
+  }
   body.hide-weather-advice .weather-advice { display: none; }
 
-  /* Tweaks */
-  .tweaks-btn { position: fixed; right: 16px; bottom: 16px; z-index: 100; appearance: none; border: 1px solid var(--ink); background: var(--paper-2); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; cursor: pointer; }
+  /* ── Tweaks panel ── */
+  .tweaks-btn { position: fixed; right: 16px; bottom: 16px; z-index: 100; appearance: none; border: 1.5px dotted var(--ink); background: var(--paper-2); color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; cursor: pointer; border-radius: 999px; }
   .tweaks-btn:hover { background: var(--paper-3); }
-  .twk-panel { position: fixed; right: 16px; bottom: 16px; z-index: 200; width: 280px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; background: rgba(250,249,247,.95); color: #29261b; -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); border: .5px solid rgba(255,255,255,.6); border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,.2); font: 11.5px/1.4 ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
+  .twk-panel { position: fixed; right: 16px; bottom: 16px; z-index: 200; width: 280px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; background: rgba(255,250,243,.95); color: #3d2a44; -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,.6); border-radius: 18px; box-shadow: 0 12px 40px rgba(0,0,0,.15); font: 11.5px/1.4 ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
   .twk-hd { display: flex; align-items: center; justify-content: space-between; padding: 10px 8px 10px 14px; cursor: move; user-select: none; border-bottom: 1px solid rgba(0,0,0,.08); }
   .twk-hd b { font-size: 12px; font-weight: 600; }
-  .twk-x { appearance: none; border: 0; background: transparent; color: rgba(41,38,27,.55); width: 22px; height: 22px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .twk-x { appearance: none; border: 0; background: transparent; color: rgba(61,42,68,.55); width: 22px; height: 22px; border-radius: 6px; cursor: pointer; font-size: 13px; }
   .twk-x:hover { background: rgba(0,0,0,.06); }
   .twk-body { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
-  .twk-sect { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(41,38,27,.45); padding: 6px 0 2px; }
+  .twk-sect { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(61,42,68,.45); padding: 6px 0 2px; }
   .twk-row { display: flex; flex-direction: column; gap: 5px; }
   .twk-row-h { flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; }
-  .twk-lbl { font-weight: 500; color: rgba(41,38,27,.72); }
+  .twk-lbl { font-weight: 500; color: rgba(61,42,68,.72); }
   .twk-field { appearance: none; width: 100%; height: 26px; padding: 0 8px; border: .5px solid rgba(0,0,0,.12); border-radius: 7px; background: rgba(255,255,255,.7); color: inherit; font: inherit; outline: none; }
   .twk-seg { position: relative; display: flex; padding: 2px; border-radius: 8px; background: rgba(0,0,0,.06); }
   .twk-seg-thumb { position: absolute; top: 2px; bottom: 2px; border-radius: 6px; background: rgba(255,255,255,.9); box-shadow: 0 1px 2px rgba(0,0,0,.12); transition: left .15s, width .15s; }
   .twk-seg button { position: relative; z-index: 1; flex: 1; border: 0; background: transparent; color: inherit; font: inherit; font-weight: 500; min-height: 22px; border-radius: 6px; cursor: pointer; padding: 4px 6px; }
   .twk-toggle { position: relative; width: 32px; height: 18px; border: 0; border-radius: 999px; background: rgba(0,0,0,.15); transition: background .15s; cursor: pointer; padding: 0; flex-shrink: 0; }
-  .twk-toggle[data-on="1"] { background: #34c759; }
+  .twk-toggle[data-on="1"] { background: #c64a7a; }
   .twk-toggle i { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: transform .15s; display: block; }
   .twk-toggle[data-on="1"] i { transform: translateX(14px); }
   .twk-chips { display: flex; gap: 6px; }
-  .twk-chip { position: relative; flex: 1; height: 46px; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.12); transition: transform .12s; }
+  .twk-chip { position: relative; flex: 1; height: 46px; border: 0; border-radius: 10px; overflow: hidden; cursor: pointer; box-shadow: 0 0 0 .5px rgba(0,0,0,.12); transition: transform .12s; }
   .twk-chip:hover { transform: translateY(-1px); }
-  .twk-chip[data-on="1"] { box-shadow: 0 0 0 2px rgba(0,0,0,.8); }
+  .twk-chip[data-on="1"] { box-shadow: 0 0 0 2.5px rgba(61,42,68,.7); }
 
   @media (max-width: 900px) {
     .digest { padding: 24px 20px 64px; }
     .masthead, .greeting, .top-row, .tech-grid, .events-row, .health-row, .lower-row, .colophon { grid-template-columns: 1fr; }
     .masthead .left, .masthead .right { align-items: flex-start; }
-    .events-col + .events-col { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 24px; margin-top: 8px; }
+    .events-col + .events-col { border-left: none; padding-left: 0; border-top: 2px dotted var(--accent); padding-top: 24px; margin-top: 8px; }
     .events-col:first-child { padding-right: 0; }
-    .tech-card { border-right: none; border-top: 1px solid var(--ink); padding: 22px 0; }
-    .tech-card + .tech-card { padding-left: 0; }
-    .tech-card:first-child { border-top: none; }
-    .health-col { border-right: none; border-top: 1px solid var(--ink); padding: 22px 0; }
-    .health-col:first-child { border-top: none; }
+    .tech-grid { gap: 12px; }
+    .health-row { gap: 12px; }
     .colophon .right, .colophon .center { text-align: left; }
-    .submast { flex-direction: column; align-items: flex-start; gap: 6px; }
   }
 </style>
 </head>
@@ -247,11 +449,11 @@
 <script type="text/babel">
 const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
-// ── Live data pulled May 25, 2026 ─────────────────────────────────────────────
+// ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
   date: new Date(2026, 4, 25),
   edition: "Vol. III · No. 145",
-  location: "Brooklyn, NY",
+  location: "Manhattan, NY",
   weatherStrip: "79°F · Sunny · Memorial Day · UV 9 · AQI 38",
 
   topStories: [
@@ -357,20 +559,6 @@ const DIGEST = {
       blurb: "A horticultural marketplace on the elevated High Line featuring curated plants and botanical vendors, with scenic open-air views above the West Side streets.",
       where: "Chelsea, Manhattan", time: "11a–5p", price: "Free entry",
       url: "https://www.eventbrite.com/e/rooted-in-resilience-high-line-plant-sale-tickets-1988856414073"
-    },
-    {
-      day: "Tue", num: 27,
-      title: "Colombiana Rooftop Party — The DL",
-      blurb: "An elevated evening at one of Manhattan's most scenic rooftops — Colombian music, culture, and sweeping skyline views with festive entertainment throughout.",
-      where: "Lower East Side", time: "5p–late", price: "$20+",
-      url: "https://www.eventbrite.com/e/colombiana-rooftop-party-tickets-1988569917153"
-    },
-    {
-      day: "Tue", num: 27,
-      title: "106 & Park vs. TikTok Hits — Late-Night Party",
-      blurb: "Free-entry late-night dance party blending 2000s hip-hop and R&B nostalgia with current TikTok-era hits. RSVP guarantees complimentary entry to this high-energy night.",
-      where: "Out of Ordinary, NY", time: "11p–late", price: "Free w/ RSVP",
-      url: "https://www.eventbrite.com/e/106-park-vs-tiktok-hits-party-experience-everyone-free-entry-with-rsvp-tickets-1988872298584"
     }
   ],
 
@@ -392,18 +580,6 @@ const DIGEST = {
       title: "Laos cave rescue: Thai elite team joins five-day operation",
       blurb: "Seven villagers trapped by flash flooding after searching for gold. Thailand's 2018 Tham Luang veterans are drilling access routes and pumping water from the cave system.",
       where: "Laos", time: "Day 5", price: "—"
-    },
-    {
-      day: "Mon", num: 26,
-      title: "Mexico to auction land where cartel leader El Mencho was killed",
-      blurb: "Property inside a country club where Jalisco New Generation Cartel leader El Mencho was killed in February goes to auction — part of a broad government campaign to reclaim organized-crime assets.",
-      where: "Jalisco, Mexico", time: "This week", price: "—"
-    },
-    {
-      day: "Sun", num: 25,
-      title: "Three killed as minibus strikes elephant in Uganda national park",
-      blurb: "A fatal collision at Murchison Falls National Park has prompted safety reviews across Uganda's wildlife preserves, which logged a record 1.2 million visitors last year.",
-      where: "Murchison Falls, UG", time: "Yesterday", price: "—"
     }
   ],
 
@@ -411,7 +587,7 @@ const DIGEST = {
     eat: {
       title: "On the plate",
       sub: "2026 Dietary Guidelines update",
-      copy: "The new federal guidelines, updated this year, emphasize whole foods and consistent eating patterns over strict macronutrient targets. Key focus: cut ultra-processed foods, increase fiber, and eat more plant-forward meals. Science is also walking back decades of full-fat dairy alarm — recent evidence shows neutral to protective cardiovascular effects.",
+      copy: "The new federal guidelines emphasize whole foods and consistent eating patterns over strict macronutrient targets. Key focus: cut ultra-processed foods, increase fiber, and eat more plant-forward meals. Science is also walking back decades of full-fat dairy alarm — recent evidence shows neutral to protective cardiovascular effects.",
       list: [
         { b: "Try", text: "Full-fat Greek yogurt with berries — science now backs it." },
         { b: "Limit", text: "Ultra-processed snacks — the 2026 guidelines call them out specifically." },
@@ -421,7 +597,7 @@ const DIGEST = {
     move: {
       title: "Moving body",
       sub: "Memorial Day prescription",
-      copy: "A sunny 79°F day is ideal for an outdoor zone-2 session. Prospect Park's outer loop is 3.35 miles with the wind at your back on the second half. If the BBQ is calling first, 15 of WebMD's curated Pilates moves can be done on any flat surface in 25 minutes — strong evidence for lower-back relief and posture.",
+      copy: "A sunny 79°F day is ideal for an outdoor zone-2 session. Central Park's outer loop is 6.1 miles with great shade on the east side. If the BBQ is calling first, 15 of WebMD's curated Pilates moves can be done on any flat surface in 25 minutes — strong evidence for lower-back relief and posture.",
       list: [
         { b: "Outdoor", text: "35-min easy run or brisk walk; keep heart rate at 60–70% max." },
         { b: "Indoor", text: "15 Pilates moves focusing on core, hip flexors, and posture." },
@@ -445,7 +621,7 @@ const DIGEST = {
       cat: "Cover discovery · Physics / Materials",
       caption: "Science News — gold surface research",
       headline: "Physics finally explains why gold never tarnishes — and it could unlock corrosion-resistant materials",
-      deck: "Scientists have mapped the atomic mechanism behind gold's famous inertness: the metal's surface undergoes a rapid rearrangement that prevents oxygen from bonding — unlike copper, silver, or iron. The findings, published this month, could inform next-generation corrosion-resistant coatings at the nano scale.",
+      deck: "Scientists have mapped the atomic mechanism behind gold's famous inertness: the metal's surface undergoes a rapid rearrangement that prevents oxygen from bonding — unlike copper, silver, or iron. The findings could inform next-generation corrosion-resistant coatings at the nano scale.",
       source: "Science News",
       url: "https://www.sciencenews.org/article/physics-explains-gold-shiny-oxidize",
       img: "images/science1.webp"
@@ -454,13 +630,13 @@ const DIGEST = {
       {
         field: "Neuroscience",
         title: "Ultrasound aimed at the brain shows significant relief for Parkinson's tremors",
-        deck: "A non-invasive ultrasound technique targeting specific brain regions is reducing motor symptoms in early trials — without the risks of surgical deep-brain stimulation. Larger multi-center trials are now planned.",
+        deck: "A non-invasive ultrasound technique targeting specific brain regions is reducing motor symptoms in early trials — without the risks of surgical deep-brain stimulation.",
         url: "https://www.sciencenews.org/article/parkinsons-ultrasound-brain-shake-pain"
       },
       {
         field: "Quantum physics",
         title: "\"Butterfly molecule\" finally observed, closing a 20-year prediction gap",
-        deck: "Physicists observed giant Rydberg-atom molecules whose electron orbits at extraordinary distance — just as theorized since the early 2000s. These could serve as ultra-sensitive quantum electric-field probes.",
+        deck: "Physicists observed giant Rydberg-atom molecules whose electron orbits at extraordinary distance — just as theorized since the early 2000s. These could serve as ultra-sensitive quantum probes.",
         url: "https://phys.org/news/2026-05-butterfly-molecule-year-quantum-zoo.html"
       },
       {
@@ -494,7 +670,7 @@ const DIGEST = {
     {
       pub: "National Geographic",
       headline: "Inside the search for the lost Inca citadel of Ancocagua",
-      deck: "Archaeologists are combining colonial manuscripts, satellite imagery, and high-altitude fieldwork in Peru to find a legendary citadel that vanished after the Spanish conquest. If found, it could rival Machu Picchu.",
+      deck: "Archaeologists are combining colonial manuscripts, satellite imagery, and high-altitude fieldwork in Peru to find a legendary citadel that vanished after the Spanish conquest.",
       author: "by Nat Geo Explorers",
       read: "14 min",
       url: "https://www.nationalgeographic.com/history/article/inca-lost-citadel-ancocagua-peru",
@@ -503,7 +679,7 @@ const DIGEST = {
     {
       pub: "National Geographic",
       headline: "A new T. rex of the seas — scientists describe a fearsome mosasaur species",
-      deck: "Paleontologists have named a massive new Late Cretaceous mosasaur built for ambush predation of sharks and other marine reptiles. The discovery reshapes our picture of ancient ocean ecosystems.",
+      deck: "Paleontologists have named a massive new Late Cretaceous mosasaur built for ambush predation of sharks and other marine reptiles.",
       author: "by Nat Geo Science",
       read: "10 min",
       url: "https://www.nationalgeographic.com/science/article/tylosaurus-rex-mosasaur",
@@ -523,10 +699,129 @@ function formatDate(d) {
   return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
 }
 
-// ── Img: simple local-file image, no fallback needed ─────────────────────────
+// ── Img ───────────────────────────────────────────────────────────────────────
 function Img({ src, alt }) {
   if (!src) return null;
   return <img src={src} alt={alt || ""} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />;
+}
+
+// ── Icon ──────────────────────────────────────────────────────────────────────
+const IC = {
+  ink: "#3d2a44", paper: "#fffaf3",
+  pink: "#c64a7a",   pinkBg: "#ffd1de",
+  sky: "#3a7dbf",    skyBg: "#d9ecff",
+  lav: "#7a55c9",    lavBg: "#e6dcfa",
+  mint: "#3e9c5e",   mintBg: "#bfe6cb",
+  peach: "#d76a3a",  peachBg: "#ffdcc7",
+  butter: "#c79520", butterBg: "#ffe98a"
+};
+
+function Icon({ name, size = 44 }) {
+  const sw = 2.4;
+  const common = { width: size, height: size, viewBox: "0 0 48 48", fill: "none", "aria-hidden": "true" };
+  const st = { stroke: IC.ink, strokeWidth: sw, strokeLinecap: "round", strokeLinejoin: "round" };
+  switch (name) {
+    case "newspaper": return (
+      <svg {...common}><g {...st}>
+        <rect x="6" y="9" width="32" height="31" rx="2" fill={IC.paper} />
+        <path d="M38 15h4v21a4 4 0 0 1-4 4" fill={IC.butterBg} />
+        <rect x="10" y="13" width="14" height="10" fill={IC.pinkBg} />
+        <line x1="27" y1="15" x2="34" y2="15" /><line x1="27" y1="19" x2="34" y2="19" /><line x1="27" y1="23" x2="32" y2="23" />
+        <line x1="10" y1="28" x2="34" y2="28" /><line x1="10" y1="32" x2="34" y2="32" /><line x1="10" y1="36" x2="28" y2="36" />
+      </g></svg>);
+    case "chip": return (
+      <svg {...common}><g {...st}>
+        <rect x="10" y="10" width="28" height="28" rx="2" fill={IC.lavBg} />
+        <rect x="16" y="16" width="16" height="16" rx="1" fill={IC.pinkBg} />
+        <circle cx="20" cy="20" r="1.4" fill={IC.ink} stroke="none" />
+        <circle cx="28" cy="28" r="1.4" fill={IC.ink} stroke="none" />
+        <line x1="6" y1="16" x2="10" y2="16" /><line x1="6" y1="22" x2="10" y2="22" /><line x1="6" y1="28" x2="10" y2="28" /><line x1="6" y1="34" x2="10" y2="34" />
+        <line x1="38" y1="16" x2="42" y2="16" /><line x1="38" y1="22" x2="42" y2="22" /><line x1="38" y1="28" x2="42" y2="28" /><line x1="38" y1="34" x2="42" y2="34" />
+        <line x1="16" y1="6" x2="16" y2="10" /><line x1="22" y1="6" x2="22" y2="10" /><line x1="28" y1="6" x2="28" y2="10" /><line x1="34" y1="6" x2="34" y2="10" />
+        <line x1="16" y1="38" x2="16" y2="42" /><line x1="22" y1="38" x2="22" y2="42" /><line x1="28" y1="38" x2="28" y2="42" /><line x1="34" y1="38" x2="34" y2="42" />
+      </g></svg>);
+    case "apple": return (
+      <svg {...common}><g {...st}>
+        <path d="M26 11c4-5 11-5 13-2-1 5-7 8-13 5z" fill={IC.mint} />
+        <path d="M24 14c0-2 1-3 2-4" />
+        <path d="M16 14c-5 0-10 4-10 12s7 16 11 16c2 0 3-1 5-1s3 1 5 1c4 0 11-8 11-16s-5-12-10-12c-2 0-4 1-6 1s-4-1-6-1z" fill={IC.pink} />
+        <defs><clipPath id="appleClip"><path d="M16 14c-5 0-10 4-10 12s7 16 11 16c2 0 3-1 5-1s3 1 5 1c4 0 11-8 11-16s-5-12-10-12c-2 0-4 1-6 1s-4-1-6-1z" /></clipPath></defs>
+        <g clipPath="url(#appleClip)">
+          <rect x="11" y="29" width="7" height="13" fill={IC.paper} stroke={IC.ink} strokeWidth={sw} />
+          <path d="M19 21l4-4 4 4v21h-8z" fill={IC.butterBg} stroke={IC.ink} strokeWidth={sw} strokeLinejoin="round" />
+          <rect x="28" y="26" width="7" height="16" fill={IC.skyBg} stroke={IC.ink} strokeWidth={sw} />
+        </g>
+      </g></svg>);
+    case "globe": return (
+      <svg {...common}><g {...st}>
+        <circle cx="24" cy="24" r="18" fill={IC.skyBg} />
+        <path d="M10 18c2-2 5-1 7 1s-1 4 0 6c1 1 3 2 2 4-1 1-4 0-6 1s-3 3-5 2" fill={IC.mint} />
+        <path d="M28 12c3 0 6 2 6 5-1 2-4 2-4 5 0 2 3 3 2 5" fill={IC.mint} />
+        <path d="M22 32c2-1 5 0 7-1s4 0 5 2-2 4-4 4c-3 0-6-2-8-2s-3 1-4 0" fill={IC.mint} />
+        <line x1="6.5" y1="24" x2="41.5" y2="24" />
+        <ellipse cx="24" cy="24" rx="9" ry="18" />
+      </g></svg>);
+    case "heart": return (
+      <svg {...common}>
+        <path d="M24 41s-17-9-17-22a8.5 8.5 0 0 1 17-4 8.5 8.5 0 0 1 17 4c0 13-17 22-17 22z" fill={IC.pinkBg} {...st} />
+        <path d="M7 23h7l2-4 4 10 3-8 3 5h17" fill="none" stroke={IC.pink} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>);
+    case "sparkle": return (
+      <svg {...common}><g {...st}>
+        <path d="M14 22c0-6 5-11 10-11s10 5 10 11c0 4-3 6-3 10H17c0-4-3-6-3-10z" fill={IC.butterBg} />
+        <path d="M20 22l4 5 4-5" fill="none" stroke={IC.butter} strokeWidth="2" />
+        <rect x="18" y="33" width="12" height="3" fill={IC.lavBg} />
+        <rect x="20" y="36" width="8" height="3" fill={IC.lavBg} />
+        <line x1="22" y1="40" x2="26" y2="40" />
+        <g stroke={IC.pink} strokeWidth="2">
+          <line x1="6" y1="14" x2="10" y2="14" /><line x1="8" y1="12" x2="8" y2="16" />
+          <line x1="38" y1="16" x2="42" y2="16" /><line x1="40" y1="14" x2="40" y2="18" />
+          <line x1="7" y1="32" x2="11" y2="32" /><line x1="9" y1="30" x2="9" y2="34" />
+          <line x1="38" y1="32" x2="42" y2="32" /><line x1="40" y1="30" x2="40" y2="34" />
+        </g>
+      </g></svg>);
+    case "book": return (
+      <svg {...common}><g {...st}>
+        <path d="M6 9h14a2 2 0 0 1 2 2v28a2 2 0 0 0-2-2H6V9z" fill={IC.lavBg} />
+        <path d="M42 9H28a2 2 0 0 0-2 2v28a2 2 0 0 1 2-2h14V9z" fill={IC.pinkBg} />
+        <line x1="10" y1="15" x2="18" y2="15" /><line x1="10" y1="19" x2="18" y2="19" /><line x1="10" y1="23" x2="16" y2="23" />
+        <line x1="30" y1="15" x2="38" y2="15" /><line x1="30" y1="19" x2="38" y2="19" /><line x1="30" y1="23" x2="36" y2="23" />
+        <path d="M32 9v12l3-3 3 3V9z" fill={IC.butter} />
+      </g></svg>);
+    case "bowl": return (
+      <svg {...common}><g {...st}>
+        <g stroke={IC.sky} strokeWidth="2.2">
+          <path d="M16 12c1.5-1 1.5-3 0-4" fill="none" />
+          <path d="M24 11c1.5-1 1.5-3 0-4" fill="none" />
+          <path d="M32 12c1.5-1 1.5-3 0-4" fill="none" />
+        </g>
+        <circle cx="17" cy="22" r="3.5" fill={IC.mint} />
+        <circle cx="24" cy="20" r="4" fill={IC.mint} />
+        <circle cx="31" cy="22" r="3.5" fill={IC.mint} />
+        <circle cx="21" cy="24" r="2.4" fill={IC.peach} />
+        <circle cx="28" cy="24" r="2.4" fill={IC.butter} />
+        <path d="M5 25h38c0 9-9 15-19 15S5 34 5 25z" fill={IC.peachBg} />
+        <line x1="3" y1="25" x2="45" y2="25" />
+      </g></svg>);
+    case "shoe": return (
+      <svg {...common}><g {...st}>
+        <path d="M5 35c0-3 2-5 5-5l8-7c2-2 5-4 8-4h4c3 0 5 2 5 5v2c0 2 1 3 3 3h4c2 0 3 1 3 3v3H5z" fill={IC.skyBg} />
+        <path d="M5 35h40v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3z" fill={IC.mint} />
+        <g stroke={IC.pink} strokeWidth="2.4">
+          <line x1="16" y1="27" x2="20" y2="25" />
+          <line x1="19" y1="23" x2="23" y2="21" />
+          <line x1="22" y1="19" x2="26" y2="17" />
+        </g>
+      </g></svg>);
+    case "pill": return (
+      <svg {...common}><g transform="rotate(-30 24 24)">
+        <rect x="6" y="19" width="36" height="10" rx="5" fill={IC.peachBg} stroke={IC.ink} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11 19a5 5 0 0 0 0 10h13V19z" fill={IC.pink} stroke={IC.ink} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="24" y1="19" x2="24" y2="29" stroke={IC.ink} strokeWidth={sw} strokeLinecap="round" />
+        <line x1="29" y1="22" x2="38" y2="22" stroke={IC.paper} strokeWidth="2" strokeLinecap="round" />
+      </g></svg>);
+    default: return null;
+  }
 }
 
 // ── Masthead ──────────────────────────────────────────────────────────────────
@@ -537,15 +832,6 @@ function Masthead() {
         <div className="left"><span>{DIGEST.edition}</span><span>{DIGEST.location}</span></div>
         <div className="wordmark"><span className="digest-word">Daily Digest</span></div>
         <div className="right"><span>{formatDate(DIGEST.date)}</span><span>Curated · 6:00 AM ET</span></div>
-      </div>
-      <div className="submast">
-        <div className="vol">
-          {["Top stories","· Weather","· Technology","· This week","· Health","· Discoveries","· Long reads"].map((s,i)=><span key={i}>{s}</span>)}
-        </div>
-        <div style={{ display:"flex", gap:18, alignItems:"center" }}>
-          <span style={{ color:"var(--terracotta)" }}>●</span>
-          <span>{DIGEST.weatherStrip}</span>
-        </div>
       </div>
     </header>
   );
@@ -599,7 +885,7 @@ function WeatherCard() {
     <aside className="weather">
       <div className="weather-head">
         <span className="tag">Weather · Memorial Day</span>
-        <span className="place">New York · Brooklyn</span>
+        <span className="place">New York · Manhattan</span>
       </div>
       <div className="weather-now">
         <div>
@@ -631,9 +917,12 @@ function WeatherCard() {
 // ── Top row ───────────────────────────────────────────────────────────────────
 function TopRow() {
   return (
-    <section className="section">
+    <section className="section theme-pink">
       <div className="kicker">
-        <div className="label"><span className="num">i.</span>Top stories · today</div>
+        <div className="label">
+          <span className="glyph"><Icon name="newspaper" size={48} /></span>
+          <span className="num">i.</span>Top stories · today
+        </div>
         <div className="tag">Pulled from CBS News · ABC News · TechCrunch</div>
       </div>
       <div className="top-row">
@@ -647,17 +936,17 @@ function TopRow() {
 // ── Technology ────────────────────────────────────────────────────────────────
 function TechSection() {
   return (
-    <section className="section">
+    <section className="section theme-lav">
       <div className="kicker">
-        <div className="label"><span className="num">ii.</span>Technology · today</div>
+        <div className="label">
+          <span className="glyph"><Icon name="chip" size={48} /></span>
+          <span className="num">ii.</span>Technology · today
+        </div>
         <div className="tag">TechCrunch · CBS News · May 25 2026</div>
       </div>
       <div className="tech-grid">
         {DIGEST.tech.map((t,i) => (
           <article className="tech-card" key={i}>
-            <div className="tech-img has-photo">
-              <Img src={t.img} alt={t.headline} />
-            </div>
             <div className="tech-num">{t.num}</div>
             <h3>{t.headline}</h3>
             <p>{t.deck}</p>
@@ -680,7 +969,7 @@ function EventList({ items }) {
         <div className="event" key={i}>
           <div className="event-date"><div className="day">{e.day}</div><div className="num">{e.num}</div></div>
           <div className="event-body">
-            <h4>{e.url ? <a href={e.url} target="_blank" rel="noopener" style={{ color:"inherit", textDecoration:"none", borderBottom:"1px solid var(--ink-3)" }}>{e.title}</a> : e.title}</h4>
+            <h4>{e.url ? <a href={e.url} target="_blank" rel="noopener" style={{ color:"inherit", textDecoration:"none", borderBottom:"1px solid var(--accent-bg)" }}>{e.title}</a> : e.title}</h4>
             <p>{e.blurb}</p>
           </div>
           <div className="event-meta">
@@ -697,9 +986,12 @@ function EventList({ items }) {
 function EventsSection() {
   const [scope, setScope] = useState("both");
   return (
-    <section className="section">
+    <section className="section theme-mint">
       <div className="kicker">
-        <div className="label"><span className="num">iii.</span>This week · May 25–31</div>
+        <div className="label">
+          <span className="glyph"><Icon name="globe" size={48} /></span>
+          <span className="num">iii.</span>This week · May 25–31
+        </div>
         <div className="scope-tabs">
           {["nyc","world","both"].map(s => (
             <button key={s} className={scope===s?"on":""} onClick={() => setScope(s)}>{s.toUpperCase()}</button>
@@ -710,7 +1002,7 @@ function EventsSection() {
         {(scope==="nyc"||scope==="both") && (
           <div className="events-col">
             <div className="events-head">
-              <h2><b>New York</b> <em>— happening near you</em></h2>
+              <h2><span className="head-icon"><Icon name="apple" size={36} /></span><b>New York</b> <em>— near you</em></h2>
               <span className="span">via Eventbrite</span>
             </div>
             <EventList items={DIGEST.nycEvents} />
@@ -719,7 +1011,7 @@ function EventsSection() {
         {(scope==="world"||scope==="both") && (
           <div className="events-col">
             <div className="events-head">
-              <h2><b>The world</b> <em>— at a glance</em></h2>
+              <h2><span className="head-icon"><Icon name="globe" size={36} /></span><b>The world</b> <em>— at a glance</em></h2>
               <span className="span">via CBS News</span>
             </div>
             <EventList items={DIGEST.worldEvents} />
@@ -733,20 +1025,23 @@ function EventsSection() {
 // ── Health ────────────────────────────────────────────────────────────────────
 function HealthSection() {
   const cols = [
-    { ...DIGEST.health.eat, glyph: "e" },
-    { ...DIGEST.health.move, glyph: "m" },
-    { ...DIGEST.health.supps, glyph: "s" }
+    { ...DIGEST.health.eat, glyph: "bowl" },
+    { ...DIGEST.health.move, glyph: "shoe" },
+    { ...DIGEST.health.supps, glyph: "pill" }
   ];
   return (
-    <section className="section">
+    <section className="section theme-peach">
       <div className="kicker">
-        <div className="label"><span className="num">iv.</span>The health desk · personal</div>
+        <div className="label">
+          <span className="glyph"><Icon name="heart" size={48} /></span>
+          <span className="num">iv.</span>The health desk · personal
+        </div>
         <div className="tag">WebMD · Healthline · FDA · May 2026 — Not medical advice</div>
       </div>
       <div className="health-row">
         {cols.map((c,i) => (
           <div className="health-col" key={i}>
-            <div className="icon-frame">{c.glyph}</div>
+            <div className="icon-frame"><Icon name={c.glyph} size={48} /></div>
             <h3>{c.title}</h3>
             <div className="sub">{c.sub}</div>
             <p>{c.copy}</p>
@@ -764,9 +1059,12 @@ function HealthSection() {
 function DiscoveriesAndReads() {
   const d = DIGEST.discoveries;
   return (
-    <section className="section">
+    <section className="section theme-butter">
       <div className="kicker">
-        <div className="label"><span className="num">v.</span>New discoveries &amp; the long read</div>
+        <div className="label">
+          <span className="glyph"><Icon name="sparkle" size={48} /></span>
+          <span className="num">v.</span>New discoveries &amp; the long read
+        </div>
         <div className="tag">Science News · Phys.org · Smithsonian · Nat Geo</div>
       </div>
       <div className="lower-row">
@@ -796,7 +1094,8 @@ function DiscoveriesAndReads() {
           </div>
         </div>
         <div className="longreads">
-          <div style={{ fontFamily:"var(--mono)", fontSize:11, letterSpacing:"0.18em", textTransform:"uppercase", color:"var(--ink)", fontWeight:600, marginBottom:10 }}>
+          <div className="longreads-label">
+            <span className="head-icon"><Icon name="book" size={32} /></span>
             Saved for the weekend
           </div>
           {DIGEST.longreads.map((l,i) => (
@@ -833,10 +1132,12 @@ function Colophon() {
 
 // ── Tweaks ────────────────────────────────────────────────────────────────────
 const ACCENT_MAP = {
-  "#2563c4": { accent:"#2563c4", deep:"#1a4a99" },
-  "#3c8dbc": { accent:"#3c8dbc", deep:"#246a8e" },
-  "#1f6f8b": { accent:"#1f6f8b", deep:"#13556e" },
-  "#5b6fb5": { accent:"#5b6fb5", deep:"#3f5293" }
+  "#c64a7a": { accent:"#c64a7a", deep:"#9a3460" },
+  "#3a7dbf": { accent:"#3a7dbf", deep:"#245a92" },
+  "#7a55c9": { accent:"#7a55c9", deep:"#563594" },
+  "#3e9c5e": { accent:"#3e9c5e", deep:"#2a7444" },
+  "#d76a3a": { accent:"#d76a3a", deep:"#a04a22" },
+  "#c79520": { accent:"#c79520", deep:"#8e6912" }
 };
 
 function TweaksPanel({ t, setTweak, onClose }) {
@@ -872,7 +1173,7 @@ function TweaksPanel({ t, setTweak, onClose }) {
         </div>
         <div className="twk-row"><div className="twk-lbl">Accent</div>
           <div className="twk-chips">
-            {["#2563c4","#3c8dbc","#1f6f8b","#5b6fb5"].map(a => (
+            {["#c64a7a","#3a7dbf","#7a55c9","#3e9c5e","#d76a3a","#c79520"].map(a => (
               <button key={a} className="twk-chip" data-on={t.accent===a?"1":"0"} onClick={() => setTweak("accent", a)} style={{ background: a }}>
                 {t.accent===a && <svg viewBox="0 0 14 14" style={{ position:"absolute",top:6,left:6,width:13,height:13 }}><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke="#fff"/></svg>}
               </button>
@@ -891,7 +1192,7 @@ function TweaksPanel({ t, setTweak, onClose }) {
 
 // ── App ───────────────────────────────────────────────────────────────────────
 function App() {
-  const [tweaks, setTweaksState] = useState({ name:"", timeOfDay:"auto", accent:"#2563c4", theme:"paper", showWeatherAdvice:true });
+  const [tweaks, setTweaksState] = useState({ name:"", timeOfDay:"auto", accent:"#c64a7a", theme:"paper", showWeatherAdvice:true });
   const [panelOpen, setPanelOpen] = useState(false);
   const setTweak = (k, v) => setTweaksState(p => ({ ...p, [k]: v }));
 
@@ -902,7 +1203,9 @@ function App() {
 
   useEffect(() => {
     document.body.dataset.theme = tweaks.theme;
-    const a = ACCENT_MAP[tweaks.accent] || ACCENT_MAP["#2563c4"];
+    const a = ACCENT_MAP[tweaks.accent] || ACCENT_MAP["#c64a7a"];
+    document.body.style.setProperty("--pink-ink", a.accent);
+    document.body.style.setProperty("--pink-deep", a.deep);
     document.body.style.setProperty("--terracotta", a.accent);
     document.body.style.setProperty("--terracotta-deep", a.deep);
   }, [tweaks.theme, tweaks.accent]);
