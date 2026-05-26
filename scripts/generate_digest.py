@@ -290,7 +290,7 @@ Return ONLY valid JSON — no markdown fences, no commentary:
 }}"""
 
     resp = client.messages.create(
-        model="claude-opus-4-7",
+        model="claude-sonnet-4-6",
         max_tokens=8192,
         messages=[{"role":"user","content":prompt}],
     )
