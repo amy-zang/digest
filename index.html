@@ -857,9 +857,9 @@ function Story({ s, isLead }) {
   const [read, setRead] = useState(false);
   return (
     <article className={"story" + (isLead ? " lead" : "")}>
-      <div className="story-img has-photo">
+      <div className={"story-img" + (s.img ? " has-photo" : "")}>
         <Img src={s.img} alt={s.headline} />
-        <span className="caption">{s.source}</span>
+        <span className="caption">{s.caption || s.source}</span>
       </div>
       <div className="story-body">
         <div className="story-cat">{s.category}</div>
@@ -1070,7 +1070,7 @@ function DiscoveriesAndReads() {
       <div className="lower-row">
         <div className="discovery">
           <article className="feat">
-            <div className="feat-img has-photo">
+            <div className={"feat-img" + (d.feature.img ? " has-photo" : "")}>
               <Img src={d.feature.img} alt={d.feature.headline} />
               <span className="caption">{d.feature.source}</span>
             </div>

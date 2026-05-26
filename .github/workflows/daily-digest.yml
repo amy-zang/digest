@@ -1,0 +1,68 @@
+name: Daily Digest
+
+on:
+  schedule:
+    # 9:00 AM EDT = 13:00 UTC  (EDT is UTC-4, runs May–Nov)
+    - cron: '0 13 * * *'
+  workflow_dispatch:          # allow manual trigger any time
+
+permissions:
+  contents: write             # needed to commit & push index.html
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. 10-day window guard ───────────────────────────────────────────────
+      - name: Check schedule window
+        id: window
+        run: |
+          START="2026-05-25"
+          END="2026-06-04"
+          TODAY=$(date -u +%Y-%m-%d)
+          echo "Today: $TODAY  Window: $START → $END"
+          if [[ "$TODAY" < "$START" || "$TODAY" > "$END" ]]; then
+            echo "Outside window — skipping generation."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 3. Python setup ──────────────────────────────────────────────────────
+      - name: Set up Python
+        if: steps.window.outputs.skip != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        if: steps.window.outputs.skip != 'true'
+        run: pip install -r requirements.txt
+
+      # ── 4. Generate ──────────────────────────────────────────────────────────
+      - name: Generate digest
+        if: steps.window.outputs.skip != 'true'
+        run: python scripts/generate_digest.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWS_API_KEY:      ${{ secrets.NEWS_API_KEY }}
+
+      # ── 5. Commit & push ─────────────────────────────────────────────────────
+      - name: Commit and push
+        if: steps.window.outputs.skip != 'true'
+        run: |
+          git config user.name  "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add index.html
+          if git diff --staged --quiet; then
+            echo "index.html unchanged — nothing to commit."
+          else
+            git commit -m "digest: $(date -u +%Y-%m-%d)"
+            git push
+          fi
