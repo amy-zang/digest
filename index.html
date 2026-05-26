@@ -431,13 +431,53 @@
 
   @media (max-width: 900px) {
     .digest { padding: 24px 20px 64px; }
-    .masthead, .greeting, .top-row, .tech-grid, .events-row, .health-row, .lower-row, .colophon { grid-template-columns: 1fr; }
-    .masthead .left, .masthead .right { align-items: flex-start; }
+    .masthead { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .masthead .center { grid-column: 1 / -1; order: -1; text-align: center; }
+    .masthead .right { align-items: flex-end; text-align: right; }
+    .greeting { grid-template-columns: 1fr; gap: 20px; }
+    .top-row { grid-template-columns: 1fr; gap: 32px; }
+    .story { grid-template-columns: 140px 1fr; gap: 16px; }
+    .story:first-child { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; gap: 12px; }
+    .events-row { grid-template-columns: 1fr; }
     .events-col + .events-col { border-left: none; padding-left: 0; border-top: 2px dotted var(--accent); padding-top: 24px; margin-top: 8px; }
     .events-col:first-child { padding-right: 0; }
-    .tech-grid { gap: 12px; }
-    .health-row { gap: 12px; }
-    .colophon .right, .colophon .center { text-align: left; }
+    .health-row { grid-template-columns: 1fr; gap: 12px; }
+    .lower-row { grid-template-columns: 1fr; gap: 32px; }
+    .colophon { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .colophon .center { grid-column: 1 / -1; text-align: left; }
+    .colophon .right { text-align: right; }
+  }
+
+  @media (max-width: 480px) {
+    .digest { padding: 14px 14px 52px; }
+    .masthead { grid-template-columns: 1fr; gap: 8px; }
+    .masthead .center { order: -1; }
+    .masthead .left, .masthead .right { display: none; }
+    .wordmark { font-size: 22px; }
+    .greeting h1 { font-size: 26px; }
+    .greeting { padding: 20px 0 18px; gap: 14px; }
+    .story { grid-template-columns: 1fr; }
+    .story-img { display: none; }
+    .story:first-child .story-img { display: block; }
+    .story-headline { font-size: 17px; }
+    .story:first-child .story-headline { font-size: 20px; }
+    .tech-card { padding: 16px 16px; }
+    .tech-num { font-size: 22px; }
+    .weather-hours { grid-template-columns: repeat(5, 1fr); }
+    .hour { padding: 7px 0; }
+    .hour .t { font-size: 14px; }
+    .event { grid-template-columns: 52px 1fr; gap: 10px; }
+    .event-meta { display: none; }
+    .health-col { padding: 16px 16px; }
+    .health-col h3 { font-size: 16px; }
+    .longread { grid-template-columns: 1fr; }
+    .longread-img { display: none; }
+    .colophon { grid-template-columns: 1fr; gap: 14px; }
+    .colophon .right { text-align: left; }
+    .kicker .label { font-size: 15px; letter-spacing: .12em; }
+    .kicker .label .num { font-size: 22px; }
+    .tweaks-btn { right: 12px; bottom: 12px; padding: 7px 12px; }
   }
 </style>
 </head>

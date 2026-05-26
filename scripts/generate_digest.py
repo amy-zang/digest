@@ -253,7 +253,8 @@ Your job: generate today's digest content as a single JSON object. Follow these 
 - discoveries.more: exactly 3 items from science news.
 - longreads: exactly 3 from longreads/science/world feeds, preferring long-form journalism sources.
 - img: if the news item listed an IMG URL, use that exact URL; otherwise "".
-- Write decks in 2-3 tight sentences. Explain WHY it matters, not just what happened.
+- Write in wire-service style: factual, neutral, no emotional language, no bias. State what happened, where, and when. No "stunning", "alarming", "exciting", or interpretive adjectives.
+- Decks: maximum 2 sentences, 30 words total. Facts only.
 - Use real URLs from the feeds above wherever possible.
 
 Return ONLY valid JSON — no markdown fences, no commentary:
