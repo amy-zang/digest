@@ -318,10 +318,13 @@
   .health-col h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; letter-spacing: -.015em; margin: 0 0 6px; color: var(--ink); }
   .health-col .sub { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
   .health-col p { font-family: var(--serif); font-size: 14.5px; line-height: 1.5; color: var(--ink-2); margin: 0 0 12px; }
-  .health-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .health-list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
   .health-list li { font-family: var(--serif); font-size: 14px; line-height: 1.4; display: grid; grid-template-columns: 18px 1fr; align-items: baseline; }
   .health-list li::before { content: "●"; font-family: var(--mono); color: var(--accent); font-weight: 700; font-size: 9px; padding-top: 4px; }
   .health-list li b { color: var(--ink); font-weight: 600; }
+  .health-group { margin-top: 16px; }
+  .health-group:first-child { margin-top: 0; }
+  .health-group-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep); font-weight: 700; padding-bottom: 5px; border-bottom: 1.5px dotted var(--accent); margin-bottom: 2px; }
 
   /* ── Discoveries ── */
   .lower-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; }
@@ -684,58 +687,70 @@ const DIGEST = {
   health: {
     "eat": {
         "title": "On the plate",
-        "sub": "May 2026 eating",
-        "copy": "Late May in New York means peak spring produce at the Greenmarket — strawberries, asparagus, pea shoots, and ramps are at their best right now. Eating seasonally from local farms keeps nutrients high and supports the regional food system. Memorial Day is also a natural moment to fire up lighter, plant-forward grilling rather than defaulting to heavy red meat.",
-        "list": [
+        "sub": "May 2026 · seasonal",
+        "copy": "",
+        "groups": [
             {
-                "b": "Try",
-                "text": "Grilled asparagus with lemon zest and shaved parmesan — peak-season stalks from Hudson Valley farms are in Union Square Greenmarket this week."
+                "label": "Fruits & Vegetables in Season",
+                "items": [
+                    {"b": "Strawberries", "text": "peak late May — local farms at Union Square Greenmarket; eat fresh or with Greek yogurt"},
+                    {"b": "Asparagus", "text": "Hudson Valley stalks at their sweetest; roast with olive oil or shave raw into salads"},
+                    {"b": "Pea shoots", "text": "tender and nutrient-dense; toss into stir-fries or top on toast"},
+                    {"b": "Rhubarb", "text": "tart spring stalks good for compotes or baked with oats and honey"}
+                ]
             },
             {
-                "b": "Limit",
-                "text": "Processed deli meats and sugary BBQ sauces common at holiday cookouts — high sodium and added sugars blunt your energy by mid-afternoon."
-            },
-            {
-                "b": "Add",
-                "text": "Fresh strawberries from local farms — naturally hydrating and packed with vitamin C, they're the perfect low-effort Memorial Day dessert."
+                "label": "Meal Ideas",
+                "items": [
+                    {"b": "Breakfast", "text": "Greek yogurt with sliced strawberries and granola"},
+                    {"b": "Lunch", "text": "shaved asparagus and pea shoot salad with lemon vinaigrette and soft-boiled egg"},
+                    {"b": "Dinner", "text": "grilled salmon with roasted asparagus and a side of brown rice"}
+                ]
             }
         ]
     },
     "move": {
-        "title": "Moving body",
-        "sub": "Today's recommendation",
-        "copy": "Clear skies and a 75°F high make today one of the best outdoor exercise days Manhattan will offer all spring. The extended daylight — sunset at 8:15 p.m. — means you have a huge window for outdoor activity even after any morning obligations. This is a rare holiday Monday worth treating as a full active-recovery or adventure day.",
-        "list": [
+        "title": "Move your body",
+        "sub": "May · clear 64°F",
+        "copy": "",
+        "groups": [
             {
-                "b": "Outdoor",
-                "text": "Run, walk, or cycle the full Central Park loop (6.1 miles) in the morning before the holiday crowds peak — conditions are close to perfect."
+                "label": "Gym",
+                "items": [
+                    {"b": "Strength", "text": "lower body focus — squats, Romanian deadlifts, hip thrusts (3×10)"},
+                    {"b": "Cardio", "text": "30-min incline treadmill walk or row machine intervals"},
+                    {"b": "Recovery", "text": "foam roll quads and hip flexors; 5-min static stretch after"}
+                ]
             },
             {
-                "b": "Indoor",
-                "text": "If crowds deter you, a 45-minute yoga or mobility session at home takes advantage of the rest-day spirit without skipping movement entirely."
-            },
-            {
-                "b": "Evening",
-                "text": "A slow 20-minute walk after dinner as temps cool toward 60°F aids digestion and winds down the nervous system before sleep."
+                "label": "Yoga / Pilates",
+                "items": [
+                    {"b": "Morning", "text": "sun salutation flow × 5 rounds — 15 min to wake up the spine"},
+                    {"b": "Evening", "text": "yin yoga: dragon pose and supported fish — hold 3 min each"}
+                ]
             }
         ]
     },
     "supps": {
         "title": "Supplements",
-        "sub": "This week",
-        "copy": "With UV index at 4 and increasing sun exposure through the holiday weekend, your vitamin D synthesis is back in gear — but don't drop your supplement yet if you've been deficient. Social media's well-documented mental health impact is back in the headlines this week; supporting your nervous system is timely. Magnesium remains underconsumed by most New Yorkers under chronic stress.",
-        "list": [
+        "sub": "Daily & cycle-aware",
+        "copy": "",
+        "groups": [
             {
-                "b": "Priority",
-                "text": "Vitamin D3 (1,000–2,000 IU) with breakfast — despite sunny days, most urban adults still fall short through glass-filtered office environments."
+                "label": "Take Daily",
+                "items": [
+                    {"b": "Vitamin D3", "text": "1,000–2,000 IU with breakfast — most urban adults stay deficient despite sunny weather"},
+                    {"b": "Magnesium glycinate", "text": "200–400 mg at night — supports sleep, muscle recovery, and stress regulation"},
+                    {"b": "Omega-3", "text": "1–2 g EPA/DHA with largest meal — anti-inflammatory and supports mood"}
+                ]
             },
             {
-                "b": "Consider",
-                "text": "Magnesium glycinate (200–400 mg) in the evening — supports sleep quality and nervous system recovery, especially after a socially busy holiday weekend."
-            },
-            {
-                "b": "Note",
-                "text": "Omega-3s (fish oil or algae-based) taken with your largest meal improve absorption and support the mood regulation that heavy news weeks can erode."
+                "label": "Occasionally / As Needed",
+                "items": [
+                    {"b": "Iron", "text": "during menstruation — take with vitamin C, away from coffee; check levels annually"},
+                    {"b": "Ashwagandha", "text": "300–600 mg during high-stress periods — reduces cortisol; cycle 8 weeks on / 2 weeks off"},
+                    {"b": "B-complex", "text": "during luteal phase or fatigue — supports energy metabolism and mood in the week before period"}
+                ]
             }
         ]
     }
@@ -1160,10 +1175,21 @@ function HealthSection() {
             <div className="icon-frame"><Icon name={c.glyph} size={48} /></div>
             <h3>{c.title}</h3>
             <div className="sub">{c.sub}</div>
-            <p>{c.copy}</p>
-            <ul className="health-list">
-              {c.list.map((l,j) => <li key={j}><span><b>{l.b}.</b> {l.text}</span></li>)}
-            </ul>
+            {c.copy && <p>{c.copy}</p>}
+            {c.groups ? (
+              c.groups.map((g,gi) => (
+                <div className="health-group" key={gi}>
+                  <div className="health-group-label">{g.label}</div>
+                  <ul className="health-list">
+                    {g.items.map((l,j) => <li key={j}><span><b>{l.b}</b> {l.text}</span></li>)}
+                  </ul>
+                </div>
+              ))
+            ) : (
+              <ul className="health-list">
+                {(c.list||[]).map((l,j) => <li key={j}><span><b>{l.b}.</b> {l.text}</span></li>)}
+              </ul>
+            )}
           </div>
         ))}
       </div>

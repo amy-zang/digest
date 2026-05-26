@@ -255,6 +255,10 @@ Your job: generate today's digest content as a single JSON object. Follow these 
 - img: if the news item listed an IMG URL, use that exact URL; otherwise "".
 - Write in wire-service style: factual, neutral, no emotional language, no bias. State what happened, where, and when. No "stunning", "alarming", "exciting", or interpretive adjectives.
 - Decks: maximum 2 sentences, 30 words total. Facts only.
+- health.eat.groups[0]: list 4 fruits and vegetables that are peak season in {TODAY.strftime('%B')} in New York. Each item: bold=produce name, text=brief note on why it's good now and how to use it.
+- health.eat.groups[1]: 3 specific meal ideas (breakfast/lunch/dinner) using those seasonal ingredients.
+- health.move: gym group = strength/cardio/recovery tips suited to today's weather; yoga/pilates group = a morning and evening practice.
+- health.supps: "Take Daily" group = core daily supplements with dose and timing; "Occasionally" group = cycle-aware and stress-aware supplements (iron during menstruation, adaptogens during high stress, B-complex during luteal phase, etc.).
 - Use real URLs from the feeds above wherever possible.
 
 Return ONLY valid JSON — no markdown fences, no commentary:
@@ -276,9 +280,57 @@ Return ONLY valid JSON — no markdown fences, no commentary:
     {{"day":"{TODAY.strftime('%a')}","num":{TODAY.day},"title":"World event","blurb":"1-2 sentence summary.","where":"City, Country","time":"Ongoing","price":"—"}}
   ],
   "health": {{
-    "eat": {{"title":"On the plate","sub":"{month_yr} eating","copy":"Seasonal eating advice for {TODAY.strftime('%B')} in New York. 2-3 sentences.","list":[{{"b":"Try","text":"Tip."}},{{"b":"Limit","text":"Tip."}},{{"b":"Add","text":"Tip."}}]}},
-    "move": {{"title":"Moving body","sub":"Today's recommendation","copy":"Movement advice for today's {weather['condition'].lower()}, {weather['now']}°F conditions in Manhattan. 2-3 sentences.","list":[{{"b":"Outdoor","text":"Activity."}},{{"b":"Indoor","text":"Alternative."}},{{"b":"Evening","text":"Wind-down."}}]}},
-    "supps": {{"title":"Supplements","sub":"This week","copy":"Relevant wellness info for this week. 2-3 sentences.","list":[{{"b":"Priority","text":"Key supplement + timing."}},{{"b":"Consider","text":"Second rec."}},{{"b":"Note","text":"Third tip."}}]}}
+    "eat": {{
+      "title": "On the plate",
+      "sub": "{month_yr} · seasonal",
+      "copy": "",
+      "groups": [
+        {{"label": "Fruits & Vegetables in Season", "items": [
+          {{"b": "Item name", "text": "why it's good now and one way to eat it"}},
+          {{"b": "Item name", "text": "..."}},
+          {{"b": "Item name", "text": "..."}},
+          {{"b": "Item name", "text": "..."}}
+        ]}},
+        {{"label": "Meal Ideas", "items": [
+          {{"b": "Breakfast", "text": "specific meal suggestion using seasonal produce"}},
+          {{"b": "Lunch", "text": "specific meal suggestion"}},
+          {{"b": "Dinner", "text": "specific meal suggestion"}}
+        ]}}
+      ]
+    }},
+    "move": {{
+      "title": "Move your body",
+      "sub": "{TODAY.strftime('%B')} · {weather['condition'].lower()} {weather['now']}°F",
+      "copy": "",
+      "groups": [
+        {{"label": "Gym", "items": [
+          {{"b": "Strength", "text": "specific exercise or muscle group to focus on today"}},
+          {{"b": "Cardio", "text": "specific recommendation for today's weather"}},
+          {{"b": "Recovery", "text": "stretching or cooldown tip"}}
+        ]}},
+        {{"label": "Yoga / Pilates", "items": [
+          {{"b": "Morning", "text": "specific pose or flow sequence"}},
+          {{"b": "Evening", "text": "restorative pose or wind-down practice"}}
+        ]}}
+      ]
+    }},
+    "supps": {{
+      "title": "Supplements",
+      "sub": "Daily & cycle-aware",
+      "copy": "",
+      "groups": [
+        {{"label": "Take Daily", "items": [
+          {{"b": "Vitamin D3", "text": "dose and best time to take"}},
+          {{"b": "Magnesium", "text": "form and timing"}},
+          {{"b": "Omega-3", "text": "dose recommendation"}}
+        ]}},
+        {{"label": "Occasionally / As Needed", "items": [
+          {{"b": "Iron", "text": "relevant during menstruation — when and how to take"}},
+          {{"b": "Ashwagandha", "text": "for high-stress periods — dosage and note"}},
+          {{"b": "B-complex", "text": "useful during luteal phase or fatigue"}}
+        ]}}
+      ]
+    }}
   }},
   "discoveries": {{
     "feature": {{"cat":"Cover discovery · Field","headline":"Discovery headline.","deck":"2-3 sentence deck.","source":"Source","url":"https://...","img":"","caption":"caption"}},
