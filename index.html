@@ -281,6 +281,19 @@
   .outfit-label { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--sky-deep); font-weight: 700; }
   .outfit-val { font-family: var(--serif); font-size: 13px; color: var(--ink); line-height: 1.3; }
   .sun-times { margin-top: 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); display: flex; justify-content: space-between; }
+  .forecast7 { border-top: 2px dashed var(--sky-ink); padding-top: 12px; position: relative; z-index: 1; }
+  .forecast7-title { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--sky-deep); font-weight: 700; margin-bottom: 8px; }
+  .forecast7-grid { display: grid; grid-template-columns: repeat(7, 1fr); border: 1.5px dotted var(--sky-ink); border-radius: 10px; background: var(--paper); overflow: hidden; }
+  .fday { display: flex; flex-direction: column; align-items: center; padding: 8px 3px; gap: 3px; border-right: 1.5px dotted var(--sky-ink); }
+  .fday:last-child { border-right: none; }
+  .fday.today { background: var(--sky-soft); }
+  .fday-label { font-family: var(--mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--sky-deep); white-space: nowrap; }
+  .fday-ic { display: flex; align-items: center; justify-content: center; }
+  .fday-high { font-family: var(--serif); font-size: 12px; font-weight: 700; color: var(--ink); line-height: 1; }
+  .fday-bar-wrap { width: 4px; flex: 1; min-height: 22px; border-radius: 2px; background: var(--sky-bg); position: relative; overflow: hidden; }
+  .fday-bar-fill { position: absolute; left: 0; right: 0; border-radius: 2px; background: var(--sky-ink); }
+  .fday-bar-fill.rain { background: var(--lav-ink); }
+  .fday-low { font-family: var(--mono); font-size: 9px; color: var(--ink-3); line-height: 1; }
 
   /* ── Tech ── */
   .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 3px dotted var(--accent); padding-top: 22px; }
@@ -554,6 +567,15 @@ const DIGEST = {
         {"h": "+5h",  "t": 73, "ic": "sun"},
         {"h": "+8h",  "t": 71, "ic": "cloud"},
         {"h": "+11h", "t": 62, "ic": "cloud"}
+    ],
+    "forecast7": [
+        {"day": "MON", "high": 75, "low": 55, "ic": "sun",   "rain": false},
+        {"day": "TUE", "high": 71, "low": 54, "ic": "cloud", "rain": false},
+        {"day": "WED", "high": 64, "low": 51, "ic": "rain",  "rain": true},
+        {"day": "THU", "high": 67, "low": 52, "ic": "cloud", "rain": false},
+        {"day": "FRI", "high": 70, "low": 55, "ic": "sun",   "rain": false},
+        {"day": "SAT", "high": 74, "low": 57, "ic": "sun",   "rain": false},
+        {"day": "SUN", "high": 72, "low": 56, "ic": "cloud", "rain": false}
     ],
     "outfit": [
         {"label": "Jacket",    "val": "Light layer for morning"},
@@ -1012,6 +1034,36 @@ function WxIcon({ ic, size = 19 }) {
   );
 }
 
+function Forecast7({ days }) {
+  if (!days || !days.length) return null;
+  const weekMin = Math.min(...days.map(d => d.low));
+  const weekMax = Math.max(...days.map(d => d.high));
+  const span = weekMax - weekMin || 1;
+  return (
+    <div className="forecast7">
+      <div className="forecast7-title">7-Day Outlook</div>
+      <div className="forecast7-grid">
+        {days.map((d, i) => {
+          const fillTop    = (1 - (d.high - weekMin) / span) * 100;
+          const fillBottom = ((d.low  - weekMin) / span) * 100;
+          return (
+            <div className={`fday${i === 0 ? " today" : ""}`} key={i}>
+              <span className="fday-label">{i === 0 ? "Today" : d.day}</span>
+              <span className="fday-ic"><WxIcon ic={d.ic} size={15}/></span>
+              <span className="fday-high">{d.high}°</span>
+              <div className="fday-bar-wrap">
+                <div className={`fday-bar-fill${d.rain ? " rain" : ""}`}
+                     style={{ top: `${fillTop}%`, bottom: `${fillBottom}%` }}/>
+              </div>
+              <span className="fday-low">{d.low}°</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function WeatherCard() {
   const w = DIGEST.weather;
   const uvLevel = (w.uv >= 8) ? "uv-high" : (w.uv >= 5) ? "uv-mod" : "uv-low";
@@ -1044,6 +1096,7 @@ function WeatherCard() {
           </div>
         ))}
       </div>
+      <Forecast7 days={w.forecast7} />
       <div className="weather-outfit">
         <div className="outfit-title">What to wear</div>
         <ul className="outfit-list">

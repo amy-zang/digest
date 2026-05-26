@@ -160,11 +160,11 @@ def fetch_weather():
             "latitude": 40.7484, "longitude": -73.9967,
             "current":  "temperature_2m,apparent_temperature,weather_code,windspeed_10m",
             "hourly":   "temperature_2m,weather_code",
-            "daily":    "temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max",
+            "daily":    "temperature_2m_max,temperature_2m_min,weather_code,precipitation_sum,sunrise,sunset,uv_index_max",
             "temperature_unit": "fahrenheit",
             "wind_speed_unit": "mph",
             "timezone": "America/New_York",
-            "forecast_days": 1,
+            "forecast_days": 7,
         }, timeout=12)
         r.raise_for_status()
         d      = r.json()
@@ -201,6 +201,29 @@ def fetch_weather():
             t = round(hour_temps[i]) if i < len(hour_temps) else temp
             c = int(hour_codes[i])   if i < len(hour_codes)  else code
             forecast.append({"h": label, "t": t, "ic": WMO_SIMPLE.get(c, "cloud")})
+
+        # Build 7-day forecast
+        daily_dates  = daily.get("time", [])
+        daily_highs  = daily.get("temperature_2m_max", [])
+        daily_lows   = daily.get("temperature_2m_min", [])
+        daily_codes  = daily.get("weather_code", [])
+        daily_precip = daily.get("precipitation_sum", [])
+        forecast7 = []
+        for j in range(min(7, len(daily_dates))):
+            try:
+                dt      = datetime.date.fromisoformat(daily_dates[j])
+                day_lbl = dt.strftime("%a").upper()
+            except Exception:
+                day_lbl = "DAY"
+            dc = int(daily_codes[j]) if j < len(daily_codes) else 0
+            dp = float(daily_precip[j]) if j < len(daily_precip) else 0.0
+            forecast7.append({
+                "day":  day_lbl,
+                "high": round(daily_highs[j]) if j < len(daily_highs) else temp,
+                "low":  round(daily_lows[j])  if j < len(daily_lows)  else temp - 15,
+                "ic":   WMO_SIMPLE.get(dc, "cloud"),
+                "rain": dc in RAIN_CODES or dp > 0.1,
+            })
 
         # Compute outfit recommendations from weather data
         outfit = []
@@ -241,6 +264,7 @@ def fetch_weather():
             "rain": is_rain, "wind": wind_lbl,
             "sunrise": sunrise, "sunset": sunset,
             "hours": forecast,
+            "forecast7": forecast7,
             "outfit": outfit,
         }
     except Exception as ex:
@@ -252,6 +276,15 @@ def fetch_weather():
             "hours":[{"h":"Now","t":68,"ic":"sun"},{"h":"+2h","t":70,"ic":"sun"},
                      {"h":"+5h","t":71,"ic":"sun"},{"h":"+8h","t":67,"ic":"cloud"},
                      {"h":"+11h","t":62,"ic":"cloud"}],
+            "forecast7":[
+                {"day":"MON","high":72,"low":58,"ic":"sun","rain":False},
+                {"day":"TUE","high":68,"low":55,"ic":"cloud","rain":False},
+                {"day":"WED","high":63,"low":52,"ic":"rain","rain":True},
+                {"day":"THU","high":66,"low":53,"ic":"cloud","rain":False},
+                {"day":"FRI","high":70,"low":56,"ic":"sun","rain":False},
+                {"day":"SAT","high":74,"low":58,"ic":"sun","rain":False},
+                {"day":"SUN","high":71,"low":57,"ic":"cloud","rain":False},
+            ],
             "outfit":[
                 {"label":"Jacket","val":"Light layer for morning"},
                 {"label":"Top","val":"Long sleeve or light layer"},
