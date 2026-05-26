@@ -1268,7 +1268,7 @@ function TweaksPanel({ t, setTweak, onClose }) {
 
 // ── App ───────────────────────────────────────────────────────────────────────
 function App() {
-  const [tweaks, setTweaksState] = useState({ name:"", timeOfDay:"auto", accent:"#c64a7a", theme:"paper", showWeatherAdvice:true });
+  const [tweaks, setTweaksState] = useState({ name:"Amy", timeOfDay:"auto", accent:"#c64a7a", theme:"paper", showWeatherAdvice:true });
   const [panelOpen, setPanelOpen] = useState(false);
   const setTweak = (k, v) => setTweaksState(p => ({ ...p, [k]: v }));
 

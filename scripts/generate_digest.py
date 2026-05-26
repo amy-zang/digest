@@ -221,9 +221,10 @@ def generate_with_claude(news, weather):
         for item in items:
             if not item.get("title"):
                 continue
+            img_line = f"\n    IMG: {item['image']}" if item.get("image") else ""
             out.append(f"  • [{item['source']}] {item['title']}\n"
                        f"    {item['summary'][:220]}\n"
-                       f"    URL: {item['link']}")
+                       f"    URL: {item['link']}{img_line}")
         return "\n".join(out)
 
     news_block = ""
@@ -251,7 +252,7 @@ Your job: generate today's digest content as a single JSON object. Follow these 
 - worldEvents: exactly 3 significant world events from today's news.
 - discoveries.more: exactly 3 items from science news.
 - longreads: exactly 3 from longreads/science/world feeds, preferring long-form journalism sources.
-- All img fields: set to "" (images handled separately).
+- img: if the news item listed an IMG URL, use that exact URL; otherwise "".
 - Write decks in 2-3 tight sentences. Explain WHY it matters, not just what happened.
 - Use real URLs from the feeds above wherever possible.
 
@@ -259,7 +260,7 @@ Return ONLY valid JSON — no markdown fences, no commentary:
 
 {{
   "topStories": [
-    {{"category":"Category · Type","headline":"Declarative headline.","deck":"2-3 sentence deck.","source":"Source","bias":"Center","read":"5 min","url":"https://...","img":"","caption":"short caption"}}
+    {{"category":"Category · Type","headline":"Declarative headline.","deck":"2-3 sentence deck.","source":"Source","bias":"Center","read":"5 min","url":"https://...","img":"https://... or empty string","caption":"short caption"}}
   ],
   "weatherAdvice": [
     {{"mark":"→","text":"Practical tip for today's specific conditions."}}
