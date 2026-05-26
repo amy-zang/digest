@@ -241,7 +241,7 @@
     padding: 22px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     position: relative;
   }
   .weather::before {
@@ -253,32 +253,34 @@
   }
   .weather-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px dashed var(--sky-ink); padding-bottom: 10px; position: relative; z-index: 1; }
   .weather-head .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--sky-deep); }
-  .weather-head .place { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink); }
-  .weather-now { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; position: relative; z-index: 1; }
-  .temp { font-family: var(--serif); font-weight: 700; font-size: 60px; line-height: .95; letter-spacing: -.05em; color: var(--sky-deep); display: flex; align-items: flex-start; }
-  .temp .deg { font-size: 28px; font-weight: 500; margin-top: 8px; color: var(--peach-ink); }
-  .sun-glyph { width: 90px; height: 90px; position: relative; }
-  .sun-glyph .core { position: absolute; inset: 22%; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px var(--sky-soft), 0 0 0 5.5px var(--peach-ink); }
-  .sun-glyph::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: conic-gradient(from 0deg, var(--peach-ink) 0deg 6deg, transparent 6deg 45deg, var(--peach-ink) 45deg 51deg, transparent 51deg 90deg, var(--peach-ink) 90deg 96deg, transparent 96deg 135deg, var(--peach-ink) 135deg 141deg, transparent 141deg 180deg, var(--peach-ink) 180deg 186deg, transparent 186deg 225deg, var(--peach-ink) 225deg 231deg, transparent 231deg 270deg, var(--peach-ink) 270deg 276deg, transparent 276deg 315deg, var(--peach-ink) 315deg 321deg, transparent 321deg 360deg);
-    -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%);
-            mask: radial-gradient(circle, transparent 32%, #000 33%, #000 46%, transparent 47%);
-  }
-  .weather-cond { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--sky-deep); margin-top: -4px; }
-  .weather-cond b { font-style: normal; font-weight: 700; color: var(--ink); }
+  .weather-head .place { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--ink); }
+  .weather-now { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+  .temp { font-family: var(--serif); font-weight: 700; font-size: 56px; line-height: .95; letter-spacing: -.05em; color: var(--sky-deep); display: flex; align-items: flex-start; flex-shrink: 0; }
+  .temp .deg { font-size: 26px; font-weight: 500; margin-top: 6px; color: var(--peach-ink); }
+  .weather-right { display: flex; flex-direction: column; gap: 3px; }
+  .weather-cond { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); }
+  .weather-hl { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--sky-deep); }
+  .w-chips { display: flex; gap: 6px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .w-chip { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1.5px dotted; white-space: nowrap; }
+  .w-chip.uv-low  { border-color: var(--mint-ink);  color: var(--mint-deep);  background: var(--mint-soft); }
+  .w-chip.uv-mod  { border-color: var(--butter-ink); color: var(--butter-deep); background: var(--butter-soft); }
+  .w-chip.uv-high { border-color: var(--peach-ink); color: var(--peach-deep); background: var(--peach-soft); }
+  .w-chip.chip-ok   { border-color: var(--mint-ink);  color: var(--mint-deep);  background: var(--mint-soft); }
+  .w-chip.chip-rain { border-color: var(--sky-ink);  color: var(--sky-deep);  background: var(--sky-bg); }
+  .w-chip.chip-wind { border-color: var(--lav-ink);  color: var(--lav-deep);  background: var(--lav-soft); }
   .weather-hours { display: grid; grid-template-columns: repeat(5, 1fr); border: 1.5px dotted var(--sky-ink); border-radius: 10px; background: var(--paper); overflow: hidden; position: relative; z-index: 1; }
-  .hour { text-align: center; padding: 10px 0; border-right: 1.5px dotted var(--sky-ink); display: flex; flex-direction: column; gap: 4px; }
+  .hour { text-align: center; padding: 10px 0; border-right: 1.5px dotted var(--sky-ink); display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .hour:last-child { border-right: none; }
   .hour .h { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--sky-deep); }
-  .hour .t { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--ink); }
-  .hour .ic { font-size: 14px; }
-  .weather-advice { border-top: 2px dashed var(--sky-ink); padding-top: 14px; position: relative; z-index: 1; }
-  .advice-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--sky-deep); margin-bottom: 8px; }
-  .advice-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-  .advice-list li { font-family: var(--serif); font-size: 14px; line-height: 1.35; display: grid; grid-template-columns: 22px 1fr; gap: 4px; color: var(--ink); }
-  .advice-list li .mark { font-family: var(--mono); font-weight: 700; color: var(--sky-ink); font-size: 13px; padding-top: 2px; }
+  .hour .t { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); }
+  .hour .ic { display: flex; align-items: center; justify-content: center; }
+  .weather-outfit { border-top: 2px dashed var(--sky-ink); padding-top: 12px; position: relative; z-index: 1; }
+  .outfit-title { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--sky-deep); font-weight: 700; margin-bottom: 8px; }
+  .outfit-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .outfit-list li { display: grid; grid-template-columns: 72px 1fr; gap: 6px; align-items: baseline; }
+  .outfit-label { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--sky-deep); font-weight: 700; }
+  .outfit-val { font-family: var(--serif); font-size: 13px; color: var(--ink); line-height: 1.3; }
+  .sun-times { margin-top: 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); display: flex; justify-content: space-between; }
 
   /* ── Tech ── */
   .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 3px dotted var(--accent); padding-top: 22px; }
@@ -542,52 +544,22 @@ const DIGEST = {
     "high": 75,
     "low": 55,
     "uv": 4,
+    "rain": false,
+    "wind": "Calm",
     "sunrise": "5:30a",
     "sunset": "8:15p",
     "hours": [
-        {
-            "h": "Now",
-            "t": 64,
-            "ic": "☀"
-        },
-        {
-            "h": "+2h",
-            "t": 64,
-            "ic": "☀"
-        },
-        {
-            "h": "+5h",
-            "t": 64,
-            "ic": "☀"
-        },
-        {
-            "h": "+8h",
-            "t": 64,
-            "ic": "☀"
-        },
-        {
-            "h": "+11h",
-            "t": 64,
-            "ic": "☀"
-        }
+        {"h": "Now",  "t": 64, "ic": "sun"},
+        {"h": "+2h",  "t": 68, "ic": "sun"},
+        {"h": "+5h",  "t": 73, "ic": "sun"},
+        {"h": "+8h",  "t": 71, "ic": "cloud"},
+        {"h": "+11h", "t": 62, "ic": "cloud"}
     ],
-    "advice": [
-        {
-            "mark": "→",
-            "text": "It's a crisp 64°F at sunrise — grab a light jacket for the morning commute; you'll want to shed a layer by midday as temps climb toward a comfortable 75°F."
-        },
-        {
-            "mark": "→",
-            "text": "UV index is a moderate 4 today — sunscreen (SPF 30+) is worth applying if you're spending more than 30 minutes outdoors, especially during the long 14-hour stretch of daylight."
-        },
-        {
-            "mark": "→",
-            "text": "Clear skies and a 75°F high make this ideal for a Memorial Day walk, run, or picnic in Central Park — crowds will be out, so head early or after 4 p.m. for breathing room."
-        },
-        {
-            "mark": "→",
-            "text": "The overnight low dips to 55°F, so if you're staying out for evening festivities, pack a layer — al fresco dining will turn noticeably cool after sunset at 8:15 p.m."
-        }
+    "outfit": [
+        {"label": "Jacket",    "val": "Light layer for morning"},
+        {"label": "Top",       "val": "T-shirt"},
+        {"label": "Bottom",    "val": "Shorts or skirt"},
+        {"label": "Sunscreen", "val": "Recommended — UV 4"}
     ]
 },
 
@@ -1010,35 +982,80 @@ function Story({ s, isLead }) {
 }
 
 // ── Weather ───────────────────────────────────────────────────────────────────
+function WxIcon({ ic, size = 19 }) {
+  const type = (ic === "sun")  ? "sun"
+             : (ic === "rain") ? "rain"
+             : (ic === "☀" || ic === "🌤") ? "sun"
+             : (ic && (ic.includes("🌧") || ic.includes("🌦") || ic.includes("⛈") || ic.includes("🌨") || ic.includes("❄"))) ? "rain"
+             : "cloud";
+  const fill = "var(--sky-deep)";
+  if (type === "sun") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.5" fill={fill}/>
+      {[0,45,90,135,180,225,270,315].map(a => (
+        <line key={a} x1="12" y1="2.8" x2="12" y2="1.2" stroke={fill} strokeWidth="2" strokeLinecap="round" transform={`rotate(${a} 12 12)`}/>
+      ))}
+    </svg>
+  );
+  if (type === "rain") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 14a5.5 5.5 0 0 1 10.1-3A3.5 3.5 0 1 1 17 18H5a3.5 3.5 0 0 1 0-7z" fill={fill} opacity=".7"/>
+      <line x1="8"  y1="21" x2="7"  y2="23" stroke={fill} strokeWidth="1.8" strokeLinecap="round"/>
+      <line x1="12" y1="21" x2="11" y2="23" stroke={fill} strokeWidth="1.8" strokeLinecap="round"/>
+      <line x1="16" y1="21" x2="15" y2="23" stroke={fill} strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  );
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 15a5.5 5.5 0 0 1 10.1-3A3.5 3.5 0 1 1 17 19H5a3.5 3.5 0 0 1 0-7z" fill={fill} opacity=".6"/>
+    </svg>
+  );
+}
+
 function WeatherCard() {
   const w = DIGEST.weather;
+  const uvLevel = (w.uv >= 8) ? "uv-high" : (w.uv >= 5) ? "uv-mod" : "uv-low";
+  const rainChip = w.rain ? "chip-rain" : "chip-ok";
+  const windChip = (w.wind === "Windy" || w.wind === "Breezy") ? "chip-wind" : "chip-ok";
   return (
     <aside className="weather">
       <div className="weather-head">
-        <span className="tag">Weather · Memorial Day</span>
-        <span className="place">New York · Manhattan</span>
+        <span className="tag">Weather · today</span>
+        <span className="place">Manhattan</span>
       </div>
       <div className="weather-now">
-        <div>
-          <div className="temp">{w.now}<span className="deg">°F</span></div>
-          <div className="weather-cond"><b>{w.condition}.</b> Feels like {w.feels}°. High {w.high}, low {w.low}.</div>
+        <div className="temp">{w.now}<span className="deg">°</span></div>
+        <div className="weather-right">
+          <div className="weather-cond">{w.condition}</div>
+          <div className="weather-hl">H {w.high}° · L {w.low}° · Feels {w.feels}°</div>
         </div>
-        <div className="sun-glyph"><div className="core" /></div>
+      </div>
+      <div className="w-chips">
+        <span className={`w-chip ${uvLevel}`}>UV {w.uv}</span>
+        <span className={`w-chip ${rainChip}`}>{w.rain ? "Rain" : "No rain"}</span>
+        <span className={`w-chip ${windChip}`}>{w.wind || "Calm"}</span>
       </div>
       <div className="weather-hours">
         {w.hours.map((h,i) => (
           <div className="hour" key={i}>
-            <span className="h">{h.h}</span><span className="ic">{h.ic}</span><span className="t">{h.t}°</span>
+            <span className="h">{h.h}</span>
+            <span className="ic"><WxIcon ic={h.ic} size={18}/></span>
+            <span className="t">{h.t}°</span>
           </div>
         ))}
       </div>
-      <div className="weather-advice">
-        <div className="advice-title">What to wear / bring</div>
-        <ul className="advice-list">
-          {w.advice.map((a,i) => <li key={i}><span className="mark">{a.mark}</span><span>{a.text}</span></li>)}
+      <div className="weather-outfit">
+        <div className="outfit-title">What to wear</div>
+        <ul className="outfit-list">
+          {(w.outfit || []).map((o,i) => (
+            <li key={i}>
+              <span className="outfit-label">{o.label}</span>
+              <span className="outfit-val">{o.val}</span>
+            </li>
+          ))}
         </ul>
-        <div style={{ marginTop:12, fontFamily:"var(--mono)", fontSize:10, letterSpacing:"0.12em", textTransform:"uppercase", color:"var(--ink-3)", display:"flex", justifyContent:"space-between" }}>
-          <span>↑ Sunrise {w.sunrise}</span><span>↓ Sunset {w.sunset}</span>
+        <div className="sun-times">
+          <span>↑ {w.sunrise}</span><span>↓ {w.sunset}</span>
         </div>
       </div>
     </aside>
