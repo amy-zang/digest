@@ -509,171 +509,245 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 4, 25),
-  edition: "Vol. III · No. 145",
+  date: new Date(2026, 4, 26),
+  edition: "Vol. III · No. 146",
   location: "Manhattan, NY",
-  weatherStrip: "64°F · Clear · UV 4 · Manhattan",
+  weatherStrip: "81°F · Partly Cloudy · UV 8 · Manhattan",
 
   topStories: [
     {
-        "category": "World · War",
-        "headline": "U.S. Launches New 'Self-Defense' Strikes on Southern Iran as Peace Talks Convene in Qatar.",
-        "deck": "U.S. Central Command announced fresh strikes on Iranian missile launch sites and naval vessels in the Gulf, even as Iranian diplomats arrived in Doha for ceasefire negotiations. The simultaneous military action and diplomacy underscore how fragile the path to a deal remains — and how quickly the conflict could escalate beyond control.",
+        "category": "World · Conflict",
+        "headline": "Iran condemns U.S. strikes as ceasefire violation; retaliation threatened.",
+        "deck": "U.S. military forces struck sites near the Strait of Hormuz while Iranian and Qatari negotiators were in Doha for peace talks. Iran has warned of retaliation; officials say the U.S. identified new threats before resuming strikes.",
         "source": "BBC News / NYT",
         "bias": "Center",
         "read": "6 min",
-        "url": "https://www.nytimes.com/live/2026/05/25/world/iran-war-trump",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/26a6/live/298e0590-5899-11f1-a1da-d1d49c6758a7.jpg",
-        "caption": "U.S. CENTCOM confirms strikes on southern Iran"
+        "url": "https://www.nytimes.com/live/2026/05/26/world/iran-war-trump-deal",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60fa/live/b45e44b0-593d-11f1-8f5a-71117a5267dc.jpg",
+        "caption": "Negotiations were underway in Doha when strikes resumed."
     },
     {
-        "category": "World · Diplomacy",
-        "headline": "Iran Says a Deal With the U.S. Is Not Imminent, Despite Rubio's Optimism.",
-        "deck": "Secretary of State Rubio signaled a potential agreement could arrive as soon as Monday, but Tehran pushed back, citing 'frequent changes' in Washington's negotiating positions. With oil prices already sliding on deal hopes and the Strait of Hormuz on the table, the diplomatic stakes — and market sensitivities — are enormous.",
-        "source": "BBC News / CBS News",
-        "bias": "Center",
-        "read": "5 min",
-        "url": "https://www.bbc.com/news/articles/cglpp2yk336o?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a0c1/live/741c5a20-5827-11f1-8df1-478734c7d1a9.jpg",
-        "caption": "Iran-U.S. talks stall on deal timeline"
-    },
-    {
-        "category": "U.S. · Emergency",
-        "headline": "California Chemical Leak Explosion Threat 'Eliminated' After Overnight Operation in Garden Grove.",
-        "deck": "Emergency crews worked through the night to neutralize a tank holding 7,000 gallons of methyl methacrylate — a volatile plastic-production chemical — at a GKN Aerospace facility in Orange County. Officials say the catastrophic blast risk is now gone, though the incident spotlights industrial safety gaps near residential areas.",
-        "source": "CBS News",
+        "category": "U.S. · Industrial Accident",
+        "headline": "Multiple fatalities reported after chemical tank ruptures at Washington state mill.",
+        "deck": "A chemical tank imploded Tuesday morning at Nippon Dynawave Packaging Co. in Longview, Washington, causing multiple fatalities and critical injuries. Local fire and law enforcement are on scene.",
+        "source": "CBS News / ABC News",
         "bias": "Center",
         "read": "4 min",
-        "url": "https://www.cbsnews.com/live-updates/california-chemical-leak-orange-county-garden-grove-emergency-day-5/",
-        "img": "",
-        "caption": "Garden Grove chemical tank crisis, Day 5"
+        "url": "https://www.cbsnews.com/news/washington-paper-mill-chemical-tank-explosion-deaths/",
+        "img": "https://s.abcnews.com/images/US/longview-mill-02-ht-jt-260526_1779817332923_hpMain_4x3t_384.jpg",
+        "caption": "Longview Fire Department confirmed fatalities at the Nippon Dynawave facility."
+    },
+    {
+        "category": "World · Security",
+        "headline": "Russia threatens renewed Kyiv strikes; foreign nationals told to leave Ukrainian capital.",
+        "deck": "Moscow issued warnings of further aerial attacks on Kyiv following one of the largest drone and missile assaults of the war over the weekend. Foreign nationals have been advised to depart the city.",
+        "source": "BBC News",
+        "bias": "Center",
+        "read": "5 min",
+        "url": "https://www.bbc.com/news/articles/c1e22n55zn4o?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e77a/live/157edd60-585b-11f1-9a33-c313bd26e03f.jpg",
+        "caption": "Kyiv suffered a major aerial assault over the weekend; further strikes threatened."
     }
 ],
 
   weather: {
-    "now": 64,
-    "condition": "Clear",
-    "feels": 66,
-    "high": 75,
-    "low": 55,
-    "uv": 4,
+    "now": 81,
+    "condition": "Partly Cloudy",
+    "feels": 79,
+    "high": 81,
+    "low": 59,
+    "uv": 8,
     "rain": false,
     "wind": "Calm",
-    "sunrise": "5:30a",
-    "sunset": "8:15p",
+    "sunrise": "5:29a",
+    "sunset": "8:16p",
     "hours": [
-        {"h": "Now",  "t": 64, "ic": "sun"},
-        {"h": "+2h",  "t": 68, "ic": "sun"},
-        {"h": "+5h",  "t": 73, "ic": "sun"},
-        {"h": "+8h",  "t": 71, "ic": "cloud"},
-        {"h": "+11h", "t": 62, "ic": "cloud"}
+        {
+            "h": "Now",
+            "t": 81,
+            "ic": "sun"
+        },
+        {
+            "h": "+2h",
+            "t": 78,
+            "ic": "cloud"
+        },
+        {
+            "h": "+5h",
+            "t": 67,
+            "ic": "cloud"
+        },
+        {
+            "h": "+8h",
+            "t": 65,
+            "ic": "cloud"
+        },
+        {
+            "h": "+11h",
+            "t": 65,
+            "ic": "cloud"
+        }
     ],
     "forecast7": [
-        {"day": "MON", "high": 75, "low": 55, "ic": "sun",   "rain": false},
-        {"day": "TUE", "high": 71, "low": 54, "ic": "cloud", "rain": false},
-        {"day": "WED", "high": 64, "low": 51, "ic": "rain",  "rain": true},
-        {"day": "THU", "high": 67, "low": 52, "ic": "cloud", "rain": false},
-        {"day": "FRI", "high": 70, "low": 55, "ic": "sun",   "rain": false},
-        {"day": "SAT", "high": 74, "low": 57, "ic": "sun",   "rain": false},
-        {"day": "SUN", "high": 72, "low": 56, "ic": "cloud", "rain": false}
+        {
+            "day": "TUE",
+            "high": 81,
+            "low": 59,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "WED",
+            "high": 87,
+            "low": 63,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "THU",
+            "high": 77,
+            "low": 61,
+            "ic": "rain",
+            "rain": true
+        },
+        {
+            "day": "FRI",
+            "high": 78,
+            "low": 59,
+            "ic": "rain",
+            "rain": true
+        },
+        {
+            "day": "SAT",
+            "high": 68,
+            "low": 51,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "SUN",
+            "high": 76,
+            "low": 54,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "MON",
+            "high": 65,
+            "low": 58,
+            "ic": "rain",
+            "rain": true
+        }
     ],
     "outfit": [
-        {"label": "Jacket",    "val": "Light layer for morning"},
-        {"label": "Top",       "val": "T-shirt"},
-        {"label": "Bottom",    "val": "Shorts or skirt"},
-        {"label": "Sunscreen", "val": "Recommended — UV 4"}
+        {
+            "label": "Jacket",
+            "val": "Not needed"
+        },
+        {
+            "label": "Top",
+            "val": "T-shirt"
+        },
+        {
+            "label": "Bottom",
+            "val": "Shorts or skirt"
+        },
+        {
+            "label": "Sunscreen",
+            "val": "Yes — UV 8, high"
+        }
     ]
 },
 
   tech: [
     {
         "num": "01",
-        "headline": "ClickUp Lays Off Hundreds of Humans, Replaces Them With 'Thousands' of AI Agents.",
-        "deck": "The nine-year-old productivity startup's mass layoff is one of the starkest examples yet of companies moving from AI experimentation to outright workforce substitution. It signals that the AI displacement many economists warned about isn't a future scenario — it's happening now, and at scale, inside well-funded software firms.",
+        "headline": "American Airlines to install Starlink on 500-plus Airbus aircraft.",
+        "deck": "American Airlines announced Tuesday it will equip more than 500 Airbus jets with SpaceX's Starlink internet service. The deal marks another major carrier win for SpaceX ahead of its anticipated IPO.",
         "source": "TechCrunch",
-        "read": "5 min",
-        "url": "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
+        "read": "4 min",
+        "url": "https://techcrunch.com/2026/05/26/spacexs-starlink-nabs-american-airlines-contract-another-win-for-its-ipo/",
         "img": ""
     },
     {
         "num": "02",
-        "headline": "Pope Leo's 42,000-Word AI Encyclical Is Really a Warning About Power, Not Chatbots.",
-        "deck": "Pope Leo XIV's sweeping document 'Magnifica Humanitas' uses artificial intelligence as a vehicle to critique concentrated corporate power, eroding democracy, and the tech elite's outsized influence on society. Analysts note the pope even cites Gandalf — making this the rare papal document that crosses into pop culture while landing serious geopolitical punches.",
-        "source": "TechCrunch / Ars Technica",
-        "read": "6 min",
-        "url": "https://techcrunch.com/2026/05/25/the-popes-ai-encyclical-isnt-really-about-ai/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2277573960-1-500x500-1779741774.jpg"
+        "headline": "OpenRouter raises $113M Series B, valuation doubles to $1.3 billion.",
+        "deck": "OpenRouter, a platform routing queries across multiple AI models, closed a $113 million Series B led by CapitalG. Usage grew fivefold in six months, reflecting accelerating enterprise demand for multi-model AI infrastructure.",
+        "source": "TechCrunch",
+        "read": "4 min",
+        "url": "https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/",
+        "img": ""
     },
     {
         "num": "03",
-        "headline": "Ferrari Unveils Its First EV — Designed With Jony Ive and Marc Newson.",
-        "deck": "The Ferrari Luce is the legendary Italian marque's maiden all-electric vehicle, and it arrives with serious design pedigree: former Apple chief designer Jony Ive and his LoveFrom partner Marc Newson shaped its aesthetic. The collaboration suggests Ferrari is betting that the EV transition can be sold as a luxury design story, not just a green one.",
+        "headline": "Google retires Fitbit app, replaces it with Google Health platform.",
+        "deck": "Google has officially shut down the Fitbit app and launched Google Health as its unified wellness platform, coinciding with the release of the new Fitbit Air wearable. Users report friction in the transition to the redesigned interface.",
         "source": "The Verge",
-        "read": "4 min",
-        "url": "https://www.theverge.com/transportation/937066/ferrari-luce-ev-jony-ive-marc-newson-lovefrom",
+        "read": "3 min",
+        "url": "https://www.theverge.com/gadgets/937534/google-health-fitbit-app-ai",
         "img": ""
     }
 ],
 
   nycEvents: [
     {
-        "day": "Mon",
-        "num": 25,
-        "title": "Memorial Day Concert & Ceremony at Central Park",
-        "blurb": "The New York Philharmonic traditionally marks Memorial Day with free outdoor performances and city-wide ceremonies honor fallen service members. With clear 75°F skies, the Great Lawn is the best place to be in Manhattan today.",
+        "day": "Tue",
+        "num": 26,
+        "title": "2026 FIFA World Cup U.S. Men's National Team Roster Announcement",
+        "blurb": "Manager Mauricio Pochettino unveiled the USMNT squad for the 2026 World Cup at an event in New York City today. With the tournament hosted across North America this summer, the announcement draws local and national attention.",
+        "where": "Midtown, Manhattan",
+        "time": "Today",
+        "price": "Free",
+        "url": "https://www.cbsnews.com/news/world-cup-team-usa-players-2026/"
+    },
+    {
+        "day": "Tue",
+        "num": 26,
+        "title": "Evening Run in Central Park",
+        "blurb": "With a high of 81°F dropping to 59°F by evening, Tuesday offers ideal conditions for a park run. The 6.1-mile loop around the park's perimeter is well-lit and heavily used on warm spring evenings.",
         "where": "Central Park, Manhattan",
-        "time": "All day / Evening concert",
+        "time": "6:00 PM – 8:00 PM",
         "price": "Free",
-        "url": "https://www.centralparknyc.org"
+        "url": ""
     },
     {
-        "day": "Mon",
-        "num": 25,
-        "title": "Fleet Week NYC — Ship Tours at Intrepid & Pier 88",
-        "blurb": "Fleet Week 2026 runs through the holiday weekend, with U.S. Navy, Coast Guard, and allied vessels open for public tours along the Hudson. It's a rare chance to board active military ships and a fitting way to mark Memorial Day.",
-        "where": "Pier 86 & Pier 88, Hell's Kitchen",
-        "time": "10 a.m. – 5 p.m.",
-        "price": "Free",
-        "url": "https://www.intrepidmuseum.org/fleet-week"
-    },
-    {
-        "day": "Mon",
-        "num": 25,
-        "title": "Brooklyn Bridge Park Memorial Day Waterfront Picnic",
-        "blurb": "The park's lawns open fully for holiday picnicking with panoramic Manhattan skyline views — food vendors and pop-up markets typically line the promenade. Accessible via the A/C to High Street or the free ferry from Pier 11.",
-        "where": "Brooklyn Bridge Park, DUMBO",
-        "time": "All day",
-        "price": "Free",
-        "url": "https://www.brooklynbridgepark.org"
+        "day": "Tue",
+        "num": 26,
+        "title": "Union Square Greenmarket",
+        "blurb": "One of Manhattan's largest farmers markets runs Tuesday, Friday, and Saturday. Late May brings peak strawberries, asparagus, spring onions, and early lettuce from Hudson Valley and Long Island farms.",
+        "where": "Union Square, Manhattan",
+        "time": "8:00 AM – 6:00 PM",
+        "price": "Free entry",
+        "url": ""
     }
 ],
 
   worldEvents: [
     {
-        "day": "Mon",
-        "num": 25,
-        "title": "Iran War: Talks in Doha, Strikes in Gulf",
-        "blurb": "Iranian diplomats convened ceasefire negotiations in Qatar while the U.S. military simultaneously conducted new strikes on southern Iran — creating a dangerous contradiction that could collapse diplomacy before it gains traction.",
-        "where": "Doha, Qatar / Gulf of Oman",
+        "day": "Tue",
+        "num": 26,
+        "title": "U.S.–Iran military conflict escalates near Strait of Hormuz",
+        "blurb": "U.S. forces carried out fresh strikes on Iranian sites while diplomatic talks were underway in Doha. Iran condemned the action and warned of retaliation, raising concerns about Strait of Hormuz shipping lanes.",
+        "where": "Tehran, Iran / Doha, Qatar",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Mon",
-        "num": 25,
-        "title": "UK Records Hottest May Day in History at 34°C",
-        "blurb": "Britain shattered its May temperature record as a heat dome settled over Europe, coming just a day after the warmest May night ever recorded — a pattern scientists link directly to accelerating climate change.",
+        "day": "Tue",
+        "num": 26,
+        "title": "UK records hottest May day in history for second consecutive day",
+        "blurb": "Provisional figures show temperatures reached 35.1°C at Kew Gardens in south-west London, breaking the previous day's record. The heat event is being monitored by UK meteorological authorities.",
         "where": "London, United Kingdom",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Mon",
-        "num": 25,
-        "title": "Pope Leo XIV Releases Landmark AI Encyclical",
-        "blurb": "The Roman Catholic Church's leader issued 'Magnifica Humanitas,' a 42,300-word document calling for the 'disarmament' of AI and warning that unchecked technology concentrates power in ways that threaten human dignity and democratic governance worldwide.",
-        "where": "Vatican City",
-        "time": "Published today",
+        "day": "Tue",
+        "num": 26,
+        "title": "Four killed as school minibus struck by train in Belgium",
+        "blurb": "A collision between a school minibus and a train in Belgium killed two schoolchildren, their chaperone, and the driver. A Belgian minister confirmed the fatalities.",
+        "where": "Belgium",
+        "time": "Today",
         "price": "—"
     }
 ],
@@ -682,45 +756,81 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "May 2026 · seasonal",
-        "copy": "",
+        "copy": "Late May in New York brings some of the year's best local produce. Hudson Valley strawberries hit their peak, asparagus is still running, and the first sugar snap peas and spring onions arrive at greenmarkets.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
-                    {"b": "Strawberries", "text": "peak late May — local farms at Union Square Greenmarket; eat fresh or with Greek yogurt"},
-                    {"b": "Asparagus", "text": "Hudson Valley stalks at their sweetest; roast with olive oil or shave raw into salads"},
-                    {"b": "Pea shoots", "text": "tender and nutrient-dense; toss into stir-fries or top on toast"},
-                    {"b": "Rhubarb", "text": "tart spring stalks good for compotes or baked with oats and honey"}
+                    {
+                        "b": "Strawberries",
+                        "text": "Local Hudson Valley strawberries peak in late May — smaller and more flavorful than supermarket varieties. Eat fresh, halved over yogurt, or macerated with a touch of balsamic."
+                    },
+                    {
+                        "b": "Asparagus",
+                        "text": "New York and New Jersey asparagus season runs through early June. Roast at high heat with olive oil and lemon, or shave raw into salads."
+                    },
+                    {
+                        "b": "Sugar Snap Peas",
+                        "text": "Arriving now at Union Square Greenmarket from local farms. Eat raw with hummus, toss into grain bowls, or lightly sauté with garlic and mint."
+                    },
+                    {
+                        "b": "Spring Onions",
+                        "text": "Milder than storage onions and abundant in May. Grill whole as a side, slice thin into slaws, or use tops like scallions in any dish."
+                    }
                 ]
             },
             {
                 "label": "Meal Ideas",
                 "items": [
-                    {"b": "Breakfast", "text": "Greek yogurt with sliced strawberries and granola"},
-                    {"b": "Lunch", "text": "shaved asparagus and pea shoot salad with lemon vinaigrette and soft-boiled egg"},
-                    {"b": "Dinner", "text": "grilled salmon with roasted asparagus and a side of brown rice"}
+                    {
+                        "b": "Breakfast",
+                        "text": "Greek yogurt bowl with sliced local strawberries, a drizzle of honey, and a handful of granola — fast, high-protein, and built around peak fruit."
+                    },
+                    {
+                        "b": "Lunch",
+                        "text": "Farro salad with shaved raw asparagus, sugar snap peas, spring onion, lemon-Dijon vinaigrette, and crumbled feta."
+                    },
+                    {
+                        "b": "Dinner",
+                        "text": "Pan-seared chicken thighs with a spring onion and sugar snap pea stir-fry in sesame oil; strawberries with black pepper for dessert."
+                    }
                 ]
             }
         ]
     },
     "move": {
         "title": "Move your body",
-        "sub": "May · clear 64°F",
-        "copy": "",
+        "sub": "May · partly cloudy 81°F",
+        "copy": "Partly cloudy skies and 81°F with low humidity make today well-suited for outdoor activity, particularly in the morning before UV index peaks at 8. Hydrate before, during, and after any outdoor session.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
-                    {"b": "Strength", "text": "lower body focus — squats, Romanian deadlifts, hip thrusts (3×10)"},
-                    {"b": "Cardio", "text": "30-min incline treadmill walk or row machine intervals"},
-                    {"b": "Recovery", "text": "foam roll quads and hip flexors; 5-min static stretch after"}
+                    {
+                        "b": "Strength",
+                        "text": "Focus on posterior chain today — deadlifts, Romanian deadlifts, and seated rows. Three to four sets of 6–8 reps at moderate-to-heavy load."
+                    },
+                    {
+                        "b": "Cardio",
+                        "text": "If exercising outdoors, go before 10 AM or after 5 PM to avoid peak UV-8 intensity. A 30-minute brisk walk or easy jog in Central Park is appropriate for the temperature."
+                    },
+                    {
+                        "b": "Recovery",
+                        "text": "Spend 10 minutes on a foam roller targeting hamstrings, glutes, and thoracic spine after lifting. Finish with a 5-minute cold or contrast shower to reduce core temperature."
+                    }
                 ]
             },
             {
                 "label": "Yoga / Pilates",
                 "items": [
-                    {"b": "Morning", "text": "sun salutation flow × 5 rounds — 15 min to wake up the spine"},
-                    {"b": "Evening", "text": "yin yoga: dragon pose and supported fish — hold 3 min each"}
+                    {
+                        "b": "Morning",
+                        "text": "15-minute energizing flow: Sun Salutation A x3, Warrior I and II each side, Triangle Pose, and finish in a seated forward fold. Sets intention and opens the hips before a full day."
+                    },
+                    {
+                        "b": "Evening",
+                        "text": "Restorative wind-down: Legs-up-the-wall (Viparita Karani) for 5 minutes, then supported reclined bound angle with a bolster. Calms the nervous system before sleep."
+                    }
                 ]
             }
         ]
@@ -728,22 +838,40 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "",
+        "copy": "Core daily supplements support baseline function year-round. Cycle-aware and stress-aware options below are situational — add only when relevant to your current phase or circumstances.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
-                    {"b": "Vitamin D3", "text": "1,000–2,000 IU with breakfast — most urban adults stay deficient despite sunny weather"},
-                    {"b": "Magnesium glycinate", "text": "200–400 mg at night — supports sleep, muscle recovery, and stress regulation"},
-                    {"b": "Omega-3", "text": "1–2 g EPA/DHA with largest meal — anti-inflammatory and supports mood"}
+                    {
+                        "b": "Vitamin D3",
+                        "text": "2,000–4,000 IU with breakfast alongside a fat-containing meal for best absorption. Even in sunny May, urban dwellers often run low due to limited direct sun exposure."
+                    },
+                    {
+                        "b": "Magnesium",
+                        "text": "300–400 mg magnesium glycinate (preferred form for absorption and tolerability) taken 30–60 minutes before bed. Supports sleep, muscle recovery, and stress regulation."
+                    },
+                    {
+                        "b": "Omega-3",
+                        "text": "1,000–2,000 mg combined EPA/DHA from fish oil, taken with a meal. Supports cardiovascular health, inflammation management, and cognitive function."
+                    }
                 ]
             },
             {
                 "label": "Occasionally / As Needed",
                 "items": [
-                    {"b": "Iron", "text": "during menstruation — take with vitamin C, away from coffee; check levels annually"},
-                    {"b": "Ashwagandha", "text": "300–600 mg during high-stress periods — reduces cortisol; cycle 8 weeks on / 2 weeks off"},
-                    {"b": "B-complex", "text": "during luteal phase or fatigue — supports energy metabolism and mood in the week before period"}
+                    {
+                        "b": "Iron",
+                        "text": "During menstruation: 18–25 mg ferrous bisglycinate with vitamin C on an empty stomach or between meals. Avoid taking with coffee, tea, or calcium within two hours."
+                    },
+                    {
+                        "b": "Ashwagandha",
+                        "text": "During high-stress periods: 300–600 mg KSM-66 extract once daily with food, morning or evening. Cycle on for 6–8 weeks, then take a 2-week break."
+                    },
+                    {
+                        "b": "B-complex",
+                        "text": "During luteal phase or periods of fatigue: one B-complex with breakfast. B6 supports progesterone balance and mood; B12 and folate address energy dips common in the luteal window."
+                    }
                 ]
             }
         ]
@@ -752,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Physics",
-        "headline": "Gravity May Be the Missing Key to a Unified Theory of Everything, New Research Suggests.",
-        "deck": "A radical rewrite of quantum mechanics that incorporates gravity could finally reconcile the two great incompatible pillars of modern physics — and reveals that time itself may have an irreducible 'fuzziness' at the smallest scales. If the framework holds, it would represent the most significant theoretical physics advance in a generation, reshaping our understanding of reality from the Big Bang to black holes.",
-        "source": "New Scientist",
-        "url": "https://www.newscientist.com/article/2526507-does-gravity-create-reality-a-shocking-path-to-a-theory-of-everything/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home",
-        "img": "https://images.newscientist.com/wp-content/uploads/2026/05/13133140/SEI_296754903.jpg",
-        "caption": "A new quantum-gravity framework may finally unify physics"
+        "cat": "Cover discovery · Solar Science",
+        "headline": "Scientists detect warning patterns hours before major solar flares.",
+        "deck": "Researchers identified consistent precursor patterns in solar activity that appear several hours before large flare events. The findings could form the basis of an early-warning system for solar storms that threaten satellites, power grids, and communications infrastructure.",
+        "source": "Science News",
+        "url": "https://www.sciencenews.org/article/solar-flare-warning-signs-eruptions",
+        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/051426_LG_solarflares_main.jpg?w=800",
+        "caption": "Solar flares may produce detectable signals hours before eruption, new research finds."
     },
     "more": [
         {
-            "field": "Epidemiology",
-            "title": "A Rare Ebola Strain in Congo Is Exposing Dangerous Gaps in Global Readiness.",
-            "deck": "Congo's growing Bundibugyo Ebola outbreak is straining public health systems that prepared for a different strain, forcing responders to revert to old-school containment tactics while scientists scramble for new tools.",
-            "url": "https://www.sciencenews.org/article/congo-ebola-rare-strain-gaps-readiness"
+            "field": "Atmospheric Science",
+            "title": "Intensifying storms and worsening drought are both symptoms of the same driver.",
+            "deck": "About two-thirds of the U.S. is in drought in late spring 2026, even as extreme downpours increase. Researchers say both trends are consistent with rising global temperatures altering the water cycle.",
+            "url": "https://phys.org/news/2026-05-stronger-storms-droughts-worse.html"
         },
         {
-            "field": "Materials Science",
-            "title": "Physics Finally Explains Why Gold Never Tarnishes.",
-            "deck": "A new study reveals that gold avoids oxidation through a rapid atomic surface rearrangement that blocks oxygen from bonding — a quantum-level trick that copper and other metals simply can't perform.",
-            "url": "https://www.sciencenews.org/article/physics-explains-gold-shiny-oxidize"
+            "field": "Space Weather",
+            "title": "Geomagnetic storms can flip train signals, posing collision risk.",
+            "deck": "Researchers warn that safety-critical signaling systems in many rail networks are vulnerable to space weather disruptions. A severe solar storm could trigger false-clear signals, potentially causing serious accidents.",
+            "url": "https://www.newscientist.com/article/2527673-space-storms-could-switch-train-signals-and-cause-serious-accidents/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
         },
         {
-            "field": "Archaeology / Medicine",
-            "title": "Ming Dynasty Surgeons Used a Toxic Chemical as a Controlled Anesthetic as Early as 1348.",
-            "deck": "Microscopic residue analysis on surgical instruments from a Chinese tomb reveals sophisticated, deliberate use of a highly toxic anesthetic compound — rewriting assumptions about the history of surgical medicine in East Asia.",
-            "url": "https://phys.org/news/2026-05-ancient-anesthetic-reveals-ming-china.html"
+            "field": "Virology",
+            "title": "Andes hantavirus attacks the lungs through a mechanism distinct from other respiratory pathogens.",
+            "deck": "New research into the Andes strain of hantavirus reveals its method of causing lethal lung failure differs from influenza and SARS-CoV-2. The distinction may point toward targeted treatment approaches.",
+            "url": "https://www.sciencenews.org/article/andes-hantavirus-treatments-lung-fail"
         }
     ]
 },
@@ -785,29 +913,29 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "Pope Leo's Unsettling Vision of the AI Future.",
-        "deck": "A deep read on 'Magnifica Humanitas' and why the new pope's encyclical — despite gestures toward hope — lands as a fundamentally alarmed document about where AI-driven civilization is heading.",
-        "author": "by The Atlantic Staff",
+        "headline": "The Advice I Hope You'll Never Need.",
+        "deck": "A survivor of two separate school shootings writes about what the experience taught them — and what they would tell others. A reported personal essay on preparedness, trauma, and institutional failure.",
+        "author": "by The Atlantic",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/ideas/2026/05/pope-leo-ai-encyclical-magnifica-humanitas/687294/?utm_source=feed",
+        "url": "https://www.theatlantic.com/ideas/2026/05/i-survived-two-school-shootings/687295/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "Paleontologists Discover 'Tylosaurus rex' — a 43-Foot Sea Monster That Ruled the Cretaceous.",
-        "deck": "Scientists untangled a case of mistaken fossil identity to crown a new apex predator of the ancient seas — a mosasaur the length of a school bus that may upend our understanding of Cretaceous marine ecosystems.",
-        "author": "by Smithsonian Staff",
+        "headline": "Scientists identify warning signs that preceded Alaska's 2025 mega-tsunami.",
+        "deck": "A landslide at Tracy Arm fjord near Juneau triggered a massive wave in 2025. Researchers have now identified precursor indicators that could help predict similar events as climate change accelerates glacial and slope instability.",
+        "author": "by Smithsonian Magazine",
         "read": "8 min",
-        "url": "https://www.smithsonianmag.com/smart-news/paleontologists-discover-an-ancient-marine-reptile-theyve-dubbed-the-t-rex-of-the-sea-crowning-another-king-of-the-cretaceous-180988792/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/V6xiNcPL4sa3uEkSjHXQRaIZhuQ=/420x240/filters:focal(1414x757:1415x758)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/50/ec/50ec4aa5-90cd-4286-857c-71ee105af444/1b_tylosaurus_rex_reconstruction_alderon_games_-_path_of_titans.jpg"
+        "url": "https://www.smithsonianmag.com/smart-news/a-sudden-landslide-triggered-alaskas-2025-mega-tsunami-now-scientists-have-identified-warning-signs-to-predict-similar-events-180988797/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/N3pRYbk5pq71tFTZm_SdrRSZcs0=/420x240/filters:focal(750x357:751x358)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/67/3a/673a0406-09a2-4385-9572-9a5dccbaf18c/tracy-arm.webp"
     },
     {
         "pub": "NYT World",
-        "headline": "Cubans Cook Over Charcoal and Wood Fires as the U.S. Oil Blockade Bites Deep.",
-        "deck": "In Santiago de Cuba — birthplace of the revolution — apartment residents have been reduced to burning charcoal and firewood to cook meals, a visceral portrait of how the American oil embargo is dismantling daily life across the island.",
-        "author": "by NYT Correspondents",
+        "headline": "The wars in Ukraine and Iran share more than geography.",
+        "deck": "Drone warfare tactics, shifting global alignments, and parallel diplomatic stalemates show how the two conflicts are shaping each other — and what they suggest about the structure of future wars.",
+        "author": "by The New York Times",
         "read": "9 min",
-        "url": "https://www.nytimes.com/2026/05/25/world/americas/cuba-blackouts-fire-energy-oil.html",
+        "url": "https://www.nytimes.com/2026/05/26/world/middleeast/iran-ukraine-wars-similarities.html",
         "img": ""
     }
 ]
