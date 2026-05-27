@@ -2,8 +2,8 @@ name: Daily Digest
 
 on:
   schedule:
-    # 9:00 AM EDT = 13:00 UTC  (EDT is UTC-4, runs May–Nov)
-    - cron: '0 13 * * *'
+    # 8:00 AM EDT = 12:00 UTC  (EDT is UTC-4, runs May–Nov)
+    - cron: '0 12 * * *'
   workflow_dispatch:          # allow manual trigger any time
 
 permissions:
