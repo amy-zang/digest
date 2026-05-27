@@ -2,8 +2,8 @@ name: Daily Digest
 
 on:
   schedule:
-    # 8:00 AM EDT = 12:00 UTC  (EDT is UTC-4, runs May–Nov)
-    - cron: '0 12 * * *'
+    # 6:00 AM UTC — arrives by ~8-9 AM EDT even with GitHub delays
+    - cron: '0 6 * * *'
   workflow_dispatch:          # allow manual trigger any time
 
 permissions:
