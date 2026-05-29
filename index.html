@@ -509,134 +509,134 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 4, 28),
-  edition: "Vol. III · No. 148",
+  date: new Date(2026, 4, 29),
+  edition: "Vol. III · No. 149",
   location: "Manhattan, NY",
-  weatherStrip: "76°F · Partly Cloudy · UV 7 · Manhattan",
+  weatherStrip: "77°F · Clear · UV 8 · Manhattan",
 
   topStories: [
     {
-        "category": "World · Conflict",
-        "headline": "U.S. and Iran Trade Strikes as Negotiators Report Draft Deal Awaiting Leader Approval.",
-        "deck": "U.S. and Iranian forces exchanged strikes Wednesday, with Iran targeting a U.S. base after what the Pentagon called defensive operations. Negotiators report a tentative 60-day ceasefire framework; neither Trump nor Iranian leadership has approved it.",
-        "source": "ABC News / CBS News",
+        "category": "World · Security",
+        "headline": "Russian Drone Strikes Romanian Apartment Block, NATO and EU Condemn Moscow.",
+        "deck": "A Russian drone hit a residential building in Romania, a NATO member state. The alliance condemned Russia's actions as reckless escalation.",
+        "source": "BBC News / NYT",
         "bias": "Center",
-        "read": "6 min",
-        "url": "https://abcnews.com/International/live-updates/iran-live-updates-peace-deal-work-progress-rubio/?id=133278077",
-        "img": "https://s.abcnews.com/images/US/cabinet-15-gty-gmh-260527_1779902436683_hpMain_4x3t_384.jpg",
-        "caption": "Negotiations continue amid active exchanges of fire."
+        "read": "5 min",
+        "url": "https://www.nytimes.com/2026/05/29/world/europe/romania-drone-russia-ukraine.html",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0481/live/15366340-5b3b-11f1-9a6c-c14292377fff.jpg",
+        "caption": "Drone debris at the Romanian residential site, May 29."
     },
     {
-        "category": "U.S. · Politics",
-        "headline": "35 Former Federal Judges Ask Court to Reopen Dispute Over Trump's $1.776B Anti-Weaponization Fund.",
-        "deck": "A coalition of ex-federal judges filed a motion calling the settlement deal potentially fraudulent. The fund was established in a legal agreement between the Trump administration and the government.",
-        "source": "CBS News",
+        "category": "US · Politics",
+        "headline": "Trump Promises 'Final Determination' on Iran Nuclear Proposal as Talks Continue.",
+        "deck": "President Trump said he was meeting with aides at the White House on a response to Iran. Iran has not confirmed any commitments to U.S. conditions.",
+        "source": "The New York Times",
         "bias": "Center-Left",
-        "read": "4 min",
-        "url": "https://www.cbsnews.com/news/dozens-of-ex-judges-push-look-into-trump-anti-weaponization-fund-fraud-on-the-court/",
+        "read": "6 min",
+        "url": "https://www.nytimes.com/live/2026/05/29/world/iran-war-us-trump-deal",
         "img": "",
-        "caption": "Former judges allege fraud on the court in fund settlement."
+        "caption": "White House negotiations over Iran proposal continue Friday."
     },
     {
-        "category": "World · Middle East",
-        "headline": "Israeli Strike on Gaza City Reportedly Kills Several, Including at Least Five Children.",
-        "deck": "A strike in Gaza City hit what appears to have been a location tied to a Hamas commander. Hospital officials reported multiple civilian casualties including children.",
-        "source": "BBC News",
+        "category": "US · Justice",
+        "headline": "Former AG Pam Bondi Testifies Behind Closed Doors in House Epstein Probe.",
+        "deck": "Bondi appeared before the House Oversight Committee on Friday regarding her handling of Epstein files. The session was closed to the public.",
+        "source": "CBS News",
         "bias": "Center",
         "read": "4 min",
-        "url": "https://www.bbc.com/news/articles/cn9p40en4ngo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ac09/live/d65f99a0-5aa1-11f1-9626-f75d5d5577d2.jpg",
-        "caption": "Strike targets Hamas leadership in Gaza City."
+        "url": "https://www.cbsnews.com/news/pam-bondi-epstein-files-house-oversight-committee/",
+        "img": "",
+        "caption": "Bondi testified before the House Oversight Committee, May 29."
     }
 ],
 
   weather: {
-    "now": 76,
-    "condition": "Partly Cloudy",
-    "feels": 72,
-    "high": 77,
-    "low": 61,
-    "uv": 7,
+    "now": 77,
+    "condition": "Clear",
+    "feels": 75,
+    "high": 78,
+    "low": 56,
+    "uv": 8,
     "rain": false,
-    "wind": "Breezy",
+    "wind": "Calm",
     "sunrise": "5:28a",
-    "sunset": "8:17p",
+    "sunset": "8:18p",
     "hours": [
         {
             "h": "Now",
             "t": 75,
-            "ic": "cloud"
+            "ic": "sun"
         },
         {
             "h": "+2h",
-            "t": 74,
-            "ic": "cloud"
+            "t": 78,
+            "ic": "sun"
         },
         {
             "h": "+5h",
-            "t": 73,
+            "t": 77,
             "ic": "sun"
         },
         {
             "h": "+8h",
-            "t": 66,
+            "t": 72,
             "ic": "cloud"
         },
         {
             "h": "+11h",
-            "t": 60,
-            "ic": "sun"
+            "t": 69,
+            "ic": "cloud"
         }
     ],
     "forecast7": [
         {
-            "day": "THU",
-            "high": 77,
-            "low": 61,
-            "ic": "cloud",
-            "rain": false
-        },
-        {
             "day": "FRI",
             "high": 78,
-            "low": 54,
+            "low": 56,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "SAT",
-            "high": 68,
+            "high": 69,
             "low": 51,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "SUN",
-            "high": 77,
-            "low": 53,
+            "high": 76,
+            "low": 45,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "MON",
             "high": 73,
-            "low": 58,
-            "ic": "cloud",
-            "rain": false
+            "low": 62,
+            "ic": "rain",
+            "rain": true
         },
         {
             "day": "TUE",
-            "high": 59,
-            "low": 55,
+            "high": 75,
+            "low": 53,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "WED",
-            "high": 66,
-            "low": 53,
-            "ic": "rain",
-            "rain": true
+            "high": 82,
+            "low": 58,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "THU",
+            "high": 78,
+            "low": 65,
+            "ic": "cloud",
+            "rain": false
         }
     ],
     "outfit": [
@@ -654,7 +654,7 @@ const DIGEST = {
         },
         {
             "label": "Sunscreen",
-            "val": "Yes — UV 7, high"
+            "val": "Yes — UV 8, high"
         }
     ]
 },
@@ -662,92 +662,92 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "Anthropic Releases Claude Opus 4.8 With Enhanced Honesty Training.",
-        "deck": "Anthropic released Claude Opus 4.8 on Thursday, emphasizing \"honesty\" improvements designed to reduce false claims and better acknowledge model errors. The company says honesty is trained across all its models.",
-        "source": "The Verge",
-        "read": "3 min",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/939094/anthropic-claude-4-8-opus-honesty-effort",
-        "img": ""
+        "headline": "Blue Origin Rocket Explosion Casts Doubt on NASA Moon Program Timeline.",
+        "deck": "A Blue Origin rocket exploded, setting back the company's launch ambitions and NASA's lunar plans. The incident raises questions about the viability of current Moon mission schedules.",
+        "source": "BBC News",
+        "read": "4 min",
+        "url": "https://www.bbc.com/news/articles/cwy2q0g07kgo?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a3d4/live/c55b7990-5b4a-11f1-a62b-2f41c7c3a318.jpg"
     },
     {
         "num": "02",
-        "headline": "Illinois Passes Landmark AI Safety Law as States Fill Federal Regulatory Void.",
-        "deck": "Illinois enacted an AI safety testing law with backing from both Anthropic and OpenAI, marking a significant move by a U.S. state to regulate artificial intelligence. The law comes as the Trump administration has pulled back from federal AI oversight.",
-        "source": "Ars Technica",
-        "read": "5 min",
-        "url": "https://arstechnica.com/tech-policy/2026/05/trump-loses-more-control-over-ai-regulation-as-illinois-passes-landmark-law/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1476750862-500x500-1779984827.jpg"
+        "headline": "AI Chip Startup Groq Reportedly Raising $650M After Nvidia's $20B Deal.",
+        "deck": "Groq is seeking $650 million in internal funding as it shifts focus from hardware to AI inference. The raise follows Nvidia's reported $20 billion non-acquisition arrangement with the firm.",
+        "source": "TechCrunch",
+        "read": "3 min",
+        "url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
+        "img": ""
     },
     {
         "num": "03",
-        "headline": "Steam Deck Sells Out in North America Within 24 Hours of Price Increase.",
-        "deck": "Valve's Steam Deck handheld gaming device sold out across North America within a day of a price hike taking effect. Units remain available in Europe, Australia, and parts of Asia.",
-        "source": "Ars Technica",
-        "read": "3 min",
-        "url": "https://arstechnica.com/gaming/2026/05/despite-price-hike-steam-deck-is-already-sold-out-in-north-america/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2023/11/IMG_8144-500x500.jpg"
+        "headline": "Startup Offers Free Home Cleaning in Exchange for Robot Training Video Footage.",
+        "deck": "An AI training company called Shift is sending camera-equipped workers to clean New York homes at no charge, collecting footage for robot training data. The program is set to expand to other cities including London.",
+        "source": "The Verge / Ars Technica",
+        "read": "4 min",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-9.24.24-AM-500x500.png"
     }
 ],
 
   nycEvents: [
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "Bryant Park Picnic Season",
-        "blurb": "Bryant Park's lawns are open for picnicking through the summer. The park's central lawn is ideal on a partly cloudy 76°F afternoon; free to enter, with nearby food kiosks and lawn chairs available.",
-        "where": "Midtown, Manhattan",
-        "time": "All day",
+        "day": "Fri",
+        "num": 29,
+        "title": "Fleet Week New York 2026",
+        "blurb": "U.S. Navy, Marine Corps, and Coast Guard ships are docked along the Hudson River for the annual Fleet Week. Sailors and Marines participate in public events across the city through June 4.",
+        "where": "Intrepid Sea, Air & Space Museum, Midtown West",
+        "time": "10:00 AM – 5:00 PM",
         "price": "Free",
-        "url": "https://bryantpark.org"
+        "url": "https://www.intrepidmuseum.org/fleet-week-new-york"
     },
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "Governors Island Opening Weekend",
-        "blurb": "Governors Island opens for the 2026 season this weekend, offering car-free bike paths, public art installations, and sweeping harbor views. Ferries depart from Lower Manhattan and Brooklyn.",
-        "where": "Lower Manhattan / Governors Island",
-        "time": "10:00 AM – 6:00 PM",
-        "price": "$3 ferry",
-        "url": "https://govisland.com"
+        "day": "Fri",
+        "num": 29,
+        "title": "SummerStage Free Kickoff — Central Park",
+        "blurb": "City Parks Foundation's SummerStage kicks off its free outdoor concert season in Central Park. A strong lineup of live music makes this a reliable Memorial Day weekend tradition for Manhattanites.",
+        "where": "Rumsey Playfield, Central Park",
+        "time": "3:00 PM – 8:00 PM",
+        "price": "Free",
+        "url": "https://cityparksfoundation.org/summerstage/"
     },
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "Union Square Greenmarket",
-        "blurb": "The year-round farmers market runs Thursday mornings at Union Square with peak late-May produce including strawberries, asparagus, ramps, and spring lettuces from regional farms.",
-        "where": "Union Square, Manhattan",
-        "time": "8:00 AM – 6:00 PM",
-        "price": "Free entry",
-        "url": "https://www.grownyc.org/greenmarket/manhattan-union-square-m"
+        "day": "Fri",
+        "num": 29,
+        "title": "Brooklyn Bridge Park Sunset Picnic",
+        "blurb": "With clear skies forecast and sunset at 8:18 PM, the Brooklyn Bridge Park waterfront offers exceptional views for a Memorial Day weekend evening picnic. The park's Pier 1 lawn is open to all.",
+        "where": "Pier 1, Brooklyn Bridge Park",
+        "time": "6:30 PM – Sunset",
+        "price": "Free",
+        "url": "https://brooklynbridgepark.org"
     }
 ],
 
   worldEvents: [
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "U.S.-Iran Conflict: Draft Ceasefire Deal Reported, Not Yet Approved",
-        "blurb": "Negotiators say a tentative 60-day agreement has been drafted to end the three-month U.S.-Iran conflict, but neither President Trump nor Iranian leadership has signed off. Both sides traded strikes Wednesday, with Iran launching a ballistic missile toward Kuwait.",
-        "where": "Middle East / Oman",
+        "day": "Fri",
+        "num": 29,
+        "title": "NATO Condemns Russian Drone Strike on Romanian Apartment Block",
+        "blurb": "A Russian drone, likely deflected by Ukrainian air defenses, struck a residential building in Romania. NATO and the EU issued formal condemnations of Moscow on Friday.",
+        "where": "Romania",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "Europe Records Hottest May Temperatures in France and Portugal",
-        "blurb": "France and Portugal broke their all-time May temperature records on Thursday amid a continent-wide heat wave. Italy issued a red alert for Rome as the heat wave continues to affect major European capitals.",
-        "where": "Europe",
+        "day": "Fri",
+        "num": 29,
+        "title": "Trump Signals 'Final Determination' on Iran Nuclear Proposal",
+        "blurb": "President Trump stated he was consulting aides on a definitive U.S. response to an Iranian nuclear proposal. Iran has not publicly confirmed agreement to U.S. preconditions.",
+        "where": "Washington, D.C. / Tehran",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Thu",
-        "num": 28,
-        "title": "Australia Sues 3M for $1.4 Billion Over PFAS Contamination at Defense Bases",
-        "blurb": "The Australian government filed a lawsuit against 3M seeking more than 2 billion Australian dollars in damages over per- and polyfluoroalkyl substance contamination from firefighting foam used at military installations.",
-        "where": "Canberra, Australia",
-        "time": "Filed Thu, May 28",
+        "day": "Fri",
+        "num": 29,
+        "title": "Kenneth Law Admits Aiding Suicides via Online Chemical Sales",
+        "blurb": "Kenneth Law pleaded guilty in Canada to charges of aiding suicides by selling toxic chemicals online to buyers worldwide. Families of 79 British victims are pressing for additional UK charges.",
+        "where": "Canada / United Kingdom",
+        "time": "Ongoing",
         "price": "—"
     }
 ],
@@ -756,26 +756,26 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "May 2026 · seasonal",
-        "copy": "Late May in New York brings some of the year's best farmers market finds. Strawberries peak now, asparagus is at its most tender, and spring greens are abundant before summer heat sets in.",
+        "copy": "New York's greenmarkets are at peak spring bounty this week. Prioritize what's local and freshly harvested.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "New York-grown strawberries peak in late May with concentrated flavor; eat fresh, slice into yogurt, or macerate with a little lemon zest."
+                        "text": "Hudson Valley strawberries peak in late May — sweeter and more aromatic than shipped varieties. Eat fresh with yogurt or slice into salads."
                     },
                     {
                         "b": "Asparagus",
-                        "text": "Local asparagus is at peak tenderness before summer heat turns it woody; roast with olive oil, or shave raw into a salad."
+                        "text": "Local asparagus is at its most tender before summer heat sets in. Roast with olive oil or shave raw into a lemon vinaigrette."
                     },
                     {
-                        "b": "Spring Peas",
-                        "text": "Fresh snap and shelling peas arrive at Union Square Greenmarket now; add raw to grain bowls or quickly sauté with mint and butter."
+                        "b": "Snap Peas",
+                        "text": "Sugar snap peas arrive at greenmarkets now, crisp and naturally sweet. Eat raw as a snack, or stir-fry briefly to preserve crunch."
                     },
                     {
-                        "b": "Baby Spinach & Spring Lettuces",
-                        "text": "Cool spring nights keep greens sweet and crisp this month; use as a base for warm-grain salads or wilt lightly into eggs."
+                        "b": "Rhubarb",
+                        "text": "Tart rhubarb stalks are available through early June at Union Square Greenmarket. Stew with a touch of honey for compotes or overnight oats."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt parfait layered with fresh sliced strawberries, a drizzle of honey, and toasted oats."
+                        "text": "Greek yogurt parfait layered with sliced fresh strawberries, rhubarb compote, and granola."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Shaved asparagus and spring pea salad over farro with lemon-Dijon vinaigrette and shaved Pecorino."
+                        "text": "Shaved asparagus and snap pea salad with farro, feta, and lemon-Dijon dressing."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Seared salmon fillet over baby spinach wilted in garlic and olive oil, finished with roasted asparagus spears and lemon."
+                        "text": "Pan-seared salmon with roasted asparagus spears and a strawberry-arugula side salad."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "May · partly cloudy 76°F",
-        "copy": "At 76°F with cloud cover and low humidity, today is well-suited for outdoor exercise. UV index is 7 — apply SPF 30+ for any activity lasting more than 30 minutes outside.",
+        "sub": "May · clear 77°F",
+        "copy": "Clear skies and a high of 78°F make this an ideal Friday to train outdoors. UV index hits 8 midday — apply SPF 30+ before any outdoor session.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Focus on posterior chain today — deadlifts, Romanian deadlifts, and hamstring curls. 3–4 sets of 6–8 reps at moderate-to-heavy load."
+                        "text": "Focus on posterior chain — deadlifts, Romanian deadlifts, and glute bridges. Three sets of 8–10 reps at moderate load heading into a long weekend."
                     },
                     {
                         "b": "Cardio",
-                        "text": "Conditions favor an outdoor run in Central Park — aim for 30–40 minutes at a conversational pace; cloud cover keeps exertion manageable."
+                        "text": "A 30–40 minute outdoor run in Central Park or along the Hudson River Greenway before 10 AM to beat peak UV. Keep pace conversational."
                     },
                     {
                         "b": "Recovery",
-                        "text": "Follow lifting with 10 minutes of hip-flexor and hamstring stretching; use a foam roller on the IT band and thoracic spine."
+                        "text": "Finish with 10 minutes of hip flexor and hamstring stretching. Hydrate with electrolytes after any outdoor sweat session in this humidity."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "A 20-minute Sun Salutation B flow (Surya Namaskar B) to build warmth and activate the legs and core before the workday."
+                        "text": "Sun salutation A and B flow, 5 rounds each, followed by low lunge and crescent pose to open the hips. Practice outdoors if possible at sunrise."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative practice: supported bridge pose, legs-up-the-wall (Viparita Karani), and reclined spinal twist held 3–5 minutes each to downregulate the nervous system."
+                        "text": "Restorative supine twist, legs-up-the-wall (Viparita Karani) for 5 minutes, and a 5-minute Savasana with a bolster under the knees to wind down."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Core daily supplements support baseline function year-round. Cycle-aware and stress-aware additions should be taken only during the relevant phase or period of need.",
+        "copy": "Foundational support first; cycle- and stress-aware additions as needed. Consult a healthcare provider before starting any new supplement protocol.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "2,000–4,000 IU taken with your largest meal for best fat-soluble absorption; even on sunny days, urban sun exposure is often insufficient."
+                        "text": "1,000–2,000 IU with breakfast alongside a fat-containing meal for optimal absorption. Despite sunny weather, most adults remain insufficient."
                     },
                     {
                         "b": "Magnesium",
-                        "text": "300–400 mg magnesium glycinate or malate taken 30–60 minutes before bed; supports sleep quality, muscle recovery, and stress regulation."
+                        "text": "200–400 mg magnesium glycinate taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and stress regulation."
                     },
                     {
-                        "b": "Omega-3 (EPA/DHA)",
-                        "text": "1,000–2,000 mg combined EPA/DHA from fish oil with a meal; supports cardiovascular health, inflammation regulation, and mood."
+                        "b": "Omega-3",
+                        "text": "1–2 g combined EPA/DHA from fish oil with lunch or dinner. Reduces systemic inflammation and supports cardiovascular and cognitive health."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "18–27 mg ferrous bisglycinate taken on an empty stomach with vitamin C during menstruation to replace losses; avoid within 2 hours of coffee or calcium."
+                        "text": "18–27 mg ferrous bisglycinate with vitamin C on an empty stomach during menstruation. Avoid taking within 2 hours of coffee or calcium."
                     },
                     {
-                        "b": "Ashwagandha (KSM-66)",
-                        "text": "300–600 mg daily during high-stress periods; take with food in the morning or evening — not for indefinite daily use; cycle off after 8–12 weeks."
+                        "b": "Ashwagandha",
+                        "text": "300–600 mg KSM-66 extract with dinner during high-stress periods. Cycle on for 8 weeks, off for 4. Not recommended during pregnancy."
                     },
                     {
-                        "b": "B-Complex",
-                        "text": "One B-complex with breakfast during the luteal phase (days 15–28) or periods of fatigue and brain fog; B6 and B12 in particular support mood and energy metabolism."
+                        "b": "B-complex",
+                        "text": "One B-complex capsule with breakfast during the luteal phase (days 15–28) or periods of sustained fatigue. Supports progesterone metabolism and energy."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Medical Technology",
-        "headline": "$4 Tongue Swab Detects Active Tuberculosis in 30 Minutes.",
-        "deck": "A low-cost diagnostic test using a tongue swab identifies active TB within 30 minutes, requiring no laboratory equipment or phlegm sample. Researchers say the tool could expand diagnosis in low-resource settings where traditional testing is inaccessible.",
+        "cat": "Cover discovery · Astronomy",
+        "headline": "Europa May Not Vent Water into Space, Revising a Key Assumption About the Icy Moon.",
+        "deck": "New analysis suggests Jupiter's moon Europa does not actively release water plumes into space, challenging earlier observations. NASA's Europa Clipper spacecraft will provide closer data beginning in 2030.",
         "source": "Science News",
-        "url": "https://www.sciencenews.org/article/test-tuberculosis-quick-inexpensive-tb",
-        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/051426_SM_tuberculosistest_main.jpg?w=800",
-        "caption": "A $4 swab test could transform TB screening in low-access regions."
+        "url": "https://www.sciencenews.org/article/europa-moon-no-water-plumes-space",
+        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/052726_LG_Europa_main.jpg?w=800",
+        "caption": "Europa's icy surface imaged by NASA; plume debate continues."
     },
     "more": [
         {
-            "field": "Entomology",
-            "title": "Lab Study Suggests Mosquitoes Can Learn to Associate DEET With Food.",
-            "deck": "Experiments indicate mosquitoes detect the scent of DEET and may condition themselves to associate it with a meal. Researchers caution that whether this behavior occurs in the wild remains unconfirmed.",
-            "url": "https://www.sciencenews.org/article/deet-repellent-attract-mosquitoe-spray"
+            "field": "Physics",
+            "title": "IceCube Detects Break in Cosmic Neutrino Energy Spectrum, Ruling Out Simple Model.",
+            "deck": "The IceCube Collaboration reports the astrophysical neutrino spectrum deviates from a simple power-law, published in Physical Review Letters.",
+            "url": "https://phys.org/news/2026-05-icecube-cosmic-neutrino-spectrum-simple.html"
         },
         {
-            "field": "Oncology",
-            "title": "3D-Printed Lymph Nodes Could Lower Cost of CAR T-Cell Cancer Therapy.",
-            "deck": "A new method using 3D-printed lymph node structures to manufacture CAR T-cells could significantly reduce the high cost of the cancer treatment. Developers say the technique may broaden access in countries where the therapy is currently unaffordable.",
-            "url": "https://www.newscientist.com/article/2528140-3d-printed-lymph-nodes-could-widen-access-to-car-t-cell-therapy/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
+            "field": "Zoology",
+            "title": "Homing Pigeons May Navigate Using Iron-Rich Liver Immune Cells as a Magnetic Compass.",
+            "deck": "New research identifies iron-laden liver cells as a possible mechanism by which pigeons detect Earth's magnetic field for navigation.",
+            "url": "https://www.sciencenews.org/article/pigeon-navigation-iron-liver-cells"
         },
         {
-            "field": "Climatology",
-            "title": "South Pacific Volcanic Eruption May Have Consumed Its Own Methane, Offering Climate Clues.",
-            "deck": "Analysis of a large South Pacific eruption suggests the event may have broken down methane in the surrounding atmosphere. Scientists are studying whether the mechanism could be replicated as a climate intervention, though the approach remains disputed.",
-            "url": "https://www.sciencenews.org/article/volcanic-eruption-clues-climate-change"
+            "field": "Mathematics",
+            "title": "Mathematician Finds Most Efficient Method to Fold Paper into a Torus Shape.",
+            "deck": "A new proof identifies the minimum number of folds required to produce an origami torus, solving a longstanding geometric puzzle.",
+            "url": "https://www.sciencenews.org/article/origami-torus-fewest-folds-math"
         }
     ]
 },
@@ -913,29 +913,29 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "The TACO Equilibrium: Why Oil Markets Expect Trump to End the Iran War — and Why That May Be the Reason He Doesn't.",
-        "deck": "Oil markets have priced in a near-term end to the U.S.-Iran conflict, creating an economic dynamic that analysts say may reduce Trump's incentive to close a deal quickly.",
+        "headline": "Why Everyone Hates AI Data Centers.",
+        "deck": "A left-right political coalition is forming in opposition to the rapid proliferation of AI data centers. The piece examines the energy, land, and community concerns driving unlikely alliances.",
         "author": "by The Atlantic Staff",
-        "read": "8 min",
-        "url": "https://www.theatlantic.com/economy/2026/05/oil-prices-iran-trump/687344/?utm_source=feed",
+        "read": "10 min",
+        "url": "https://www.theatlantic.com/podcasts/2026/05/why-everyone-hates-ai-data-centers/687355/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "One Weather Forecast Changed the Course of WWII: The Real Story Behind 'Pressure,' a Film About the Meteorologist Who Delayed D-Day.",
-        "deck": "A new film starring Andrew Scott and Brendan Fraser reconstructs the 72 hours before the Normandy invasion, centering on the meteorologist whose forecast convinced Allied commanders to postpone Operation Overlord.",
+        "headline": "Meet Hilma af Klint, the Occultist Who May Have Invented Abstract Art Before Kandinsky.",
+        "deck": "The Swedish painter created large-scale abstract works as early as 1906, years before her better-known contemporaries. A new French exhibition examines her 'Paintings for the Temple' series.",
         "author": "by Smithsonian Staff",
-        "read": "10 min",
-        "url": "https://www.smithsonianmag.com/history/one-weather-forecast-changed-the-course-of-wwii-heres-the-real-story-behind-pressure-a-drama-about-the-meteorologist-who-convinced-the-allies-to-delay-d-day-180988829/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/o9dmwuCK0xLqCjHnqHFQCnvn2DI=/420x240/filters:focal(750x500:751x501)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/05/0e/050e07f3-3c2f-4ad2-82a1-20b7ecceca19/pressure.png"
+        "read": "8 min",
+        "url": "https://www.smithsonianmag.com/smart-news/meet-hilma-af-klint-the-occultist-who-believed-otherworldly-spirits-told-her-what-to-paint-now-shes-considered-one-of-historys-first-abstract-artists-180988859/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/Mhnol7iYgpPGvP-yk0P7Gs_2OW8=/420x240/filters:focal(750x500:751x501)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/86/ea/86ea6ec3-9230-4152-95ca-e941d343bf3b/klint-altarpiece.jpg"
     },
     {
         "pub": "The Atlantic",
-        "headline": "The Blue-State Delusion Over Unions: Public-Sector Unions Don't Always Work in the Public Interest.",
-        "deck": "An examination of public-sector union power in Democratic-led states, using the Long Island Rail Road as a case study in how labor agreements can conflict with commuter and taxpayer interests.",
+        "headline": "AI Slop Is Coming for Your Playlists.",
+        "deck": "Algorithmically generated music is increasingly infiltrating streaming platforms, often indistinguishable from human-produced tracks. The piece asks who is responsible for labeling and filtering AI-generated audio.",
         "author": "by The Atlantic Staff",
-        "read": "9 min",
-        "url": "https://www.theatlantic.com/ideas/2026/05/public-sector-unions-lirr-strike/687337/?utm_source=feed",
+        "read": "7 min",
+        "url": "https://www.theatlantic.com/newsletters/2026/05/ai-slop-music/687359/?utm_source=feed",
         "img": ""
     }
 ]
