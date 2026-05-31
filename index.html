@@ -509,62 +509,62 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 4, 30),
-  edition: "Vol. III · No. 150",
+  date: new Date(2026, 4, 31),
+  edition: "Vol. III · No. 151",
   location: "Manhattan, NY",
-  weatherStrip: "54°F · Clear · UV 7 · Manhattan",
+  weatherStrip: "53°F · Clear · UV 7 · Manhattan",
 
   topStories: [
     {
-        "category": "Diplomacy · Developing",
-        "headline": "Trump holds Situation Room meeting on Iran; no deal announced.",
-        "deck": "The U.S. and Iran agreed a framework deal, officials confirmed, but Trump made no final announcement following Friday's meeting with senior advisers.",
-        "source": "BBC News / ABC News",
-        "bias": "Center",
+        "category": "Politics · US",
+        "headline": "Trump Says He Is 'In No Hurry' to Reach Deal With Iran as Advisers Weigh Final Determination.",
+        "deck": "President Trump met with senior advisers to discuss a potential agreement with Iran. No decision has been announced as diplomatic and military options remain on the table.",
+        "source": "CBS News",
+        "bias": "Center-Left",
         "read": "5 min",
-        "url": "https://www.bbc.com/news/articles/c0r2d40r91qo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f155/live/9136a770-5b77-11f1-b93a-99fdf449fe40.jpg",
-        "caption": "Trump meets advisers in Situation Room over Iran framework deal."
+        "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
+        "img": "",
+        "caption": "Trump addresses Iran negotiations, May 31, 2026."
     },
     {
-        "category": "US News · Tragedy",
-        "headline": "Five killed, dozens injured as bus strikes multiple vehicles on I-95 in Virginia.",
-        "deck": "A bus failed to slow for traffic on Interstate 95, striking several vehicles and killing five people. Dozens more were reported injured, Virginia State Police said.",
-        "source": "CBS News",
+        "category": "Europe · Sports Violence",
+        "headline": "Nearly 800 Arrested After Riots Follow Champions League Final in France.",
+        "deck": "Clashes between supporters and police left 219 people injured, including 57 officers. French authorities made 793 arrests in connection with the post-match violence.",
+        "source": "BBC News",
         "bias": "Center",
         "read": "4 min",
-        "url": "https://www.cbsnews.com/news/bus-crash-virginia-deaths-interstate-95/",
-        "img": "",
-        "caption": "Fatal multi-vehicle crash on I-95 in Virginia leaves five dead."
+        "url": "https://www.bbc.com/news/articles/c0r2ejg1w9xo?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1402/live/6a759400-5ce6-11f1-81d4-4b01427112e9.jpg",
+        "caption": "Riot police respond to Champions League unrest, France, May 2026."
     },
     {
-        "category": "Europe · Security",
-        "headline": "Russian drone strike on Romanian territory deepens NATO anxiety over alliance solidarity.",
-        "deck": "A Russian drone that entered NATO member Romania has heightened European concern about alliance cohesion, U.S. commitment to collective defense, and Moscow's strategic intentions.",
-        "source": "The New York Times",
-        "bias": "Center-Left",
+        "category": "UK Politics · Legal",
+        "headline": "Nicola Sturgeon Says She Is 'Serving a Sentence for a Crime I Did Not Commit' in First Post-Guilty-Plea Interview.",
+        "deck": "Scotland's former first minister spoke to the BBC after her estranged husband Peter Murrell pleaded guilty to embezzling £400,000 from the SNP. Sturgeon denied personal knowledge of or involvement in the fraud.",
+        "source": "BBC News",
+        "bias": "Center",
         "read": "6 min",
-        "url": "https://www.nytimes.com/2026/05/30/world/europe/europe-nato-russia-anxiety.html",
-        "img": "",
-        "caption": "Drone incursion into Romania renews debate over NATO readiness."
+        "url": "https://www.bbc.com/news/articles/c2027k1ev3zo?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6a91/live/451863a0-5c63-11f1-aeb2-75cc9209ef5d.jpg",
+        "caption": "Sturgeon speaks to Laura Kuenssberg, BBC, May 31, 2026."
     }
 ],
 
   weather: {
-    "now": 54,
+    "now": 53,
     "condition": "Clear",
-    "feels": 43,
-    "high": 71,
-    "low": 53,
+    "feels": 50,
+    "high": 76,
+    "low": 46,
     "uv": 7,
     "rain": false,
-    "wind": "Breezy",
+    "wind": "Calm",
     "sunrise": "5:27a",
-    "sunset": "8:19p",
+    "sunset": "8:20p",
     "hours": [
         {
             "h": "Now",
-            "t": 54,
+            "t": 50,
             "ic": "sun"
         },
         {
@@ -574,67 +574,67 @@ const DIGEST = {
         },
         {
             "h": "+5h",
-            "t": 57,
-            "ic": "cloud"
+            "t": 72,
+            "ic": "sun"
         },
         {
             "h": "+8h",
-            "t": 59,
+            "t": 75,
             "ic": "cloud"
         },
         {
             "h": "+11h",
-            "t": 64,
-            "ic": "sun"
+            "t": 76,
+            "ic": "cloud"
         }
     ],
     "forecast7": [
         {
-            "day": "SAT",
-            "high": 71,
-            "low": 53,
-            "ic": "cloud",
-            "rain": false
-        },
-        {
             "day": "SUN",
-            "high": 74,
-            "low": 47,
+            "high": 76,
+            "low": 46,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "MON",
-            "high": 77,
-            "low": 61,
-            "ic": "rain",
-            "rain": true
-        },
-        {
-            "day": "TUE",
-            "high": 72,
+            "high": 74,
             "low": 55,
             "ic": "cloud",
             "rain": false
         },
         {
-            "day": "WED",
+            "day": "TUE",
             "high": 77,
-            "low": 57,
-            "ic": "cloud",
-            "rain": false
+            "low": 55,
+            "ic": "rain",
+            "rain": true
         },
         {
-            "day": "THU",
-            "high": 74,
+            "day": "WED",
+            "high": 77,
             "low": 59,
             "ic": "cloud",
             "rain": false
         },
         {
+            "day": "THU",
+            "high": 87,
+            "low": 63,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
             "day": "FRI",
-            "high": 86,
-            "low": 62,
+            "high": 87,
+            "low": 68,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "SAT",
+            "high": 92,
+            "low": 72,
             "ic": "cloud",
             "rain": false
         }
@@ -642,15 +642,15 @@ const DIGEST = {
     "outfit": [
         {
             "label": "Jacket",
-            "val": "Not needed"
+            "val": "Light layer for morning"
         },
         {
             "label": "Top",
-            "val": "Long sleeve or light layer"
+            "val": "T-shirt"
         },
         {
             "label": "Bottom",
-            "val": "Shorts, skirt, or pants"
+            "val": "Shorts or skirt"
         },
         {
             "label": "Sunscreen",
@@ -662,92 +662,92 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "SpaceX secures $6.45B in Space Force contracts ahead of IPO filing.",
-        "deck": "The Pentagon awarded SpaceX multiple Space Force contracts totaling $6.45 billion. A separate $4.16 billion deal covers missile-tracking satellites for Trump's planned 'Golden Dome' defense system.",
-        "source": "TechCrunch / The Verge",
-        "read": "5 min",
-        "url": "https://techcrunch.com/2026/05/29/spacex-awarded-6-45b-in-space-force-contracts-ahead-of-ipo/",
-        "img": ""
+        "headline": "Brain Cells Grown on a Chip Learn to Play 'Doom,' Australian Researchers Report.",
+        "deck": "A team in Australia trained lab-cultured neurons on a silicon chip to navigate the 1993 shooter game. Researchers say the experiment is an early step toward understanding what biological neural networks can compute.",
+        "source": "Phys.org",
+        "read": "4 min",
+        "url": "https://phys.org/news/2026-05-brain-cells-play-doom.html",
+        "img": "https://scx1.b-cdn.net/csz/news/tmb/2026/australian-researchers.jpg"
     },
     {
         "num": "02",
-        "headline": "Nvidia, Microsoft, and Arm tease N1X Arm-powered laptop processors ahead of Computex.",
-        "deck": "All three companies are openly signaling an imminent Nvidia announcement of its own Arm-based laptop chips. The reveal is expected at Computex this weekend.",
-        "source": "The Verge",
-        "read": "4 min",
-        "url": "https://www.theverge.com/news/940275/nvidia-n1x-laptop-processor-arm-microsoft-teaser",
+        "headline": "SoftBank Commits Up to €75 Billion to Build French Data Centers Totaling 5 Gigawatts.",
+        "deck": "The Japanese investment firm announced plans to develop and operate large-scale data center infrastructure across France. The deal represents one of the largest single-country AI infrastructure commitments in Europe to date.",
+        "source": "TechCrunch",
+        "read": "3 min",
+        "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
         "img": ""
     },
     {
         "num": "03",
-        "headline": "OMB proposes sweeping new rules allowing cancellation of US research grants at any time.",
-        "deck": "Proposed federal rules would make peer review optional and allow political staff to screen grants for prohibited topics. Scientists and universities say the changes would broadly undermine federally funded research.",
-        "source": "Ars Technica",
-        "read": "5 min",
-        "url": "https://arstechnica.com/science/2026/05/the-office-of-management-and-budget-tries-again-to-cripple-us-science/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2025/07/GettyImages-2223415789-500x500.jpg"
+        "headline": "Horror Film 'Backrooms,' Directed by a YouTuber, Opens to $38 Million on Its First Day.",
+        "deck": "Kane Parsons' feature debut is tracking for up to $90 million over its opening weekend, breaking A24's previous single-film record. The result extends a pattern of YouTube creators crossing into mainstream theatrical releases.",
+        "source": "The Verge",
+        "read": "3 min",
+        "url": "https://www.theverge.com/entertainment/940421/backrooms-blockbuster-38-million-opening",
+        "img": ""
     }
 ],
 
   nycEvents: [
     {
-        "day": "Sat",
-        "num": 30,
-        "title": "Memorial Day Weekend Open Streets",
-        "blurb": "NYC Open Streets runs through the holiday weekend, closing select Manhattan corridors to car traffic. Good conditions today — clear skies, high of 71°F — for cycling or a long walk along car-free stretches.",
-        "where": "Various, Manhattan",
-        "time": "Morning through evening",
-        "price": "Free",
-        "url": "https://www.nyc.gov/html/dot/html/pedestrians/openstreets.shtml"
+        "day": "Sun",
+        "num": 31,
+        "title": "Governors Island Opens for the 2026 Season",
+        "blurb": "The island's car-free grounds, art installations, and waterfront lawns are open for the season on a clear, mild day ideal for cycling or picnicking. Ferries depart from Lower Manhattan and Brooklyn Bridge Park.",
+        "where": "Governors Island, off Lower Manhattan",
+        "time": "10:00 AM – 6:00 PM",
+        "price": "Free–$4 ferry",
+        "url": "https://govisland.com"
     },
     {
-        "day": "Sat",
-        "num": 30,
+        "day": "Sun",
+        "num": 31,
         "title": "Union Square Greenmarket",
-        "blurb": "One of the city's largest year-round farmers markets peaks in late May with early strawberries, asparagus, spring onions, and fresh greens from regional farms. Arrive early for the best selection.",
+        "blurb": "One of the city's largest farmers markets runs every Sunday. Late May brings peak strawberries, asparagus, spring onions, and early lettuces from Hudson Valley farms.",
         "where": "Union Square, Manhattan",
         "time": "8:00 AM – 6:00 PM",
         "price": "Free entry",
         "url": "https://www.grownyc.org/greenmarket/manhattan-union-square-m"
     },
     {
-        "day": "Sat",
-        "num": 30,
-        "title": "Brooklyn Bridge Park / DUMBO Waterfront Walk",
-        "blurb": "With clear skies and a high of 71°F, the East River waterfront offers unobstructed views of lower Manhattan. The Brooklyn Bridge walk and adjacent park paths are uncrowded before midday.",
-        "where": "Brooklyn Bridge, Lower Manhattan to DUMBO",
-        "time": "All day",
+        "day": "Sun",
+        "num": 31,
+        "title": "The Ramble Birding Walk, Central Park",
+        "blurb": "Late May is peak spring migration in Central Park; the Ramble regularly draws warblers, thrushes, and orioles. The NYC Audubon Society leads informal walks most Sunday mornings through the end of the month.",
+        "where": "The Ramble, Central Park, Manhattan",
+        "time": "7:00 AM – 9:00 AM",
         "price": "Free",
-        "url": "https://brooklynbridgepark.org"
+        "url": "https://www.nycaudubon.org"
     }
 ],
 
   worldEvents: [
     {
-        "day": "Sat",
-        "num": 30,
-        "title": "Eid al-Adha marked across Middle East amid war and shortages.",
-        "blurb": "Muslims across Iran, Gaza, Lebanon, and neighboring countries observed Eid al-Adha on Saturday. Celebrations were subdued in many areas due to ongoing conflict and fuel and food shortages.",
-        "where": "Middle East, Regional",
+        "day": "Sun",
+        "num": 31,
+        "title": "Ebola Spread in DR Congo Called 'Deeply Alarming' by MSF",
+        "blurb": "Médecins Sans Frontières warned that the Ebola outbreak in the Democratic Republic of Congo is expanding at a concerning rate. The WHO director-general visited the worst-affected region as the international response intensifies.",
+        "where": "DR Congo",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Sat",
-        "num": 30,
-        "title": "Ebola outbreak surges in remote Congo gold mining town.",
-        "blurb": "A remote gold mining community in the Democratic Republic of Congo is facing a severe Ebola surge. Medical workers report strained capacity and difficulty containing the spread in the isolated area.",
-        "where": "Congo, DRC",
+        "day": "Sun",
+        "num": 31,
+        "title": "Japan Defence Minister Rejects Militarism Charge, Criticizes China's Weapons Buildup",
+        "blurb": "Shinjiro Koizumi, Japan's defence minister, denied that Tokyo's military expansion represents a return to militarism and issued pointed criticism of China's growing arsenal. The remarks are among the most direct from a Japanese cabinet official in recent memory.",
+        "where": "Tokyo, Japan",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Sat",
-        "num": 30,
-        "title": "Four remaining Laos gold miners rescued from flooded cave.",
-        "blurb": "The final four miners trapped in a flooded cave in Laos were brought out safely after water levels receded sufficiently for divers to assist their exit, a Laos rescue organization confirmed.",
+        "day": "Sun",
+        "num": 31,
+        "title": "Two Gold Miners Remain Missing in Flooded Laos Cave as Rain Threatens Rescue",
+        "blurb": "Four of six trapped miners were extracted after water levels inside the cave receded enough for divers to operate. Rescuers continue searching for the two still missing as incoming rain threatens to raise water levels again.",
         "where": "Laos",
-        "time": "Friday, May 29",
+        "time": "Ongoing",
         "price": "—"
     }
 ],
@@ -756,26 +756,26 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "May 2026 · seasonal",
-        "copy": "Late May in New York brings the first flush of summer produce alongside the tail end of cool-weather crops. Union Square Greenmarket is stocked now.",
+        "copy": "Late May in New York brings some of the year's best produce. Hudson Valley farms are at peak output; hit Union Square Greenmarket this morning before supplies sell out.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "Peak New York season runs mid-May through June. Local berries are smaller and more flavorful than supermarket imports. Eat fresh, macerate with a little lemon zest, or fold into overnight oats."
+                        "text": "Local strawberries peak in late May — sweeter and more aromatic than shipped varieties. Eat fresh with yogurt, slice into salads, or macerate with a little honey."
                     },
                     {
                         "b": "Asparagus",
-                        "text": "NY-grown asparagus hits its brief seasonal window in May. High in folate and prebiotic fiber. Roast with olive oil and sea salt or shave raw into a lemon-dressed salad."
+                        "text": "New York asparagus season runs only through early June. Roast at high heat with olive oil and lemon, or shave raw into a spring salad."
                     },
                     {
-                        "b": "Spring Peas",
-                        "text": "Sugar snaps and shelling peas are at their sweetest right now before summer heat sets in. Eat raw as a snack, toss into grain bowls, or blanch and blend into a pea-mint purée."
+                        "b": "Sugar Snap Peas",
+                        "text": "Crisp and sweet right now from local farms. Eat raw with hummus, toss into stir-fries, or add whole to grain bowls for crunch."
                     },
                     {
                         "b": "Rhubarb",
-                        "text": "Tart stalks are abundant at regional farm stands through late May. Rich in vitamin K. Simmer with a touch of honey for a compote to top yogurt or oatmeal."
+                        "text": "Available only briefly in spring; tart stalks pair well with strawberries. Simmer into a compote for oatmeal or yogurt, or bake into a crisp."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt parfait layered with macerated local strawberries, rhubarb compote, and a handful of granola. Add a drizzle of honey and fresh mint."
+                        "text": "Greek yogurt bowl with sliced local strawberries, rhubarb compote, granola, and a drizzle of honey."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Shaved asparagus and sugar snap pea salad over farro, with a soft-boiled egg, lemon-Dijon vinaigrette, and toasted almonds."
+                        "text": "Shaved asparagus and sugar snap pea salad over farro with a lemon-Dijon vinaigrette, topped with a soft-boiled egg."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Pan-seared salmon fillet with a spring pea and mint purée, roasted asparagus spears, and a glass of chilled Sancerre."
+                        "text": "Roasted asparagus and chicken thighs with a strawberry–balsamic pan sauce; serve with crusty bread or herbed rice."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "May · clear 54°F",
-        "copy": "A clear Saturday with a high of 71°F and a chilly morning start. Dress in layers for outdoor activity; it will warm significantly by midday.",
+        "sub": "May · clear 53°F",
+        "copy": "Clear skies and a high of 76°F make today ideal for outdoor activity. It will be cool at dawn and comfortable by midday — plan accordingly.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Saturday is a good day for a lower-body compound session: back squats, Romanian deadlifts, and walking lunges. Three to four sets of 6–10 reps at moderate-to-heavy load."
+                        "text": "Focus on posterior chain today — deadlifts, Romanian deadlifts, and single-leg glute bridges. Three sets of 8–10 reps at moderate load."
                     },
                     {
                         "b": "Cardio",
-                        "text": "Morning temperatures of 54°F are ideal for an outdoor run. A 30–45 minute easy-to-moderate effort in Central Park takes full advantage of the clear weather before midday crowds arrive."
+                        "text": "With UV index at 7 and temps climbing to 76°F by afternoon, take a 30–45 minute outdoor run in Central Park before 10 AM or after 5 PM. Apply SPF."
                     },
                     {
                         "b": "Recovery",
-                        "text": "After lower-body work, spend 10 minutes on hip flexor stretches, a seated hamstring hold, and pigeon pose on each side. Use a foam roller on the quads and IT band."
+                        "text": "Finish with 10 minutes of hip-flexor and hamstring stretching on a mat. Use a foam roller on the thoracic spine if you sit during the week."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "A 20-minute sun salutation flow (Surya Namaskar A and B) with warrior I and II transitions. Builds heat after the cool start and sets a grounded tone for the weekend."
+                        "text": "A 20-minute Sun Salutation flow (Surya Namaskar A and B) to warm the body in the cool morning air. Follow with Warrior I and II holds to open the hips."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative wind-down: supported bridge with a block, legs-up-the-wall (Viparita Karani) for 5 minutes, and a 5-minute savasana with a weighted eye pillow. Lowers cortisol before sleep."
+                        "text": "Restorative practice: Legs-Up-The-Wall (Viparita Karani) for 5 minutes, followed by Supine Twist on each side and a 5-minute Savasana to close the day."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Core daily supplements remain consistent. Cycle- and stress-aware additions are noted below for relevant phases.",
+        "copy": "Core daily supplements support baseline health year-round. Cycle-aware and stress-aware additions are noted below — take only as relevant to your current phase or circumstances.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "2,000–4,000 IU with breakfast. Take with a fat-containing meal for optimal absorption. UV index today is 7, so midday sun exposure also contributes."
+                        "text": "2,000–4,000 IU with breakfast. Despite spring sunshine, indoor lifestyles in Manhattan often leave levels insufficient. Take with a fat-containing meal for best absorption."
                     },
                     {
                         "b": "Magnesium",
-                        "text": "Glycinate form, 200–400 mg taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and mood regulation."
+                        "text": "Magnesium glycinate, 200–400 mg taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and stress regulation."
                     },
                     {
                         "b": "Omega-3",
-                        "text": "1,000–2,000 mg combined EPA/DHA with lunch or dinner. Take with food to reduce any fishy aftertaste and improve absorption."
+                        "text": "1,000–2,000 mg EPA+DHA from fish oil, taken with lunch or dinner. Supports cardiovascular and cognitive health; take with food to reduce fishy aftertaste."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "During menstruation, consider 18–25 mg ferrous bisglycinate taken on an empty stomach with vitamin C to enhance absorption. Avoid taking with coffee or calcium-rich foods."
+                        "text": "18–27 mg ferrous bisglycinate during menstruation, taken on an empty stomach with vitamin C to enhance absorption. Avoid taking within 2 hours of calcium or coffee."
                     },
                     {
                         "b": "Ashwagandha",
-                        "text": "During high-stress periods, 300–600 mg of KSM-66 extract once daily with food. Supports cortisol regulation. Cycle off after 8–12 weeks of continuous use."
+                        "text": "300–600 mg KSM-66 extract during periods of elevated stress. Take with dinner. Not recommended for use beyond 8–12 consecutive weeks without a break."
                     },
                     {
-                        "b": "B-complex",
-                        "text": "In the luteal phase (days 15–28) or during periods of sustained fatigue, a B-complex with active forms (methylfolate, methylcobalamin) taken with breakfast supports energy metabolism and mood."
+                        "b": "B-Complex",
+                        "text": "One B-complex tablet with breakfast during the luteal phase (days 15–28) or when experiencing fatigue. B6 in particular supports mood and progesterone activity."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Space Science",
-        "headline": "Europa may not vent water into space, casting doubt on a long-held finding.",
-        "deck": "New analysis suggests Jupiter's moon Europa does not eject water plumes into space, contradicting earlier Hubble observations. The question may not be resolved until NASA's Europa Clipper makes its closest approach in 2030.",
+        "cat": "Cover discovery · Ornithology",
+        "headline": "Homing Pigeons May Navigate Using Iron-Rich Immune Cells in the Liver, Not the Beak.",
+        "deck": "New research challenges the long-held theory that magnetite in the beak guides pigeon navigation. Scientists now point to iron-laden macrophages in the liver as a candidate biological compass.",
         "source": "Science News",
-        "url": "https://www.sciencenews.org/article/europa-moon-no-water-plumes-space",
-        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/052726_LG_Europa_main.jpg?w=800",
-        "caption": "Europa's subsurface ocean may stay sealed; plume debate reopens."
+        "url": "https://www.sciencenews.org/article/pigeon-navigation-iron-liver-cells",
+        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/052726_EP_pigeons_main.jpg?w=798",
+        "caption": "Homing pigeon in flight; new findings implicate liver cells in magnetic navigation."
     },
     "more": [
         {
+            "field": "Planetary Science",
+            "title": "Europa May Not Be Venting Water Into Space, Revised Analysis Suggests.",
+            "deck": "Scientists say earlier evidence for water plumes above Jupiter's icy moon Europa may not hold up under scrutiny. NASA's Europa Clipper, arriving in 2030, is expected to provide a definitive answer.",
+            "url": "https://www.sciencenews.org/article/europa-moon-no-water-plumes-space"
+        },
+        {
             "field": "Mathematics",
-            "title": "Mathematician finds minimum-fold method to create an origami torus.",
-            "deck": "A new proof identifies the most efficient sequence of folds needed to form a doughnut-shaped torus from a flat sheet of paper, solving a longstanding geometric puzzle.",
+            "title": "Mathematician Identifies the Most Efficient Way to Fold Paper Into a Torus.",
+            "deck": "A new proof determines the minimum number of folds required to create a doughnut-shaped origami torus. The result has implications for understanding geometric constraints in paper folding.",
             "url": "https://www.sciencenews.org/article/origami-torus-fewest-folds-math"
         },
         {
-            "field": "Biology / Navigation",
-            "title": "Homing pigeons may navigate via iron-rich liver immune cells acting as a compass.",
-            "deck": "New research points to iron-laden cells in pigeon livers as a possible mechanism for sensing Earth's magnetic field, adding a novel candidate to the hotly debated question of animal magnetoreception.",
-            "url": "https://www.sciencenews.org/article/pigeon-navigation-iron-liver-cells"
-        },
-        {
-            "field": "Quantum Physics",
-            "title": "Attempts to 'cut' a photon cause it to multiply rather than shorten.",
-            "deck": "Experiments show that when researchers attempt to truncate a single photon, it does not become shorter but instead produces additional photons, a counterintuitive behavior with implications for quantum optics.",
-            "url": "https://www.newscientist.com/article/2528339-photons-behave-very-strangely-if-you-try-to-cut-them/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
+            "field": "Reproductive Medicine",
+            "title": "Stem-Cell Embryo Organoids Created Without Sperm or Eggs Illuminate Early Pregnancy Failure.",
+            "deck": "Researchers used stem cells to build embryo-like structures that replicate early human development in the lab. The models are being used to study the mechanisms behind miscarriage, infertility, and pre-eclampsia.",
+            "url": "https://www.newscientist.com/article/2527224-embryos-made-without-sperm-or-eggs-reveal-why-many-pregnancies-fail/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
         }
     ]
 },
@@ -913,30 +913,30 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "The Kennedy Center Enters the Unknown.",
-        "deck": "With Trump signaling he may abandon the institution and its future unresolved, the Kennedy Center faces an uncertain chapter. The legal and political fight over its direction is not finished.",
-        "author": "by The Atlantic Staff",
+        "headline": "The Scariest Monster on Broadway: A New Play About Roald Dahl and Anti-Jewish Prejudice.",
+        "deck": "A stage production confronts the documented antisemitism of the beloved children's author. The review examines how the play handles the tension between celebrated art and a creator's documented prejudice.",
+        "author": "by The Atlantic",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/culture/2026/05/kennedy-center-trump-ruling/687370/?utm_source=feed",
+        "url": "https://www.theatlantic.com/ideas/2026/05/roald-dahl-play-giant-antisemitism/687373/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "600-Year-Old Chinese Surgical Instruments Found Coated in an Early Local Anesthetic from a Poisonous Plant.",
-        "deck": "Iron scissors and tweezers excavated from a Ming dynasty physician's tomb retain traces of a numbing compound derived from a toxic plant, offering rare direct evidence of pre-modern surgical pain management.",
+        "headline": "600-Year-Old Surgical Instruments From a Ming Dynasty Tomb Are Coated in an Early Local Anesthetic.",
+        "deck": "Iron scissors and tweezers found in a Ming dynasty doctor's tomb carry residue of a numbing compound extracted from a poisonous plant. Researchers say the tools offer rare physical evidence of surgical anesthesia in medieval China.",
         "author": "by Smithsonian Staff",
         "read": "8 min",
         "url": "https://www.smithsonianmag.com/smart-news/these-600-year-old-chinese-surgical-instruments-are-coated-in-an-early-local-anestheticcarefully-extracted-from-a-poisonous-plant-180988865/",
         "img": "https://th-thumbnailer.cdn-si-edu.com/dbAweNjolD733IkrXXwMKLJuGOI=/420x240/filters:focal(527x351:528x352)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/3e/bf/3ebf98af-8965-4b65-9f71-b6da84137f8f/urn_cambridgeorg_id_binary-alt_20260513195241-44146-optimisedimage-png-s0003598x26103470_fig1.jpeg"
     },
     {
-        "pub": "The New York Times",
-        "headline": "Inside the Ebola Epicenter, the Virus Rages With Little to Stop It.",
-        "deck": "A remote gold mining town in the Democratic Republic of Congo is under siege from a growing Ebola outbreak. Medical workers describe strained resources and compounding obstacles to containment.",
-        "author": "by NYT World Desk",
-        "read": "12 min",
-        "url": "https://www.nytimes.com/2026/05/30/world/africa/ebola-epicenter-congo.html",
-        "img": ""
+        "pub": "Smithsonian Magazine",
+        "headline": "Four Guam Kingfisher Chicks Hatch in Virginia, Bolstering a Species Extinct in the Wild.",
+        "deck": "The sihek, wiped out from its native Guam, survives only in captivity and at a single reintroduction site on Palmyra Atoll. Four new hatchlings at a Virginia facility represent a meaningful addition to the species' total population.",
+        "author": "by Smithsonian Staff",
+        "read": "7 min",
+        "url": "https://www.smithsonianmag.com/smart-news/four-rare-guam-kingfisher-chicks-hatch-at-virginia-facility-making-an-incredibly-valuable-addition-to-the-small-population-of-extinct-in-the-wild-birds-180988863/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/GUvXiF4Z-dSONsei2R7ljsoWLs8=/420x240/filters:focal(1024x634:1025x635)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/f9/a4/f9a4af17-b326-4f00-8d64-92966468f938/705306451_1423631536459186_5155291432592042996_n.jpg"
     }
 ]
 };
