@@ -509,152 +509,152 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 4, 31),
-  edition: "Vol. III · No. 151",
+  date: new Date(2026, 5, 1),
+  edition: "Vol. III · No. 152",
   location: "Manhattan, NY",
-  weatherStrip: "53°F · Clear · UV 7 · Manhattan",
+  weatherStrip: "68°F · Clear · UV 8 · Manhattan",
 
   topStories: [
     {
-        "category": "Politics · US",
-        "headline": "Trump Says He Is 'In No Hurry' to Reach Deal With Iran as Advisers Weigh Final Determination.",
-        "deck": "President Trump met with senior advisers to discuss a potential agreement with Iran. No decision has been announced as diplomatic and military options remain on the table.",
-        "source": "CBS News",
-        "bias": "Center-Left",
-        "read": "5 min",
-        "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-vance-ceasefire-strait-of-hormuz-deal-close/",
-        "img": "",
-        "caption": "Trump addresses Iran negotiations, May 31, 2026."
-    },
-    {
-        "category": "Europe · Sports Violence",
-        "headline": "Nearly 800 Arrested After Riots Follow Champions League Final in France.",
-        "deck": "Clashes between supporters and police left 219 people injured, including 57 officers. French authorities made 793 arrests in connection with the post-match violence.",
-        "source": "BBC News",
-        "bias": "Center",
-        "read": "4 min",
-        "url": "https://www.bbc.com/news/articles/c0r2ejg1w9xo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1402/live/6a759400-5ce6-11f1-81d4-4b01427112e9.jpg",
-        "caption": "Riot police respond to Champions League unrest, France, May 2026."
-    },
-    {
-        "category": "UK Politics · Legal",
-        "headline": "Nicola Sturgeon Says She Is 'Serving a Sentence for a Crime I Did Not Commit' in First Post-Guilty-Plea Interview.",
-        "deck": "Scotland's former first minister spoke to the BBC after her estranged husband Peter Murrell pleaded guilty to embezzling £400,000 from the SNP. Sturgeon denied personal knowledge of or involvement in the fraud.",
-        "source": "BBC News",
+        "category": "Middle East · Conflict",
+        "headline": "Iran warns Israeli strikes in Lebanon threaten US ceasefire talks as Trump says both sides agreed to pause attacks.",
+        "deck": "Israel struck Beirut's southern suburbs after Hezbollah rocket and drone fire on northern Israel. Trump posted that Israel and Hezbollah had agreed to hold off on further military action while Iran negotiations continue.",
+        "source": "BBC News / NYT",
         "bias": "Center",
         "read": "6 min",
-        "url": "https://www.bbc.com/news/articles/c2027k1ev3zo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6a91/live/451863a0-5c63-11f1-aeb2-75cc9209ef5d.jpg",
-        "caption": "Sturgeon speaks to Laura Kuenssberg, BBC, May 31, 2026."
+        "url": "https://www.nytimes.com/live/2026/06/01/world/iran-war-us-trump-israel-lebanon",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/553d/live/6bda21a0-5dd9-11f1-a574-05510226f57f.jpg",
+        "caption": "Smoke rises over Beirut's southern suburbs following Israeli strikes, June 1, 2026."
+    },
+    {
+        "category": "US Politics · Justice",
+        "headline": "DOJ agrees to abide by court ruling that temporarily froze administration's Anti-Weaponization Fund.",
+        "deck": "A federal district judge issued the temporary order pausing the fund. The Justice Department issued a statement Monday confirming it would comply with the ruling.",
+        "source": "ABC News",
+        "bias": "Center",
+        "read": "4 min",
+        "url": "https://abcnews.com/US/doj-abide-court-ruling-temporarily-paused-anti-weaponization/story?id=133493215",
+        "img": "https://s.abcnews.com/images/International/trump-1-ap-jef-260601_1780318981612_hpMain_4x3t_384.jpg",
+        "caption": "DOJ confirms compliance with court order pausing Anti-Weaponization Fund, June 1, 2026."
+    },
+    {
+        "category": "UK Politics · Diplomacy",
+        "headline": "Leaked Mandelson messages reveal senior Labour figures described No. 10 as 'beleaguered and bereft.'",
+        "deck": "Newly published documents show Lord Mandelson and ministers expressing private concerns about Prime Minister Starmer and Labour MPs. Analysts say Starmer's decision to appoint Mandelson as US ambassador is a defining vulnerability of his tenure.",
+        "source": "BBC News",
+        "bias": "Center",
+        "read": "5 min",
+        "url": "https://www.bbc.com/news/articles/cwy2431r8xdo?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ace7/live/5a2a25e0-5ded-11f1-b682-cf91850925ea.jpg",
+        "caption": "Lord Mandelson's private messages published, June 1, 2026."
     }
 ],
 
   weather: {
-    "now": 53,
+    "now": 68,
     "condition": "Clear",
-    "feels": 50,
-    "high": 76,
-    "low": 46,
-    "uv": 7,
+    "feels": 62,
+    "high": 71,
+    "low": 54,
+    "uv": 8,
     "rain": false,
-    "wind": "Calm",
-    "sunrise": "5:27a",
+    "wind": "Breezy",
+    "sunrise": "5:26a",
     "sunset": "8:20p",
     "hours": [
         {
             "h": "Now",
-            "t": 50,
+            "t": 68,
             "ic": "sun"
         },
         {
             "h": "+2h",
-            "t": 58,
-            "ic": "sun"
+            "t": 65,
+            "ic": "cloud"
         },
         {
             "h": "+5h",
-            "t": 72,
+            "t": 56,
             "ic": "sun"
         },
         {
             "h": "+8h",
-            "t": 75,
-            "ic": "cloud"
+            "t": 53,
+            "ic": "sun"
         },
         {
             "h": "+11h",
-            "t": 76,
-            "ic": "cloud"
+            "t": 50,
+            "ic": "sun"
         }
     ],
     "forecast7": [
         {
-            "day": "SUN",
-            "high": 76,
-            "low": 46,
-            "ic": "cloud",
-            "rain": false
-        },
-        {
             "day": "MON",
-            "high": 74,
-            "low": 55,
+            "high": 71,
+            "low": 54,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "TUE",
-            "high": 77,
-            "low": 55,
-            "ic": "rain",
-            "rain": true
+            "high": 76,
+            "low": 49,
+            "ic": "cloud",
+            "rain": false
         },
         {
             "day": "WED",
-            "high": 77,
-            "low": 59,
+            "high": 81,
+            "low": 54,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "THU",
             "high": 87,
-            "low": 63,
+            "low": 64,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "FRI",
-            "high": 87,
-            "low": 68,
+            "high": 91,
+            "low": 69,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "SAT",
-            "high": 92,
+            "high": 86,
             "low": 72,
-            "ic": "cloud",
-            "rain": false
+            "ic": "rain",
+            "rain": true
+        },
+        {
+            "day": "SUN",
+            "high": 74,
+            "low": 64,
+            "ic": "rain",
+            "rain": true
         }
     ],
     "outfit": [
         {
             "label": "Jacket",
-            "val": "Light layer for morning"
+            "val": "Not needed"
         },
         {
             "label": "Top",
-            "val": "T-shirt"
+            "val": "Long sleeve or light layer"
         },
         {
             "label": "Bottom",
-            "val": "Shorts or skirt"
+            "val": "Shorts, skirt, or pants"
         },
         {
             "label": "Sunscreen",
-            "val": "Yes — UV 7, high"
+            "val": "Yes — UV 8, high"
         }
     ]
 },
@@ -662,91 +662,91 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "Brain Cells Grown on a Chip Learn to Play 'Doom,' Australian Researchers Report.",
-        "deck": "A team in Australia trained lab-cultured neurons on a silicon chip to navigate the 1993 shooter game. Researchers say the experiment is an early step toward understanding what biological neural networks can compute.",
-        "source": "Phys.org",
-        "read": "4 min",
-        "url": "https://phys.org/news/2026-05-brain-cells-play-doom.html",
-        "img": "https://scx1.b-cdn.net/csz/news/tmb/2026/australian-researchers.jpg"
+        "headline": "Florida sues OpenAI and Sam Altman over alleged role of ChatGPT in multiple violent incidents.",
+        "deck": "The lawsuit is the first of its kind brought by a US state against an AI company. It centers partly on a shooting at Florida State University, with the state's attorney general accusing Altman of 'utter disregard' for human lives.",
+        "source": "TechCrunch / Ars Technica",
+        "read": "5 min",
+        "url": "https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/",
+        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/GettyImages-2265991640-500x500-1780337784.jpg"
     },
     {
         "num": "02",
-        "headline": "SoftBank Commits Up to €75 Billion to Build French Data Centers Totaling 5 Gigawatts.",
-        "deck": "The Japanese investment firm announced plans to develop and operate large-scale data center infrastructure across France. The deal represents one of the largest single-country AI infrastructure commitments in Europe to date.",
+        "headline": "Hackers hijacked Instagram accounts by manipulating Meta's AI support chatbot into granting unauthorized access.",
+        "deck": "Multiple users reported their Instagram accounts compromised over the weekend. Reports indicate attackers tricked Meta's own AI customer support bot into transferring account control.",
         "source": "TechCrunch",
-        "read": "3 min",
-        "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
+        "read": "4 min",
+        "url": "https://techcrunch.com/2026/06/01/hackers-hijacked-instagram-accounts-by-tricking-meta-ai-support-chatbot-into-granting-access/",
         "img": ""
     },
     {
         "num": "03",
-        "headline": "Horror Film 'Backrooms,' Directed by a YouTuber, Opens to $38 Million on Its First Day.",
-        "deck": "Kane Parsons' feature debut is tracking for up to $90 million over its opening weekend, breaking A24's previous single-film record. The result extends a pattern of YouTube creators crossing into mainstream theatrical releases.",
+        "headline": "Nvidia's RTX Spark entry into consumer laptop chips draws comparisons to Apple's M1 transition.",
+        "deck": "Nvidia announced it is entering the consumer laptop chip market with ARM-based RTX Spark processors. Analysts note the move mirrors Apple's shift that delivered strong performance and battery life, though pricing is expected to be high at launch.",
         "source": "The Verge",
-        "read": "3 min",
-        "url": "https://www.theverge.com/entertainment/940421/backrooms-blockbuster-38-million-opening",
+        "read": "5 min",
+        "url": "https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram",
         "img": ""
     }
 ],
 
   nycEvents: [
     {
-        "day": "Sun",
-        "num": 31,
-        "title": "Governors Island Opens for the 2026 Season",
-        "blurb": "The island's car-free grounds, art installations, and waterfront lawns are open for the season on a clear, mild day ideal for cycling or picnicking. Ferries depart from Lower Manhattan and Brooklyn Bridge Park.",
-        "where": "Governors Island, off Lower Manhattan",
-        "time": "10:00 AM – 6:00 PM",
-        "price": "Free–$4 ferry",
-        "url": "https://govisland.com"
+        "day": "Mon",
+        "num": 1,
+        "title": "NYC Pride Month Kickoff — Pier 26 Hudson River Park",
+        "blurb": "June 1 marks the official start of Pride Month in New York City. Hudson River Park hosts evening programming along the waterfront throughout the month; check the park calendar for Monday's schedule.",
+        "where": "Tribeca, Manhattan",
+        "time": "Evening, check hudsonriverpark.org",
+        "price": "Free",
+        "url": "https://www.hudsonriverpark.org"
     },
     {
-        "day": "Sun",
-        "num": 31,
+        "day": "Mon",
+        "num": 2,
         "title": "Union Square Greenmarket",
-        "blurb": "One of the city's largest farmers markets runs every Sunday. Late May brings peak strawberries, asparagus, spring onions, and early lettuces from Hudson Valley farms.",
+        "blurb": "Monday market features peak early-June produce — strawberries, snap peas, and early greens — from regional farms. One of the city's largest farmers markets and a strong start to the week for seasonal eating.",
         "where": "Union Square, Manhattan",
         "time": "8:00 AM – 6:00 PM",
         "price": "Free entry",
         "url": "https://www.grownyc.org/greenmarket/manhattan-union-square-m"
     },
     {
-        "day": "Sun",
-        "num": 31,
-        "title": "The Ramble Birding Walk, Central Park",
-        "blurb": "Late May is peak spring migration in Central Park; the Ramble regularly draws warblers, thrushes, and orioles. The NYC Audubon Society leads informal walks most Sunday mornings through the end of the month.",
-        "where": "The Ramble, Central Park, Manhattan",
-        "time": "7:00 AM – 9:00 AM",
+        "day": "Mon",
+        "num": 3,
+        "title": "Morning Run in Central Park — 68°F Clear Conditions",
+        "blurb": "Clear skies, 68°F with a feels-like of 62°F and a long 8:20 PM sunset make this one of the best running mornings of the year. The 6.1-mile loop around the park is fully open to pedestrians Monday mornings.",
+        "where": "Central Park, Manhattan",
+        "time": "6:00 AM – 9:00 AM recommended",
         "price": "Free",
-        "url": "https://www.nycaudubon.org"
+        "url": "https://www.centralparknyc.org"
     }
 ],
 
   worldEvents: [
     {
-        "day": "Sun",
-        "num": 31,
-        "title": "Ebola Spread in DR Congo Called 'Deeply Alarming' by MSF",
-        "blurb": "Médecins Sans Frontières warned that the Ebola outbreak in the Democratic Republic of Congo is expanding at a concerning rate. The WHO director-general visited the worst-affected region as the international response intensifies.",
-        "where": "DR Congo",
+        "day": "Mon",
+        "num": 1,
+        "title": "Iran–Israel–US Ceasefire Negotiations Continue",
+        "blurb": "Trump stated on social media that Israel and Hezbollah agreed to pause military action while US–Iran talks proceed. Iran separately warned that Israeli strikes on Beirut threaten the broader ceasefire framework.",
+        "where": "Tehran / Beirut / Washington",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Sun",
-        "num": 31,
-        "title": "Japan Defence Minister Rejects Militarism Charge, Criticizes China's Weapons Buildup",
-        "blurb": "Shinjiro Koizumi, Japan's defence minister, denied that Tokyo's military expansion represents a return to militarism and issued pointed criticism of China's growing arsenal. The remarks are among the most direct from a Japanese cabinet official in recent memory.",
-        "where": "Tokyo, Japan",
+        "day": "Mon",
+        "num": 2,
+        "title": "Ebola Vaccine Development Advances Amid Outbreak Concerns",
+        "blurb": "IAVI, Moderna, and the University of Oxford are each developing new Ebola vaccines as health officials flag growing outbreak risks. Three parallel vaccine programs represent an expanded international response.",
+        "where": "Global",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Sun",
-        "num": 31,
-        "title": "Two Gold Miners Remain Missing in Flooded Laos Cave as Rain Threatens Rescue",
-        "blurb": "Four of six trapped miners were extracted after water levels inside the cave receded enough for divers to operate. Rescuers continue searching for the two still missing as incoming rain threatens to raise water levels again.",
-        "where": "Laos",
+        "day": "Mon",
+        "num": 3,
+        "title": "Venezuela's Industrial Collapse Deepens in Cumaná",
+        "blurb": "The city of Cumaná, once a manufacturing and export hub producing Toyota vehicles and food exports, is reported to be on the brink of infrastructure collapse as public services fail across the region.",
+        "where": "Cumaná, Venezuela",
         "time": "Ongoing",
         "price": "—"
     }
@@ -755,27 +755,27 @@ const DIGEST = {
   health: {
     "eat": {
         "title": "On the plate",
-        "sub": "May 2026 · seasonal",
-        "copy": "Late May in New York brings some of the year's best produce. Hudson Valley farms are at peak output; hit Union Square Greenmarket this morning before supplies sell out.",
+        "sub": "June 2026 · seasonal",
+        "copy": "Early June in New York brings the first flush of summer produce at Greenmarkets. Strawberries peak now, snap peas are crisp and sweet, and the first zucchini and radishes of the season arrive from Hudson Valley farms.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "Local strawberries peak in late May — sweeter and more aromatic than shipped varieties. Eat fresh with yogurt, slice into salads, or macerate with a little honey."
-                    },
-                    {
-                        "b": "Asparagus",
-                        "text": "New York asparagus season runs only through early June. Roast at high heat with olive oil and lemon, or shave raw into a spring salad."
+                        "text": "Peak New York season runs through mid-June; local berries are far sweeter than shipped varieties. Slice over yogurt, blend into smoothies, or eat fresh with no preparation needed."
                     },
                     {
                         "b": "Sugar Snap Peas",
-                        "text": "Crisp and sweet right now from local farms. Eat raw with hummus, toss into stir-fries, or add whole to grain bowls for crunch."
+                        "text": "At their sweetest and crispest in early June before summer heat sets in. Eat raw as a snack, toss into grain bowls, or sauté briefly with garlic and olive oil."
                     },
                     {
-                        "b": "Rhubarb",
-                        "text": "Available only briefly in spring; tart stalks pair well with strawberries. Simmer into a compote for oatmeal or yogurt, or bake into a crisp."
+                        "b": "Zucchini",
+                        "text": "First of the summer squash harvest appears at Greenmarkets in early June. Shave raw into salads, grill with olive oil and lemon, or fold into frittatas."
+                    },
+                    {
+                        "b": "Radishes",
+                        "text": "Spring radishes hit their prime before the heat makes them bitter. Slice thin onto avocado toast, add to grain bowls for crunch, or serve with good butter and flaky salt."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt bowl with sliced local strawberries, rhubarb compote, granola, and a drizzle of honey."
+                        "text": "Greek yogurt bowl with sliced local strawberries, a drizzle of honey, and a handful of granola — quick, high-protein, and fully seasonal."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Shaved asparagus and sugar snap pea salad over farro with a lemon-Dijon vinaigrette, topped with a soft-boiled egg."
+                        "text": "Farro grain bowl with shaved raw zucchini, sliced radishes, snap peas, lemon-tahini dressing, and a soft-boiled egg."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Roasted asparagus and chicken thighs with a strawberry–balsamic pan sauce; serve with crusty bread or herbed rice."
+                        "text": "Grilled chicken thighs alongside a warm snap pea and zucchini sauté with garlic, fresh mint, and a squeeze of lemon."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "May · clear 53°F",
-        "copy": "Clear skies and a high of 76°F make today ideal for outdoor activity. It will be cool at dawn and comfortable by midday — plan accordingly.",
+        "sub": "June · clear 68°F",
+        "copy": "Conditions today are well-suited to outdoor activity: clear skies, low humidity, and a comfortable 68°F with a light breeze making it feel closer to 62°F. UV index of 8 means sunscreen is necessary for any outdoor session longer than 20 minutes.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Focus on posterior chain today — deadlifts, Romanian deadlifts, and single-leg glute bridges. Three sets of 8–10 reps at moderate load."
+                        "text": "Focus on lower body today — squats, Romanian deadlifts, and walking lunges. Monday is a strong reset day for a 3-day full-body split or a lower/upper/lower weekly structure."
                     },
                     {
                         "b": "Cardio",
-                        "text": "With UV index at 7 and temps climbing to 76°F by afternoon, take a 30–45 minute outdoor run in Central Park before 10 AM or after 5 PM. Apply SPF."
+                        "text": "With 68°F and clear skies, an outdoor run or brisk walk is the optimal choice over a treadmill. Target 30–45 minutes at a conversational pace; apply SPF 30+ before heading out — UV index is 8."
                     },
                     {
                         "b": "Recovery",
-                        "text": "Finish with 10 minutes of hip-flexor and hamstring stretching on a mat. Use a foam roller on the thoracic spine if you sit during the week."
+                        "text": "Close with a 10-minute hip flexor and hamstring stretch sequence. Pigeon pose, supine figure-four, and a standing quad hold are effective after any lower-body session."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "A 20-minute Sun Salutation flow (Surya Namaskar A and B) to warm the body in the cool morning air. Follow with Warrior I and II holds to open the hips."
+                        "text": "A 20-minute sun salutation flow (Surya Namaskar A and B, 5 rounds each) to activate the body and sync with the early sunrise. Follow with warrior I and II to open the hips before a full day."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative practice: Legs-Up-The-Wall (Viparita Karani) for 5 minutes, followed by Supine Twist on each side and a 5-minute Savasana to close the day."
+                        "text": "Restorative wind-down: legs-up-the-wall (Viparita Karani) for 5 minutes, followed by supine spinal twist on each side and a 3-minute savasana with diaphragmatic breathing to lower cortisol before sleep."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Core daily supplements support baseline health year-round. Cycle-aware and stress-aware additions are noted below — take only as relevant to your current phase or circumstances.",
+        "copy": "Core daily supplements support baseline health year-round. Cycle-aware additions address specific physiological demands during menstruation, the luteal phase, or sustained high-stress periods.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "2,000–4,000 IU with breakfast. Despite spring sunshine, indoor lifestyles in Manhattan often leave levels insufficient. Take with a fat-containing meal for best absorption."
+                        "text": "2,000–4,000 IU taken with breakfast alongside a fat-containing meal for optimal absorption. Even with June sun, consistent indoor time in NYC makes supplementation advisable for most adults."
                     },
                     {
                         "b": "Magnesium",
-                        "text": "Magnesium glycinate, 200–400 mg taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and stress regulation."
+                        "text": "200–400 mg magnesium glycinate taken 30–60 minutes before bed. Glycinate form is well-tolerated, supports sleep quality, and reduces muscle tension after training."
                     },
                     {
                         "b": "Omega-3",
-                        "text": "1,000–2,000 mg EPA+DHA from fish oil, taken with lunch or dinner. Supports cardiovascular and cognitive health; take with food to reduce fishy aftertaste."
+                        "text": "1,000–2,000 mg EPA+DHA combined daily, taken with a meal to reduce GI discomfort. Supports cardiovascular health, joint recovery, and cognitive function."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "18–27 mg ferrous bisglycinate during menstruation, taken on an empty stomach with vitamin C to enhance absorption. Avoid taking within 2 hours of calcium or coffee."
+                        "text": "18–27 mg ferrous bisglycinate taken during menstruation to offset monthly losses. Take on an empty stomach with vitamin C for best absorption; avoid within 2 hours of coffee or calcium."
                     },
                     {
                         "b": "Ashwagandha",
-                        "text": "300–600 mg KSM-66 extract during periods of elevated stress. Take with dinner. Not recommended for use beyond 8–12 consecutive weeks without a break."
+                        "text": "300–600 mg KSM-66 extract taken with dinner during sustained high-stress periods. An adaptogen shown to lower cortisol; cycle on for 6–8 weeks then take a 2-week break."
                     },
                     {
-                        "b": "B-Complex",
-                        "text": "One B-complex tablet with breakfast during the luteal phase (days 15–28) or when experiencing fatigue. B6 in particular supports mood and progesterone activity."
+                        "b": "B-complex",
+                        "text": "One B-complex with breakfast during the luteal phase (days 15–28) or periods of fatigue and brain fog. B6 in particular supports progesterone metabolism and mood stability in the second half of the cycle."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Ornithology",
-        "headline": "Homing Pigeons May Navigate Using Iron-Rich Immune Cells in the Liver, Not the Beak.",
-        "deck": "New research challenges the long-held theory that magnetite in the beak guides pigeon navigation. Scientists now point to iron-laden macrophages in the liver as a candidate biological compass.",
-        "source": "Science News",
-        "url": "https://www.sciencenews.org/article/pigeon-navigation-iron-liver-cells",
-        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/05/052726_EP_pigeons_main.jpg?w=798",
-        "caption": "Homing pigeon in flight; new findings implicate liver cells in magnetic navigation."
+        "cat": "Cover discovery · Oncology",
+        "headline": "Experimental daily pill nearly doubles survival time for patients with advanced pancreatic cancer.",
+        "deck": "People with advanced pancreatic cancer taking the oral drug lived nearly twice as long as those receiving standard chemotherapy infusions, according to new trial data. Researchers describe the result as 'transformative' for a cancer with historically poor prognosis.",
+        "source": "New Scientist",
+        "url": "https://www.newscientist.com/article/2528738-transformative-pancreatic-cancer-drug-doubles-survival-time/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home",
+        "img": "https://images.newscientist.com/wp-content/uploads/2026/06/01165715/SEI_299732646.jpg",
+        "caption": "Trial participants on the experimental oral drug showed significantly extended survival versus chemotherapy."
     },
     "more": [
         {
-            "field": "Planetary Science",
-            "title": "Europa May Not Be Venting Water Into Space, Revised Analysis Suggests.",
-            "deck": "Scientists say earlier evidence for water plumes above Jupiter's icy moon Europa may not hold up under scrutiny. NASA's Europa Clipper, arriving in 2030, is expected to provide a definitive answer.",
-            "url": "https://www.sciencenews.org/article/europa-moon-no-water-plumes-space"
+            "field": "Neuroscience",
+            "title": "A small region of the brain may continue to process sounds and words while a patient is under general anesthesia.",
+            "deck": "Tones, oddball sounds, and spoken words were found to spark measurable brain cell responses during anesthesia, suggesting a layer of auditory processing that persists without conscious awareness.",
+            "url": "https://www.sciencenews.org/article/brain-cells-listen-under-anesthesia"
         },
         {
-            "field": "Mathematics",
-            "title": "Mathematician Identifies the Most Efficient Way to Fold Paper Into a Torus.",
-            "deck": "A new proof determines the minimum number of folds required to create a doughnut-shaped origami torus. The result has implications for understanding geometric constraints in paper folding.",
-            "url": "https://www.sciencenews.org/article/origami-torus-fewest-folds-math"
+            "field": "Mathematics / AI",
+            "title": "AI is advancing through unsolved mathematical problems at a pace that has researchers questioning the future role of human mathematicians.",
+            "deck": "Mathematicians report AI systems are making rapid progress on advanced problems that have resisted human solutions for years. Some researchers say the field may be entering a new era of machine-assisted discovery.",
+            "url": "https://www.newscientist.com/article/2526650-a-golden-age-of-maths-is-dawning-and-mathematicians-are-freaking-out/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
         },
         {
-            "field": "Reproductive Medicine",
-            "title": "Stem-Cell Embryo Organoids Created Without Sperm or Eggs Illuminate Early Pregnancy Failure.",
-            "deck": "Researchers used stem cells to build embryo-like structures that replicate early human development in the lab. The models are being used to study the mechanisms behind miscarriage, infertility, and pre-eclampsia.",
-            "url": "https://www.newscientist.com/article/2527224-embryos-made-without-sperm-or-eggs-reveal-why-many-pregnancies-fail/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
+            "field": "Marine Biology",
+            "title": "Scientists identify eight distinct metabolic niches that explain how ocean microbes break down carbon on a global scale.",
+            "deck": "A new study maps the functional roles of microbial communities across the world's oceans, clarifying how trillions of microbes regulate the carbon cycle and influence Earth's climate.",
+            "url": "https://phys.org/news/2026-06-metabolic-niches-reveal-ocean-microbes.html"
         }
     ]
 },
@@ -913,30 +913,30 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "The Scariest Monster on Broadway: A New Play About Roald Dahl and Anti-Jewish Prejudice.",
-        "deck": "A stage production confronts the documented antisemitism of the beloved children's author. The review examines how the play handles the tension between celebrated art and a creator's documented prejudice.",
-        "author": "by The Atlantic",
+        "headline": "The White House Is the New Green Zone",
+        "deck": "Permanent fortifications are expanding around the White House as the threat of political violence grows. A reported look at how the seat of American government is being physically transformed.",
+        "author": "by The Atlantic staff",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/ideas/2026/05/roald-dahl-play-giant-antisemitism/687373/?utm_source=feed",
+        "url": "https://www.theatlantic.com/politics/2026/06/white-house-security-violence-green-zone/687361/?utm_source=feed",
+        "img": ""
+    },
+    {
+        "pub": "The Atlantic",
+        "headline": "Photos: Farming in Ukraine's War Zone",
+        "deck": "Four years into the war, Ukrainian farmers navigate drone attacks, mined fields, and collapsing infrastructure to work their land. A photographic dispatch from the front-line agricultural regions.",
+        "author": "by The Atlantic photo desk",
+        "read": "8 min",
+        "url": "https://www.theatlantic.com/photography/2026/06/photos-farming-in-ukraines-war-zone/687386/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "600-Year-Old Surgical Instruments From a Ming Dynasty Tomb Are Coated in an Early Local Anesthetic.",
-        "deck": "Iron scissors and tweezers found in a Ming dynasty doctor's tomb carry residue of a numbing compound extracted from a poisonous plant. Researchers say the tools offer rare physical evidence of surgical anesthesia in medieval China.",
-        "author": "by Smithsonian Staff",
-        "read": "8 min",
-        "url": "https://www.smithsonianmag.com/smart-news/these-600-year-old-chinese-surgical-instruments-are-coated-in-an-early-local-anestheticcarefully-extracted-from-a-poisonous-plant-180988865/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/dbAweNjolD733IkrXXwMKLJuGOI=/420x240/filters:focal(527x351:528x352)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/3e/bf/3ebf98af-8965-4b65-9f71-b6da84137f8f/urn_cambridgeorg_id_binary-alt_20260513195241-44146-optimisedimage-png-s0003598x26103470_fig1.jpeg"
-    },
-    {
-        "pub": "Smithsonian Magazine",
-        "headline": "Four Guam Kingfisher Chicks Hatch in Virginia, Bolstering a Species Extinct in the Wild.",
-        "deck": "The sihek, wiped out from its native Guam, survives only in captivity and at a single reintroduction site on Palmyra Atoll. Four new hatchlings at a Virginia facility represent a meaningful addition to the species' total population.",
-        "author": "by Smithsonian Staff",
-        "read": "7 min",
-        "url": "https://www.smithsonianmag.com/smart-news/four-rare-guam-kingfisher-chicks-hatch-at-virginia-facility-making-an-incredibly-valuable-addition-to-the-small-population-of-extinct-in-the-wild-birds-180988863/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/GUvXiF4Z-dSONsei2R7ljsoWLs8=/420x240/filters:focal(1024x634:1025x635)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/f9/a4/f9a4af17-b326-4f00-8d64-92966468f938/705306451_1423631536459186_5155291432592042996_n.jpg"
+        "headline": "A Bright Meteor Lit Up the New England Sky Before Exploding With a Loud Boom — Pieces May Have Landed in Cape Cod Bay",
+        "deck": "A roughly three-foot-wide meteor traveling at 75,000 miles per hour broke apart over the Massachusetts coast, releasing energy equivalent to 300 tons of TNT. Reports came in from as far south as Delaware and as far north as Montreal.",
+        "author": "by Smithsonian staff",
+        "read": "6 min",
+        "url": "https://www.smithsonianmag.com/smart-news/a-bright-meteor-lit-up-the-new-england-sky-before-exploding-with-a-loud-boom-and-its-pieces-may-have-landed-in-cape-cod-bay-180988869/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/IONItUjYTZFueImlaljSuJ8HMNk=/420x240/filters:focal(1116x956:1117x957)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/70/f7/70f74604-022a-4e74-a09f-c0f1e906bba3/screenshot_2026-06-01_at_115835.png"
     }
 ]
 };
