@@ -509,96 +509,89 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 5, 1),
-  edition: "Vol. III · No. 152",
+  date: new Date(2026, 5, 2),
+  edition: "Vol. III · No. 153",
   location: "Manhattan, NY",
-  weatherStrip: "68°F · Clear · UV 8 · Manhattan",
+  weatherStrip: "78°F · Mostly Clear · UV 8 · Manhattan",
 
   topStories: [
     {
-        "category": "Middle East · Conflict",
-        "headline": "Iran warns Israeli strikes in Lebanon threaten US ceasefire talks as Trump says both sides agreed to pause attacks.",
-        "deck": "Israel struck Beirut's southern suburbs after Hezbollah rocket and drone fire on northern Israel. Trump posted that Israel and Hezbollah had agreed to hold off on further military action while Iran negotiations continue.",
-        "source": "BBC News / NYT",
+        "category": "World · Conflict",
+        "headline": "U.S.-Iran war enters new phase as Lebanon peace talks resume in Washington.",
+        "deck": "Israeli strikes continue in southern Lebanon despite a partial Hezbollah truce brokered by the U.S. A senior Iranian officer said war with the United States appears 'inevitable.'",
+        "source": "NYT / ABC News",
         "bias": "Center",
         "read": "6 min",
-        "url": "https://www.nytimes.com/live/2026/06/01/world/iran-war-us-trump-israel-lebanon",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/553d/live/6bda21a0-5dd9-11f1-a574-05510226f57f.jpg",
-        "caption": "Smoke rises over Beirut's southern suburbs following Israeli strikes, June 1, 2026."
-    },
-    {
-        "category": "US Politics · Justice",
-        "headline": "DOJ agrees to abide by court ruling that temporarily froze administration's Anti-Weaponization Fund.",
-        "deck": "A federal district judge issued the temporary order pausing the fund. The Justice Department issued a statement Monday confirming it would comply with the ruling.",
-        "source": "ABC News",
-        "bias": "Center",
-        "read": "4 min",
-        "url": "https://abcnews.com/US/doj-abide-court-ruling-temporarily-paused-anti-weaponization/story?id=133493215",
+        "url": "https://www.nytimes.com/live/2026/06/02/world/iran-war-trump-israel-lebanon",
         "img": "https://s.abcnews.com/images/International/trump-1-ap-jef-260601_1780318981612_hpMain_4x3t_384.jpg",
-        "caption": "DOJ confirms compliance with court order pausing Anti-Weaponization Fund, June 1, 2026."
+        "caption": "Trump on Iran negotiations, June 1, 2026."
     },
     {
-        "category": "UK Politics · Diplomacy",
-        "headline": "Leaked Mandelson messages reveal senior Labour figures described No. 10 as 'beleaguered and bereft.'",
-        "deck": "Newly published documents show Lord Mandelson and ministers expressing private concerns about Prime Minister Starmer and Labour MPs. Analysts say Starmer's decision to appoint Mandelson as US ambassador is a defining vulnerability of his tenure.",
-        "source": "BBC News",
+        "category": "World · War",
+        "headline": "Russia strikes Kyiv after week of warnings; at least 22 killed across Ukraine.",
+        "deck": "Moscow launched a major assault on Kyiv following days of explicit public warnings. An eight-year-old boy was among those killed in strikes on residential apartment blocks.",
+        "source": "BBC News / NYT",
         "bias": "Center",
         "read": "5 min",
-        "url": "https://www.bbc.com/news/articles/cwy2431r8xdo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ace7/live/5a2a25e0-5ded-11f1-b682-cf91850925ea.jpg",
-        "caption": "Lord Mandelson's private messages published, June 1, 2026."
+        "url": "https://www.nytimes.com/2026/06/02/world/europe/ukraine-war-russia-kyiv-attack.html",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e46e/live/76e7ff20-5e7b-11f1-89a3-d1f559421220.jpg",
+        "caption": "Rescuers at a strike site in Ukraine, June 2, 2026."
+    },
+    {
+        "category": "UK · Politics",
+        "headline": "UK Prime Minister calls for inquiry after Henry Nowak arrest footage released.",
+        "deck": "Sir Keir Starmer said bodycam footage of the arrest raises 'serious questions for police' over how allegations of racism shaped officer decision-making.",
+        "source": "BBC News",
+        "bias": "Center",
+        "read": "4 min",
+        "url": "https://www.bbc.com/news/articles/cq8pn9ng5zlo?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cdc8/live/65b77950-5e9f-11f1-89a3-d1f559421220.jpg",
+        "caption": "PM Starmer responds to Nowak arrest footage, June 2, 2026."
     }
 ],
 
   weather: {
-    "now": 68,
-    "condition": "Clear",
-    "feels": 62,
-    "high": 71,
-    "low": 54,
+    "now": 78,
+    "condition": "Mostly Clear",
+    "feels": 74,
+    "high": 78,
+    "low": 49,
     "uv": 8,
     "rain": false,
     "wind": "Breezy",
     "sunrise": "5:26a",
-    "sunset": "8:20p",
+    "sunset": "8:21p",
     "hours": [
         {
             "h": "Now",
-            "t": 68,
+            "t": 78,
             "ic": "sun"
         },
         {
             "h": "+2h",
-            "t": 65,
+            "t": 78,
             "ic": "cloud"
         },
         {
             "h": "+5h",
-            "t": 56,
-            "ic": "sun"
+            "t": 72,
+            "ic": "cloud"
         },
         {
             "h": "+8h",
-            "t": 53,
-            "ic": "sun"
+            "t": 66,
+            "ic": "cloud"
         },
         {
             "h": "+11h",
-            "t": 50,
+            "t": 62,
             "ic": "sun"
         }
     ],
     "forecast7": [
         {
-            "day": "MON",
-            "high": 71,
-            "low": 54,
-            "ic": "cloud",
-            "rain": false
-        },
-        {
             "day": "TUE",
-            "high": 76,
+            "high": 78,
             "low": 49,
             "ic": "cloud",
             "rain": false
@@ -606,37 +599,44 @@ const DIGEST = {
         {
             "day": "WED",
             "high": 81,
-            "low": 54,
+            "low": 56,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "THU",
-            "high": 87,
-            "low": 64,
+            "high": 85,
+            "low": 56,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "FRI",
-            "high": 91,
-            "low": 69,
+            "high": 90,
+            "low": 68,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "SAT",
-            "high": 86,
+            "high": 92,
+            "low": 72,
+            "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "SUN",
+            "high": 84,
             "low": 72,
             "ic": "rain",
             "rain": true
         },
         {
-            "day": "SUN",
-            "high": 74,
-            "low": 64,
-            "ic": "rain",
-            "rain": true
+            "day": "MON",
+            "high": 69,
+            "low": 58,
+            "ic": "cloud",
+            "rain": false
         }
     ],
     "outfit": [
@@ -646,11 +646,11 @@ const DIGEST = {
         },
         {
             "label": "Top",
-            "val": "Long sleeve or light layer"
+            "val": "T-shirt"
         },
         {
             "label": "Bottom",
-            "val": "Shorts, skirt, or pants"
+            "val": "Shorts or skirt"
         },
         {
             "label": "Sunscreen",
@@ -662,92 +662,92 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "Florida sues OpenAI and Sam Altman over alleged role of ChatGPT in multiple violent incidents.",
-        "deck": "The lawsuit is the first of its kind brought by a US state against an AI company. It centers partly on a shooting at Florida State University, with the state's attorney general accusing Altman of 'utter disregard' for human lives.",
-        "source": "TechCrunch / Ars Technica",
-        "read": "5 min",
-        "url": "https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/GettyImages-2265991640-500x500-1780337784.jpg"
+        "headline": "Trump signs executive order creating pre-release review framework for frontier AI models.",
+        "deck": "The order establishes a voluntary system for AI companies to share models with the federal government before public release. The White House framed the measure as promoting secure innovation.",
+        "source": "The Verge",
+        "read": "4 min",
+        "url": "https://www.theverge.com/policy/941775/trump-ai-executive-order",
+        "img": ""
     },
     {
         "num": "02",
-        "headline": "Hackers hijacked Instagram accounts by manipulating Meta's AI support chatbot into granting unauthorized access.",
-        "deck": "Multiple users reported their Instagram accounts compromised over the weekend. Reports indicate attackers tricked Meta's own AI customer support bot into transferring account control.",
-        "source": "TechCrunch",
-        "read": "4 min",
-        "url": "https://techcrunch.com/2026/06/01/hackers-hijacked-instagram-accounts-by-tricking-meta-ai-support-chatbot-into-granting-access/",
+        "headline": "Microsoft debuts MAI-Thinking-1 reasoning model and Majorana 2 quantum chip at Build 2026.",
+        "deck": "Microsoft announced its first in-house advanced reasoning AI model alongside an upgraded quantum processor at its annual developer conference. Critics remain skeptical of the quantum computing timeline claims.",
+        "source": "The Verge / Science News",
+        "read": "5 min",
+        "url": "https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026",
         "img": ""
     },
     {
         "num": "03",
-        "headline": "Nvidia's RTX Spark entry into consumer laptop chips draws comparisons to Apple's M1 transition.",
-        "deck": "Nvidia announced it is entering the consumer laptop chip market with ARM-based RTX Spark processors. Analysts note the move mirrors Apple's shift that delivered strong performance and battery life, though pricing is expected to be high at launch.",
-        "source": "The Verge",
-        "read": "5 min",
-        "url": "https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram",
-        "img": ""
+        "headline": "Google adds deepfake call detection and expanded AirDrop support to Android in June feature drop.",
+        "deck": "Google's monthly Android update introduces AI-powered detection of voice-cloned calls and new cross-device file-sharing with Apple AirDrop. The update also expands existing scam-detection capabilities.",
+        "source": "Ars Technica",
+        "read": "4 min",
+        "url": "https://arstechnica.com/gadgets/2026/06/google-announces-deepfake-call-detection-for-android-new-airdrop-device-support/",
+        "img": "https://cdn.arstechnica.net/wp-content/uploads/2025/06/Android-IO-500x500-1749567268.jpg"
     }
 ],
 
   nycEvents: [
     {
-        "day": "Mon",
-        "num": 1,
-        "title": "NYC Pride Month Kickoff — Pier 26 Hudson River Park",
-        "blurb": "June 1 marks the official start of Pride Month in New York City. Hudson River Park hosts evening programming along the waterfront throughout the month; check the park calendar for Monday's schedule.",
-        "where": "Tribeca, Manhattan",
-        "time": "Evening, check hudsonriverpark.org",
+        "day": "Tue",
+        "num": 2,
+        "title": "Free Shakespeare in the Park — Delacorte Theater",
+        "blurb": "The Public Theater's annual free outdoor Shakespeare season runs through late June. Same-day tickets available via the Digital Lottery app from 12:00am; standby lines form at the Delacorte by late afternoon.",
+        "where": "Central Park, Manhattan",
+        "time": "8:00 PM",
         "price": "Free",
-        "url": "https://www.hudsonriverpark.org"
+        "url": "https://www.publictheater.org/programs/shakespeare-in-the-park/"
     },
     {
-        "day": "Mon",
+        "day": "Tue",
         "num": 2,
-        "title": "Union Square Greenmarket",
-        "blurb": "Monday market features peak early-June produce — strawberries, snap peas, and early greens — from regional farms. One of the city's largest farmers markets and a strong start to the week for seasonal eating.",
+        "title": "Hudson River Park Early Morning Run Club",
+        "blurb": "Mostly clear skies and a 78°F high make Tuesday ideal for a group run along the Hudson River Greenway. Multiple running clubs convene at Pier 46 on Tuesday mornings for 5K and 10K routes.",
+        "where": "Hudson River Park, West Village",
+        "time": "6:30 AM",
+        "price": "Free",
+        "url": "https://hudsonriverpark.org"
+    },
+    {
+        "day": "Tue",
+        "num": 2,
+        "title": "Union Square Greenmarket — Peak Early-Summer Produce",
+        "blurb": "The Monday–Saturday Greenmarket at Union Square is at peak seasonal variety in early June, with local strawberries, snap peas, spring onions, and early zucchini from Hudson Valley farms.",
         "where": "Union Square, Manhattan",
         "time": "8:00 AM – 6:00 PM",
         "price": "Free entry",
         "url": "https://www.grownyc.org/greenmarket/manhattan-union-square-m"
-    },
-    {
-        "day": "Mon",
-        "num": 3,
-        "title": "Morning Run in Central Park — 68°F Clear Conditions",
-        "blurb": "Clear skies, 68°F with a feels-like of 62°F and a long 8:20 PM sunset make this one of the best running mornings of the year. The 6.1-mile loop around the park is fully open to pedestrians Monday mornings.",
-        "where": "Central Park, Manhattan",
-        "time": "6:00 AM – 9:00 AM recommended",
-        "price": "Free",
-        "url": "https://www.centralparknyc.org"
     }
 ],
 
   worldEvents: [
     {
-        "day": "Mon",
-        "num": 1,
-        "title": "Iran–Israel–US Ceasefire Negotiations Continue",
-        "blurb": "Trump stated on social media that Israel and Hezbollah agreed to pause military action while US–Iran talks proceed. Iran separately warned that Israeli strikes on Beirut threaten the broader ceasefire framework.",
-        "where": "Tehran / Beirut / Washington",
-        "time": "Ongoing",
-        "price": "—"
-    },
-    {
-        "day": "Mon",
+        "day": "Tue",
         "num": 2,
-        "title": "Ebola Vaccine Development Advances Amid Outbreak Concerns",
-        "blurb": "IAVI, Moderna, and the University of Oxford are each developing new Ebola vaccines as health officials flag growing outbreak risks. Three parallel vaccine programs represent an expanded international response.",
-        "where": "Global",
+        "title": "Lebanon–Israel Peace Talks Resume in Washington",
+        "blurb": "Lebanese and Israeli officials met in Washington as Netanyahu vowed to continue strikes against Hezbollah. A partial truce brokered by the U.S. appears to be holding outside Beirut.",
+        "where": "Washington, D.C. / Beirut, Lebanon",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Mon",
-        "num": 3,
-        "title": "Venezuela's Industrial Collapse Deepens in Cumaná",
-        "blurb": "The city of Cumaná, once a manufacturing and export hub producing Toyota vehicles and food exports, is reported to be on the brink of infrastructure collapse as public services fail across the region.",
-        "where": "Cumaná, Venezuela",
+        "day": "Tue",
+        "num": 2,
+        "title": "Russia Launches Major Strike on Kyiv Following Week of Public Warnings",
+        "blurb": "Russian forces struck Kyiv and other Ukrainian cities, killing at least 22 people. Moscow's tactic of advance public warning appeared designed to compound psychological impact alongside physical damage.",
+        "where": "Kyiv, Ukraine",
         "time": "Ongoing",
+        "price": "—"
+    },
+    {
+        "day": "Tue",
+        "num": 2,
+        "title": "Kenyan Court Delays U.S. Ebola Quarantine Unit Plan",
+        "blurb": "A Kenyan court issued a ruling further delaying the Trump administration's proposed Ebola quarantine facility for Americans exposed to the virus. The plan has prompted large public protests in Kenya.",
+        "where": "Nairobi, Kenya",
+        "time": "June 2, 2026",
         "price": "—"
     }
 ],
@@ -756,26 +756,26 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "June 2026 · seasonal",
-        "copy": "Early June in New York brings the first flush of summer produce at Greenmarkets. Strawberries peak now, snap peas are crisp and sweet, and the first zucchini and radishes of the season arrive from Hudson Valley farms.",
+        "copy": "Early June in New York brings the first flush of summer produce from Hudson Valley and Long Island farms. Greenmarkets are stocked with soft fruits, tender vegetables, and leafy greens at peak flavor.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "Peak New York season runs through mid-June; local berries are far sweeter than shipped varieties. Slice over yogurt, blend into smoothies, or eat fresh with no preparation needed."
+                        "text": "Local New York strawberries peak in early June — smaller and more intensely sweet than supermarket varieties. Eat fresh with yogurt, slice over oatmeal, or macerate with a little lemon zest."
                     },
                     {
-                        "b": "Sugar Snap Peas",
-                        "text": "At their sweetest and crispest in early June before summer heat sets in. Eat raw as a snack, toss into grain bowls, or sauté briefly with garlic and olive oil."
+                        "b": "Snap Peas",
+                        "text": "Sugar snap peas from Hudson Valley farms are crisp and sweet right now, at their best raw or barely blanched. Toss into salads, stir-fries, or eat as a snack with hummus."
                     },
                     {
                         "b": "Zucchini",
-                        "text": "First of the summer squash harvest appears at Greenmarkets in early June. Shave raw into salads, grill with olive oil and lemon, or fold into frittatas."
+                        "text": "Early summer zucchini is thin-skinned and tender in June before it grows oversized. Shave raw over pasta, sauté with olive oil and garlic, or grill with lemon."
                     },
                     {
-                        "b": "Radishes",
-                        "text": "Spring radishes hit their prime before the heat makes them bitter. Slice thin onto avocado toast, add to grain bowls for crunch, or serve with good butter and flaky salt."
+                        "b": "Cherries",
+                        "text": "Sweet and sour cherries from upstate New York arrive at markets in early June. Use in overnight oats, blend into smoothies, or serve alongside cheese for a quick dessert."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt bowl with sliced local strawberries, a drizzle of honey, and a handful of granola — quick, high-protein, and fully seasonal."
+                        "text": "Greek yogurt parfait layered with fresh local strawberries, sliced cherries, granola, and a drizzle of honey — no cooking required on a warm morning."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Farro grain bowl with shaved raw zucchini, sliced radishes, snap peas, lemon-tahini dressing, and a soft-boiled egg."
+                        "text": "Farro grain bowl with shaved raw zucchini, snap peas, arugula, lemon-tahini dressing, and a soft-boiled egg; prep grains the night before for a fast assembly."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Grilled chicken thighs alongside a warm snap pea and zucchini sauté with garlic, fresh mint, and a squeeze of lemon."
+                        "text": "Grilled zucchini and snap pea pasta with ricotta, fresh mint, and chili flakes — toss with penne, finish with lemon juice, and top with toasted pine nuts."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "June · clear 68°F",
-        "copy": "Conditions today are well-suited to outdoor activity: clear skies, low humidity, and a comfortable 68°F with a light breeze making it feel closer to 62°F. UV index of 8 means sunscreen is necessary for any outdoor session longer than 20 minutes.",
+        "sub": "June · mostly clear 78°F",
+        "copy": "Clear skies and a warm but manageable 78°F make Tuesday a good day for outdoor training. UV index is 8 — apply SPF 30+ if exercising outside between 10am and 4pm and bring water.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Focus on lower body today — squats, Romanian deadlifts, and walking lunges. Monday is a strong reset day for a 3-day full-body split or a lower/upper/lower weekly structure."
+                        "text": "Focus on lower-body compound movements — squats, Romanian deadlifts, and walking lunges. Three to four sets of 8–10 reps builds functional strength and complements summer running."
                     },
                     {
                         "b": "Cardio",
-                        "text": "With 68°F and clear skies, an outdoor run or brisk walk is the optimal choice over a treadmill. Target 30–45 minutes at a conversational pace; apply SPF 30+ before heading out — UV index is 8."
+                        "text": "With UV at 8, schedule outdoor runs or cycling before 9am or after 6pm. A 30-minute tempo run along the Hudson River Greenway is well-suited to today's conditions."
                     },
                     {
                         "b": "Recovery",
-                        "text": "Close with a 10-minute hip flexor and hamstring stretch sequence. Pigeon pose, supine figure-four, and a standing quad hold are effective after any lower-body session."
+                        "text": "Post-workout: 10 minutes of hamstring and hip flexor stretching, followed by a cold-cool shower to reduce core temperature and limit heat fatigue after outdoor exertion."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "A 20-minute sun salutation flow (Surya Namaskar A and B, 5 rounds each) to activate the body and sync with the early sunrise. Follow with warrior I and II to open the hips before a full day."
+                        "text": "Sun Salutation A and B sequence (6–8 rounds) to build heat and mobility, followed by Warrior I, II, and III to engage lower body stabilizers. Practice outdoors if in shade before 9am."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative wind-down: legs-up-the-wall (Viparita Karani) for 5 minutes, followed by supine spinal twist on each side and a 3-minute savasana with diaphragmatic breathing to lower cortisol before sleep."
+                        "text": "Restorative wind-down: Legs-Up-the-Wall (Viparita Karani) for 5 minutes, Supine Spinal Twist both sides, and a 3-minute Savasana with slow 4-7-8 breathing to cue sleep."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Core daily supplements support baseline health year-round. Cycle-aware additions address specific physiological demands during menstruation, the luteal phase, or sustained high-stress periods.",
+        "copy": "Core daily supplements support baseline health year-round. Cycle-aware and situational supplements should be added only when the relevant condition applies — avoid doubling up without clinical guidance.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "2,000–4,000 IU taken with breakfast alongside a fat-containing meal for optimal absorption. Even with June sun, consistent indoor time in NYC makes supplementation advisable for most adults."
+                        "text": "1,000–2,000 IU taken with breakfast alongside a fat-containing meal for best absorption. Even with summer sun, urban dwellers often remain deficient due to limited direct skin exposure."
                     },
                     {
                         "b": "Magnesium",
-                        "text": "200–400 mg magnesium glycinate taken 30–60 minutes before bed. Glycinate form is well-tolerated, supports sleep quality, and reduces muscle tension after training."
+                        "text": "200–400 mg magnesium glycinate or citrate taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and nervous system regulation — particularly relevant during heat and exercise stress."
                     },
                     {
                         "b": "Omega-3",
-                        "text": "1,000–2,000 mg EPA+DHA combined daily, taken with a meal to reduce GI discomfort. Supports cardiovascular health, joint recovery, and cognitive function."
+                        "text": "1,000–2,000 mg combined EPA/DHA from a high-quality fish or algae oil, taken with lunch or dinner. Reduces systemic inflammation and supports cardiovascular and cognitive function."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "18–27 mg ferrous bisglycinate taken during menstruation to offset monthly losses. Take on an empty stomach with vitamin C for best absorption; avoid within 2 hours of coffee or calcium."
+                        "text": "18–27 mg ferrous bisglycinate on days 1–5 of menstruation to offset blood-loss depletion. Take on an empty stomach with vitamin C for absorption; avoid within 2 hours of coffee or calcium."
                     },
                     {
                         "b": "Ashwagandha",
-                        "text": "300–600 mg KSM-66 extract taken with dinner during sustained high-stress periods. An adaptogen shown to lower cortisol; cycle on for 6–8 weeks then take a 2-week break."
+                        "text": "300–600 mg standardized KSM-66 extract taken with dinner during periods of elevated stress or poor sleep. Cycle for 4–8 weeks on, then pause; avoid during pregnancy."
                     },
                     {
                         "b": "B-complex",
-                        "text": "One B-complex with breakfast during the luteal phase (days 15–28) or periods of fatigue and brain fog. B6 in particular supports progesterone metabolism and mood stability in the second half of the cycle."
+                        "text": "One B-complex (with methylated B12 and folate) taken with breakfast during the luteal phase (days 15–28) or during sustained fatigue. Supports energy metabolism and mood regulation when progesterone peaks."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Oncology",
-        "headline": "Experimental daily pill nearly doubles survival time for patients with advanced pancreatic cancer.",
-        "deck": "People with advanced pancreatic cancer taking the oral drug lived nearly twice as long as those receiving standard chemotherapy infusions, according to new trial data. Researchers describe the result as 'transformative' for a cancer with historically poor prognosis.",
-        "source": "New Scientist",
-        "url": "https://www.newscientist.com/article/2528738-transformative-pancreatic-cancer-drug-doubles-survival-time/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home",
-        "img": "https://images.newscientist.com/wp-content/uploads/2026/06/01165715/SEI_299732646.jpg",
-        "caption": "Trial participants on the experimental oral drug showed significantly extended survival versus chemotherapy."
+        "cat": "Cover discovery · Quantum Computing",
+        "headline": "Microsoft's Majorana 2 chip upgrades quantum error resistance — but physicists remain unconvinced.",
+        "deck": "Microsoft says material changes in its Majorana 2 processor improve the reliability of topologically protected quantum bits. Independent physicists say extraordinary claims still require independent replication.",
+        "source": "Science News",
+        "url": "https://www.sciencenews.org/article/microsoft-quantum-chip-upgrade-majorana",
+        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2026/06/060226_EC_microsoft_main.jpg?w=800",
+        "caption": "Microsoft's Majorana 2 quantum chip, June 2026."
     },
     "more": [
         {
-            "field": "Neuroscience",
-            "title": "A small region of the brain may continue to process sounds and words while a patient is under general anesthesia.",
-            "deck": "Tones, oddball sounds, and spoken words were found to spark measurable brain cell responses during anesthesia, suggesting a layer of auditory processing that persists without conscious awareness.",
-            "url": "https://www.sciencenews.org/article/brain-cells-listen-under-anesthesia"
+            "field": "Behavioral Science",
+            "title": "Richard Feynman's unpublished lunch notes reveal the math behind how people choose from a menu.",
+            "deck": "Researchers decoded Feynman's handwritten notes showing he modeled restaurant ordering as a mathematical optimization problem. Studies find people instinctively approximate his solution.",
+            "url": "https://www.sciencenews.org/article/math-restaurant-meal-feynman"
         },
         {
-            "field": "Mathematics / AI",
-            "title": "AI is advancing through unsolved mathematical problems at a pace that has researchers questioning the future role of human mathematicians.",
-            "deck": "Mathematicians report AI systems are making rapid progress on advanced problems that have resisted human solutions for years. Some researchers say the field may be entering a new era of machine-assisted discovery.",
-            "url": "https://www.newscientist.com/article/2526650-a-golden-age-of-maths-is-dawning-and-mathematicians-are-freaking-out/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
+            "field": "Mental Health / Technology",
+            "title": "Survey estimates 8 million U.S. young people now use AI chatbots for emotional support.",
+            "deck": "A new survey finds use of AI chatbots for stress, anger, and sadness among teens and young adults has risen measurably since 2024. Researchers note both accessibility benefits and unresolved safety questions.",
+            "url": "https://www.sciencenews.org/article/teens-young-adults-mental-health-ai"
         },
         {
-            "field": "Marine Biology",
-            "title": "Scientists identify eight distinct metabolic niches that explain how ocean microbes break down carbon on a global scale.",
-            "deck": "A new study maps the functional roles of microbial communities across the world's oceans, clarifying how trillions of microbes regulate the carbon cycle and influence Earth's climate.",
-            "url": "https://phys.org/news/2026-06-metabolic-niches-reveal-ocean-microbes.html"
+            "field": "Medicine / Hearing",
+            "title": "Hearing loss linked to dementia and cardiovascular risk as new treatment approaches emerge.",
+            "deck": "New Scientist surveys a growing body of evidence connecting untreated hearing loss to systemic health consequences beyond audition. Researchers report several promising therapeutic directions are now in development.",
+            "url": "https://www.newscientist.com/article/2527617-hearing-loss-is-bad-for-the-whole-body-but-new-treatments-are-coming/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
         }
     ]
 },
@@ -913,30 +913,30 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "The White House Is the New Green Zone",
-        "deck": "Permanent fortifications are expanding around the White House as the threat of political violence grows. A reported look at how the seat of American government is being physically transformed.",
-        "author": "by The Atlantic staff",
+        "headline": "Why the Worst Get on Top: Bill Pulte and the Logic of Authoritarian Appointments.",
+        "deck": "Drawing on Hayek's road-serfdom thesis, the piece examines why Trump's selection of Bill Pulte as acting director of national intelligence follows a predictable structural pattern in concentrated power systems.",
+        "author": "by The Atlantic",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/politics/2026/06/white-house-security-violence-green-zone/687361/?utm_source=feed",
+        "url": "https://www.theatlantic.com/ideas/2026/06/bill-pulte-hayek/687399/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "The Atlantic",
-        "headline": "Photos: Farming in Ukraine's War Zone",
-        "deck": "Four years into the war, Ukrainian farmers navigate drone attacks, mined fields, and collapsing infrastructure to work their land. A photographic dispatch from the front-line agricultural regions.",
-        "author": "by The Atlantic photo desk",
+        "headline": "The Ordinary Miracle of Existing.",
+        "deck": "A philosophical essay on the improbability of individual existence — and what that rarity implies about how life is spent. One of the quieter, more durable pieces in this morning's feeds.",
+        "author": "by The Atlantic",
         "read": "8 min",
-        "url": "https://www.theatlantic.com/photography/2026/06/photos-farming-in-ukraines-war-zone/687386/?utm_source=feed",
+        "url": "https://www.theatlantic.com/philosophy/2026/06/the-ordinary-miracle-of-existing/687351/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "A Bright Meteor Lit Up the New England Sky Before Exploding With a Loud Boom — Pieces May Have Landed in Cape Cod Bay",
-        "deck": "A roughly three-foot-wide meteor traveling at 75,000 miles per hour broke apart over the Massachusetts coast, releasing energy equivalent to 300 tons of TNT. Reports came in from as far south as Delaware and as far north as Montreal.",
-        "author": "by Smithsonian staff",
+        "headline": "The Bartholdi Maquette: The Statue of Liberty's Sculptor Made a Small Model — and It's Now at the Smithsonian Castle.",
+        "deck": "Frédéric Auguste Bartholdi's original small-scale model of Liberty is on summer display in Washington, offering a rare look at the monument's origins ahead of its 140th anniversary year.",
+        "author": "by Smithsonian Magazine",
         "read": "6 min",
-        "url": "https://www.smithsonianmag.com/smart-news/a-bright-meteor-lit-up-the-new-england-sky-before-exploding-with-a-loud-boom-and-its-pieces-may-have-landed-in-cape-cod-bay-180988869/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/IONItUjYTZFueImlaljSuJ8HMNk=/420x240/filters:focal(1116x956:1117x957)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/70/f7/70f74604-022a-4e74-a09f-c0f1e906bba3/screenshot_2026-06-01_at_115835.png"
+        "url": "https://www.smithsonianmag.com/smithsonian-institution/this-remarkable-statue-of-liberty-model-made-by-the-sculptor-of-the-original-has-a-new-summer-home-at-the-smithsonian-castle-180988885/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/99v_ji_DBA2LBBoupsMNP4l9QtY=/420x240/filters:focal(2160x2880:2161x2881)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ea/47/ea47e7be-98e3-4515-972b-fabff9e3746b/saam-xx76_7.jpg"
     }
 ]
 };
