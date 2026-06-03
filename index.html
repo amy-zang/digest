@@ -509,111 +509,104 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 5, 2),
-  edition: "Vol. III · No. 153",
+  date: new Date(2026, 5, 3),
+  edition: "Vol. III · No. 154",
   location: "Manhattan, NY",
-  weatherStrip: "78°F · Mostly Clear · UV 8 · Manhattan",
+  weatherStrip: "84°F · Clear · UV 8 · Manhattan",
 
   topStories: [
     {
         "category": "World · Conflict",
-        "headline": "U.S.-Iran war enters new phase as Lebanon peace talks resume in Washington.",
-        "deck": "Israeli strikes continue in southern Lebanon despite a partial Hezbollah truce brokered by the U.S. A senior Iranian officer said war with the United States appears 'inevitable.'",
-        "source": "NYT / ABC News",
+        "headline": "Iran Strikes Kuwait and Bahrain as Gulf Cease-Fire Frays.",
+        "deck": "Iranian drones and missiles hit Kuwait's airport and targets in Bahrain on Wednesday, killing at least one person. Secretary of State Rubio had told lawmakers hours earlier that the Iran war was concluded.",
+        "source": "NYT / BBC",
         "bias": "Center",
         "read": "6 min",
-        "url": "https://www.nytimes.com/live/2026/06/02/world/iran-war-trump-israel-lebanon",
-        "img": "https://s.abcnews.com/images/International/trump-1-ap-jef-260601_1780318981612_hpMain_4x3t_384.jpg",
-        "caption": "Trump on Iran negotiations, June 1, 2026."
+        "url": "https://www.nytimes.com/live/2026/06/03/world/iran-war-trump-israel-lebanon",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9df3/live/72b3c3e0-5f42-11f1-89a3-d1f559421220.jpg",
+        "caption": "Smoke rises near Kuwait City airport following Iranian drone strikes, June 3."
+    },
+    {
+        "category": "US · Politics",
+        "headline": "House to Vote on Trump's Authority to Continue War in Iran.",
+        "deck": "A war-powers measure directing the president to halt U.S. engagement in Iran comes to a House floor vote today after Republican leaders exhausted delay options. The vote's outcome is uncertain.",
+        "source": "The New York Times",
+        "bias": "Center-Left",
+        "read": "5 min",
+        "url": "https://www.nytimes.com/2026/06/03/us/politics/house-vote-trump-iran-war-powers.html",
+        "img": "",
+        "caption": "House lawmakers face a deadline vote on war-powers constraints regarding Iran."
     },
     {
         "category": "World · War",
-        "headline": "Russia strikes Kyiv after week of warnings; at least 22 killed across Ukraine.",
-        "deck": "Moscow launched a major assault on Kyiv following days of explicit public warnings. An eight-year-old boy was among those killed in strikes on residential apartment blocks.",
-        "source": "BBC News / NYT",
+        "headline": "Ukraine Strikes St. Petersburg Oil and Naval Targets on Day One of Putin Forum.",
+        "deck": "Ukrainian long-range drones hit oil storage facilities and a navy base near Russia's second-largest city as Putin's flagship economic conference opened. President Zelensky confirmed the strikes.",
+        "source": "NYT / BBC",
         "bias": "Center",
         "read": "5 min",
-        "url": "https://www.nytimes.com/2026/06/02/world/europe/ukraine-war-russia-kyiv-attack.html",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e46e/live/76e7ff20-5e7b-11f1-89a3-d1f559421220.jpg",
-        "caption": "Rescuers at a strike site in Ukraine, June 2, 2026."
-    },
-    {
-        "category": "UK · Politics",
-        "headline": "UK Prime Minister calls for inquiry after Henry Nowak arrest footage released.",
-        "deck": "Sir Keir Starmer said bodycam footage of the arrest raises 'serious questions for police' over how allegations of racism shaped officer decision-making.",
-        "source": "BBC News",
-        "bias": "Center",
-        "read": "4 min",
-        "url": "https://www.bbc.com/news/articles/cq8pn9ng5zlo?at_medium=RSS&at_campaign=rss",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cdc8/live/65b77950-5e9f-11f1-89a3-d1f559421220.jpg",
-        "caption": "PM Starmer responds to Nowak arrest footage, June 2, 2026."
+        "url": "https://www.nytimes.com/2026/06/03/world/europe/ukraine-russia-attack-st-petersburg-putin.html",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ad59/live/7866fc20-5f7a-11f1-89a3-d1f559421220.jpg",
+        "caption": "Drone strikes targeted energy and naval infrastructure near St. Petersburg, June 3."
     }
 ],
 
   weather: {
-    "now": 78,
-    "condition": "Mostly Clear",
-    "feels": 74,
-    "high": 78,
-    "low": 49,
+    "now": 84,
+    "condition": "Clear",
+    "feels": 82,
+    "high": 84,
+    "low": 60,
     "uv": 8,
     "rain": false,
-    "wind": "Breezy",
+    "wind": "Calm",
     "sunrise": "5:26a",
-    "sunset": "8:21p",
+    "sunset": "8:22p",
     "hours": [
         {
             "h": "Now",
-            "t": 78,
+            "t": 84,
             "ic": "sun"
         },
         {
             "h": "+2h",
-            "t": 78,
-            "ic": "cloud"
+            "t": 80,
+            "ic": "sun"
         },
         {
             "h": "+5h",
-            "t": 72,
-            "ic": "cloud"
+            "t": 68,
+            "ic": "sun"
         },
         {
             "h": "+8h",
-            "t": 66,
-            "ic": "cloud"
+            "t": 64,
+            "ic": "sun"
         },
         {
             "h": "+11h",
-            "t": 62,
+            "t": 60,
             "ic": "sun"
         }
     ],
     "forecast7": [
         {
-            "day": "TUE",
-            "high": 78,
-            "low": 49,
-            "ic": "cloud",
-            "rain": false
-        },
-        {
             "day": "WED",
-            "high": 81,
-            "low": 56,
-            "ic": "cloud",
+            "high": 84,
+            "low": 60,
+            "ic": "sun",
             "rain": false
         },
         {
             "day": "THU",
-            "high": 85,
-            "low": 56,
+            "high": 88,
+            "low": 58,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "FRI",
-            "high": 90,
-            "low": 68,
+            "high": 89,
+            "low": 62,
             "ic": "cloud",
             "rain": false
         },
@@ -621,20 +614,27 @@ const DIGEST = {
             "day": "SAT",
             "high": 92,
             "low": 72,
-            "ic": "cloud",
-            "rain": false
+            "ic": "rain",
+            "rain": true
         },
         {
             "day": "SUN",
-            "high": 84,
-            "low": 72,
+            "high": 79,
+            "low": 63,
             "ic": "rain",
             "rain": true
         },
         {
             "day": "MON",
-            "high": 69,
-            "low": 58,
+            "high": 77,
+            "low": 59,
+            "ic": "rain",
+            "rain": true
+        },
+        {
+            "day": "TUE",
+            "high": 87,
+            "low": 63,
             "ic": "cloud",
             "rain": false
         }
@@ -662,59 +662,59 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "Trump signs executive order creating pre-release review framework for frontier AI models.",
-        "deck": "The order establishes a voluntary system for AI companies to share models with the federal government before public release. The White House framed the measure as promoting secure innovation.",
-        "source": "The Verge",
+        "headline": "Alphabet Raises Record $85 Billion in Stock Sale for Google AI Unit.",
+        "deck": "The offering marks the largest equity raise on record and signals strong institutional appetite for AI-related investment vehicles. Proceeds are earmarked for Google's artificial intelligence business.",
+        "source": "TechCrunch",
         "read": "4 min",
-        "url": "https://www.theverge.com/policy/941775/trump-ai-executive-order",
+        "url": "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/",
         "img": ""
     },
     {
         "num": "02",
-        "headline": "Microsoft debuts MAI-Thinking-1 reasoning model and Majorana 2 quantum chip at Build 2026.",
-        "deck": "Microsoft announced its first in-house advanced reasoning AI model alongside an upgraded quantum processor at its annual developer conference. Critics remain skeptical of the quantum computing timeline claims.",
-        "source": "The Verge / Science News",
+        "headline": "As AI Agents Grow More Capable, a Fundamental Promise Comes Into Question.",
+        "deck": "Hands-on testing of Google's Gemini agent Spark shows the tool surfacing personal details users never deliberately shared with it. Reviewers describe the experience as effective but unsettling.",
+        "source": "The Verge",
         "read": "5 min",
-        "url": "https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise",
         "img": ""
     },
     {
         "num": "03",
-        "headline": "Google adds deepfake call detection and expanded AirDrop support to Android in June feature drop.",
-        "deck": "Google's monthly Android update introduces AI-powered detection of voice-cloned calls and new cross-device file-sharing with Apple AirDrop. The update also expands existing scam-detection capabilities.",
-        "source": "Ars Technica",
-        "read": "4 min",
-        "url": "https://arstechnica.com/gadgets/2026/06/google-announces-deepfake-call-detection-for-android-new-airdrop-device-support/",
-        "img": "https://cdn.arstechnica.net/wp-content/uploads/2025/06/Android-IO-500x500-1749567268.jpg"
+        "headline": "Meta Spins Out VR Fitness App Supernatural Rather Than Shutting It Down.",
+        "deck": "Meta has divested the popular virtual-reality workout application following layoffs that had placed its future in doubt. Users who organized to protest the closure will keep access to the platform.",
+        "source": "TechCrunch",
+        "read": "3 min",
+        "url": "https://techcrunch.com/2026/06/03/meta-mercifully-spun-out-vr-fitness-game-supernatural-instead-of-just-killing-it/",
+        "img": ""
     }
 ],
 
   nycEvents: [
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Free Shakespeare in the Park — Delacorte Theater",
-        "blurb": "The Public Theater's annual free outdoor Shakespeare season runs through late June. Same-day tickets available via the Digital Lottery app from 12:00am; standby lines form at the Delacorte by late afternoon.",
-        "where": "Central Park, Manhattan",
-        "time": "8:00 PM",
+        "day": "Wed",
+        "num": 3,
+        "title": "Bryant Park Picnic Performances — Summer Season",
+        "blurb": "Free outdoor live music and performance series on the Bryant Park lawn. Bring a blanket; the park's café kiosks are open. Ideal on a clear 84°F evening before sunset at 8:22 p.m.",
+        "where": "Midtown, Manhattan",
+        "time": "12:00 PM – 2:00 PM & evenings",
         "price": "Free",
-        "url": "https://www.publictheater.org/programs/shakespeare-in-the-park/"
+        "url": "https://bryantpark.org"
     },
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Hudson River Park Early Morning Run Club",
-        "blurb": "Mostly clear skies and a 78°F high make Tuesday ideal for a group run along the Hudson River Greenway. Multiple running clubs convene at Pier 46 on Tuesday mornings for 5K and 10K routes.",
-        "where": "Hudson River Park, West Village",
-        "time": "6:30 AM",
-        "price": "Free",
-        "url": "https://hudsonriverpark.org"
+        "day": "Wed",
+        "num": 3,
+        "title": "Governors Island Opens for Summer 2026",
+        "blurb": "The island's car-free grounds, art installations, and hammock grove are accessible by ferry from Lower Manhattan. June weekday crowds are light; the 10-minute ferry ride costs $4 round-trip.",
+        "where": "Governors Island / Lower Manhattan Ferry at Slip 7",
+        "time": "10:00 AM – 6:00 PM",
+        "price": "$4 ferry",
+        "url": "https://govisland.com"
     },
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Union Square Greenmarket — Peak Early-Summer Produce",
-        "blurb": "The Monday–Saturday Greenmarket at Union Square is at peak seasonal variety in early June, with local strawberries, snap peas, spring onions, and early zucchini from Hudson Valley farms.",
+        "day": "Wed",
+        "num": 3,
+        "title": "Union Square Greenmarket",
+        "blurb": "Wednesday market features peak-June produce — strawberries, sugar snap peas, and early summer squash — plus bread and dairy vendors. Arrives early for the best selection.",
         "where": "Union Square, Manhattan",
         "time": "8:00 AM – 6:00 PM",
         "price": "Free entry",
@@ -724,30 +724,30 @@ const DIGEST = {
 
   worldEvents: [
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Lebanon–Israel Peace Talks Resume in Washington",
-        "blurb": "Lebanese and Israeli officials met in Washington as Netanyahu vowed to continue strikes against Hezbollah. A partial truce brokered by the U.S. appears to be holding outside Beirut.",
-        "where": "Washington, D.C. / Beirut, Lebanon",
+        "day": "Wed",
+        "num": 3,
+        "title": "Israel–Lebanon Cease-Fire Under Pressure After Mutual Strikes",
+        "blurb": "Israeli airstrikes killed nine people in Lebanon while Hezbollah fired rockets into northern Israel, straining a partial cease-fire reached Monday. Both sides have exchanged fire since the agreement.",
+        "where": "Lebanon / Northern Israel",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Russia Launches Major Strike on Kyiv Following Week of Public Warnings",
-        "blurb": "Russian forces struck Kyiv and other Ukrainian cities, killing at least 22 people. Moscow's tactic of advance public warning appeared designed to compound psychological impact alongside physical damage.",
-        "where": "Kyiv, Ukraine",
+        "day": "Wed",
+        "num": 3,
+        "title": "UK Protests Over Henry Nowak Case Turn Violent",
+        "blurb": "Eleven police officers were injured in clashes with demonstrators following the murder of Henry Nowak and criticism of how officers treated him before his death. Right-wing politicians have amplified the unrest.",
+        "where": "United Kingdom",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Tue",
-        "num": 2,
-        "title": "Kenyan Court Delays U.S. Ebola Quarantine Unit Plan",
-        "blurb": "A Kenyan court issued a ruling further delaying the Trump administration's proposed Ebola quarantine facility for Americans exposed to the virus. The plan has prompted large public protests in Kenya.",
-        "where": "Nairobi, Kenya",
-        "time": "June 2, 2026",
+        "day": "Wed",
+        "num": 3,
+        "title": "Royal Navy Helicopter Crashes During Training Exercise in Devon",
+        "blurb": "Three personnel died when a Royal Navy helicopter came down during a training exercise in Devon, England. The Royal Family, Prime Minister, and naval leadership have offered condolences.",
+        "where": "Devon, England",
+        "time": "June 3, 2026",
         "price": "—"
     }
 ],
@@ -756,26 +756,26 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "June 2026 · seasonal",
-        "copy": "Early June in New York brings the first flush of summer produce from Hudson Valley and Long Island farms. Greenmarkets are stocked with soft fruits, tender vegetables, and leafy greens at peak flavor.",
+        "copy": "New York's June farmers markets are peaking. Prioritize local strawberries, snap peas, and early summer squash before the heat shortens their window.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "Local New York strawberries peak in early June — smaller and more intensely sweet than supermarket varieties. Eat fresh with yogurt, slice over oatmeal, or macerate with a little lemon zest."
+                        "text": "Peak flavor in June as Hudson Valley harvests ripen. Eat fresh, slice over yogurt, or macerate with a little black pepper for a quick dessert."
                     },
                     {
-                        "b": "Snap Peas",
-                        "text": "Sugar snap peas from Hudson Valley farms are crisp and sweet right now, at their best raw or barely blanched. Toss into salads, stir-fries, or eat as a snack with hummus."
+                        "b": "Sugar Snap Peas",
+                        "text": "At their crispest and sweetest before July heat sets in. Eat raw with hummus, or toss quickly in a hot pan with garlic and olive oil."
                     },
                     {
-                        "b": "Zucchini",
-                        "text": "Early summer zucchini is thin-skinned and tender in June before it grows oversized. Shave raw over pasta, sauté with olive oil and garlic, or grill with lemon."
+                        "b": "Zucchini & Summer Squash",
+                        "text": "Early-season squash arrives at greenmarkets now, tender and thin-skinned. Slice thin on a mandoline for a raw salad or grill halves over high heat."
                     },
                     {
-                        "b": "Cherries",
-                        "text": "Sweet and sour cherries from upstate New York arrive at markets in early June. Use in overnight oats, blend into smoothies, or serve alongside cheese for a quick dessert."
+                        "b": "Arugula",
+                        "text": "Local arugula is at its most peppery and nutrient-dense before summer heat causes bolting. Use as a base for grain bowls or wilted briefly into pasta."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt parfait layered with fresh local strawberries, sliced cherries, granola, and a drizzle of honey — no cooking required on a warm morning."
+                        "text": "Greek yogurt parfait layered with sliced fresh strawberries, a drizzle of honey, and toasted oats — quick and high in protein for a warm morning."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Farro grain bowl with shaved raw zucchini, snap peas, arugula, lemon-tahini dressing, and a soft-boiled egg; prep grains the night before for a fast assembly."
+                        "text": "Farro grain bowl with raw arugula, shaved zucchini ribbons, a soft-boiled egg, lemon-tahini dressing, and a handful of sugar snap peas on the side."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Grilled zucchini and snap pea pasta with ricotta, fresh mint, and chili flakes — toss with penne, finish with lemon juice, and top with toasted pine nuts."
+                        "text": "Grilled chicken thighs over sautéed arugula and garlic, served alongside halved grilled zucchini and a strawberry-arugula salad with balsamic glaze."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "June · mostly clear 78°F",
-        "copy": "Clear skies and a warm but manageable 78°F make Tuesday a good day for outdoor training. UV index is 8 — apply SPF 30+ if exercising outside between 10am and 4pm and bring water.",
+        "sub": "June · clear 84°F",
+        "copy": "UV index is 8 today — high. If training outdoors, finish by 9 a.m. or wait until after 6 p.m. Hydrate before, during, and after any session.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Focus on lower-body compound movements — squats, Romanian deadlifts, and walking lunges. Three to four sets of 8–10 reps builds functional strength and complements summer running."
+                        "text": "Focus on lower-body compound lifts today — back squats, Romanian deadlifts, and walking lunges. Three to four sets of eight to ten reps at moderate load."
                     },
                     {
                         "b": "Cardio",
-                        "text": "With UV at 8, schedule outdoor runs or cycling before 9am or after 6pm. A 30-minute tempo run along the Hudson River Greenway is well-suited to today's conditions."
+                        "text": "With 84°F heat, move cardio indoors or keep outdoor runs to early morning. A 20-minute incline treadmill walk at 3.5 mph, 8% grade, is effective and lower-impact."
                     },
                     {
                         "b": "Recovery",
-                        "text": "Post-workout: 10 minutes of hamstring and hip flexor stretching, followed by a cold-cool shower to reduce core temperature and limit heat fatigue after outdoor exertion."
+                        "text": "After lower-body work, spend 10 minutes on hip flexor and hamstring stretches. Elevate legs against the wall for five minutes post-workout to reduce lower-limb swelling."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "Sun Salutation A and B sequence (6–8 rounds) to build heat and mobility, followed by Warrior I, II, and III to engage lower body stabilizers. Practice outdoors if in shade before 9am."
+                        "text": "Sun salutation A and B series (6–8 rounds), transitioning into Warrior I, II, and III to activate the legs and build heat. Hold each standing pose for five breaths."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative wind-down: Legs-Up-the-Wall (Viparita Karani) for 5 minutes, Supine Spinal Twist both sides, and a 3-minute Savasana with slow 4-7-8 breathing to cue sleep."
+                        "text": "Restorative supine sequence: supported bridge with a block, reclined pigeon, and legs-up-the-wall (Viparita Karani) for 5 minutes. Cools the nervous system before sleep."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Core daily supplements support baseline health year-round. Cycle-aware and situational supplements should be added only when the relevant condition applies — avoid doubling up without clinical guidance.",
+        "copy": "Supplements listed below are general guidance. Consult a physician before starting any new supplement regimen.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "1,000–2,000 IU taken with breakfast alongside a fat-containing meal for best absorption. Even with summer sun, urban dwellers often remain deficient due to limited direct skin exposure."
+                        "text": "1,000–2,000 IU with breakfast alongside a fat-containing meal for optimal absorption. Even with sunny June weather, urban indoor time limits synthesis."
                     },
                     {
                         "b": "Magnesium",
-                        "text": "200–400 mg magnesium glycinate or citrate taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and nervous system regulation — particularly relevant during heat and exercise stress."
+                        "text": "200–400 mg magnesium glycinate taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and reduces heat-related cramping."
                     },
                     {
                         "b": "Omega-3",
-                        "text": "1,000–2,000 mg combined EPA/DHA from a high-quality fish or algae oil, taken with lunch or dinner. Reduces systemic inflammation and supports cardiovascular and cognitive function."
+                        "text": "1,000–2,000 mg combined EPA/DHA from fish oil, taken with lunch or dinner to minimize fishy aftertaste and improve absorption with dietary fat."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "18–27 mg ferrous bisglycinate on days 1–5 of menstruation to offset blood-loss depletion. Take on an empty stomach with vitamin C for absorption; avoid within 2 hours of coffee or calcium."
+                        "text": "18–27 mg ferrous bisglycinate during menstruation, taken on an empty stomach with vitamin C to enhance absorption. Avoid taking with coffee or calcium."
                     },
                     {
                         "b": "Ashwagandha",
-                        "text": "300–600 mg standardized KSM-66 extract taken with dinner during periods of elevated stress or poor sleep. Cycle for 4–8 weeks on, then pause; avoid during pregnancy."
+                        "text": "300–600 mg KSM-66 extract once daily with food during high-stress periods. Cycle on for 6–8 weeks, then take a 2-week break."
                     },
                     {
                         "b": "B-complex",
-                        "text": "One B-complex (with methylated B12 and folate) taken with breakfast during the luteal phase (days 15–28) or during sustained fatigue. Supports energy metabolism and mood regulation when progesterone peaks."
+                        "text": "One B-complex tablet with breakfast during the luteal phase (days 15–28) or periods of sustained fatigue. B6 and B12 in particular support mood and energy metabolism."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Quantum Computing",
-        "headline": "Microsoft's Majorana 2 chip upgrades quantum error resistance — but physicists remain unconvinced.",
-        "deck": "Microsoft says material changes in its Majorana 2 processor improve the reliability of topologically protected quantum bits. Independent physicists say extraordinary claims still require independent replication.",
-        "source": "Science News",
-        "url": "https://www.sciencenews.org/article/microsoft-quantum-chip-upgrade-majorana",
-        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2026/06/060226_EC_microsoft_main.jpg?w=800",
-        "caption": "Microsoft's Majorana 2 quantum chip, June 2026."
+        "cat": "Cover discovery · Archaeology",
+        "headline": "Notre-Dame Excavations Reveal Medieval and Roman Layers Beneath Paris.",
+        "deck": "Archaeological digs mandated ahead of redevelopment around the rebuilt cathedral have uncovered stratified remains spanning Roman occupation through the medieval period. Researchers say the site is among the most historically dense urban excavations in France.",
+        "source": "Smithsonian Magazine",
+        "url": "https://www.smithsonianmag.com/smart-news/secrets-from-centuries-of-paris-history-are-emerging-from-archaeological-digs-after-the-notre-dame-cathedral-fire-180988886/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/FdsG5DnICun-ttORiXKX49Dpwy0=/420x240/filters:focal(1500x1000:1501x1001)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/27/aa/27aa2593-9660-43a6-844d-52af3a7fd996/c69a7443_1.jpg",
+        "caption": "Excavation trenches near Notre-Dame cathedral, Paris, 2026."
     },
     "more": [
         {
-            "field": "Behavioral Science",
-            "title": "Richard Feynman's unpublished lunch notes reveal the math behind how people choose from a menu.",
-            "deck": "Researchers decoded Feynman's handwritten notes showing he modeled restaurant ordering as a mathematical optimization problem. Studies find people instinctively approximate his solution.",
-            "url": "https://www.sciencenews.org/article/math-restaurant-meal-feynman"
+            "field": "Entomology / Plant Biology",
+            "title": "Bean Plants Release Chemical Signals to Recruit Parasitic Wasps Against Caterpillars.",
+            "deck": "When attacked by caterpillars, bean plants activate an immune receptor that triggers airborne chemical emissions drawing in parasitic wasps as a defensive response.",
+            "url": "https://arstechnica.com/science/2026/06/beans-use-an-immune-receptor-to-call-in-airstrikes-on-caterpillars/"
         },
         {
-            "field": "Mental Health / Technology",
-            "title": "Survey estimates 8 million U.S. young people now use AI chatbots for emotional support.",
-            "deck": "A new survey finds use of AI chatbots for stress, anger, and sadness among teens and young adults has risen measurably since 2024. Researchers note both accessibility benefits and unresolved safety questions.",
-            "url": "https://www.sciencenews.org/article/teens-young-adults-mental-health-ai"
+            "field": "Paleomicrobiology",
+            "title": "Viable Yeasts Recovered from Ötzi the Iceman's 5,300-Year-Old Remains.",
+            "deck": "Laboratory analysis of the Copper Age mummy yielded cold-tolerant yeasts that could be cultured, suggesting portions of the Iceman's microbiome have remained biologically active across millennia.",
+            "url": "https://www.sciencenews.org/article/otzi-iceman-viable-yeasts-microbiome"
         },
         {
-            "field": "Medicine / Hearing",
-            "title": "Hearing loss linked to dementia and cardiovascular risk as new treatment approaches emerge.",
-            "deck": "New Scientist surveys a growing body of evidence connecting untreated hearing loss to systemic health consequences beyond audition. Researchers report several promising therapeutic directions are now in development.",
-            "url": "https://www.newscientist.com/article/2527617-hearing-loss-is-bad-for-the-whole-body-but-new-treatments-are-coming/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home"
+            "field": "Glaciology / Geology",
+            "title": "Researchers Identify Giant Fan-Shaped Geological Structure Hidden Under East Antarctica.",
+            "deck": "An international team using ice-penetrating radar has mapped a vast sedimentary fan formation beneath the East Antarctic Ice Sheet, with potential implications for ice-sheet stability modeling.",
+            "url": "https://phys.org/news/2026-06-giant-fan-east-antarctica.html"
         }
     ]
 },
@@ -913,30 +913,30 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "Why the Worst Get on Top: Bill Pulte and the Logic of Authoritarian Appointments.",
-        "deck": "Drawing on Hayek's road-serfdom thesis, the piece examines why Trump's selection of Bill Pulte as acting director of national intelligence follows a predictable structural pattern in concentrated power systems.",
-        "author": "by The Atlantic",
+        "headline": "Silicon Valley Is Hiring Philosophers to Shape the Future of AI.",
+        "deck": "Tech companies are bringing ethicists and philosophers onto staff as AI capabilities expand. The piece examines what that shift means for both the discipline and the industry.",
+        "author": "by Staff Writer, The Atlantic",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/ideas/2026/06/bill-pulte-hayek/687399/?utm_source=feed",
-        "img": ""
-    },
-    {
-        "pub": "The Atlantic",
-        "headline": "The Ordinary Miracle of Existing.",
-        "deck": "A philosophical essay on the improbability of individual existence — and what that rarity implies about how life is spent. One of the quieter, more durable pieces in this morning's feeds.",
-        "author": "by The Atlantic",
-        "read": "8 min",
-        "url": "https://www.theatlantic.com/philosophy/2026/06/the-ordinary-miracle-of-existing/687351/?utm_source=feed",
+        "url": "https://www.theatlantic.com/technology/2026/06/ai-companies-hiring-philosophers/687417/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "The Bartholdi Maquette: The Statue of Liberty's Sculptor Made a Small Model — and It's Now at the Smithsonian Castle.",
-        "deck": "Frédéric Auguste Bartholdi's original small-scale model of Liberty is on summer display in Washington, offering a rare look at the monument's origins ahead of its 140th anniversary year.",
-        "author": "by Smithsonian Magazine",
-        "read": "6 min",
-        "url": "https://www.smithsonianmag.com/smithsonian-institution/this-remarkable-statue-of-liberty-model-made-by-the-sculptor-of-the-original-has-a-new-summer-home-at-the-smithsonian-castle-180988885/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/99v_ji_DBA2LBBoupsMNP4l9QtY=/420x240/filters:focal(2160x2880:2161x2881)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ea/47/ea47e7be-98e3-4515-972b-fabff9e3746b/saam-xx76_7.jpg"
+        "headline": "An 80-Year-Old Math Problem Just Got Solved — With Help From AI.",
+        "deck": "Paul Erdős posed the unit distance problem in 1946 and suggested a strategy he thought optimal. An AI model has now identified a superior solution, raising questions about the limits of human mathematical intuition.",
+        "author": "by Staff Writer, Smithsonian",
+        "read": "8 min",
+        "url": "https://www.smithsonianmag.com/smart-news/mathematicians-puzzled-over-a-famous-problem-for-80-years-now-theyve-used-ai-to-identify-a-clever-solution-180988889/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/wmi_9XL87hcVW2u66Qe8thpTKLA=/420x240/filters:focal(750x500:751x501)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/88/59/885977a1-c31a42e2-8ac9-c39bebe9ded5/erdos4.jpg"
+    },
+    {
+        "pub": "Smithsonian Magazine",
+        "headline": "Google Seeks EPA Approval to Release 32 Million Sterile Mosquitoes in California and Florida.",
+        "deck": "The company's life-sciences unit is pursuing regulatory clearance to deploy sterilized male mosquitoes designed to suppress wild populations that spread dengue and other diseases.",
+        "author": "by Staff Writer, Smithsonian",
+        "read": "7 min",
+        "url": "https://www.smithsonianmag.com/smart-news/google-wants-to-release-32-million-mosquitoes-in-california-and-florida-heres-why-180988892/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/9zHnwXxeaNQ0NQE43f4RWIzBL8s=/420x240/filters:focal(1061x707:1062x708)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/21/3e/213e6ee0-ae4b-403e-a75e-516653c10772/gettyimages-139289970.jpg"
     }
 ]
 };
