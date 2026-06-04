@@ -509,133 +509,133 @@ const { useState, useMemo, useEffect, useRef, useCallback } = React;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const DIGEST = {
-  date: new Date(2026, 5, 3),
-  edition: "Vol. III · No. 154",
+  date: new Date(2026, 5, 4),
+  edition: "Vol. III · No. 155",
   location: "Manhattan, NY",
-  weatherStrip: "84°F · Clear · UV 8 · Manhattan",
+  weatherStrip: "88°F · Clear · UV 8 · Manhattan",
 
   topStories: [
     {
-        "category": "World · Conflict",
-        "headline": "Iran Strikes Kuwait and Bahrain as Gulf Cease-Fire Frays.",
-        "deck": "Iranian drones and missiles hit Kuwait's airport and targets in Bahrain on Wednesday, killing at least one person. Secretary of State Rubio had told lawmakers hours earlier that the Iran war was concluded.",
-        "source": "NYT / BBC",
+        "category": "Politics · National",
+        "headline": "John Bolton Expected to Plead Guilty to Retaining Classified Information.",
+        "deck": "Former national security adviser John Bolton will plead guilty to one count of retaining classified national security information, according to two sources familiar with the agreement.",
+        "source": "ABC News / CBS News",
         "bias": "Center",
-        "read": "6 min",
-        "url": "https://www.nytimes.com/live/2026/06/03/world/iran-war-trump-israel-lebanon",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9df3/live/72b3c3e0-5f42-11f1-89a3-d1f559421220.jpg",
-        "caption": "Smoke rises near Kuwait City airport following Iranian drone strikes, June 3."
+        "read": "4 min",
+        "url": "https://abcnews.com/Politics/former-trump-adviser-john-bolton-expected-plead-guilty/story?id=133587796",
+        "img": "https://s.abcnews.com/images/US/bolton-ap-jef-260604_1780584317809_hpMain_4x3t_384.jpg",
+        "caption": "John Bolton, former national security adviser to President Trump."
     },
     {
-        "category": "US · Politics",
-        "headline": "House to Vote on Trump's Authority to Continue War in Iran.",
-        "deck": "A war-powers measure directing the president to halt U.S. engagement in Iran comes to a House floor vote today after Republican leaders exhausted delay options. The vote's outcome is uncertain.",
-        "source": "The New York Times",
-        "bias": "Center-Left",
-        "read": "5 min",
-        "url": "https://www.nytimes.com/2026/06/03/us/politics/house-vote-trump-iran-war-powers.html",
-        "img": "",
-        "caption": "House lawmakers face a deadline vote on war-powers constraints regarding Iran."
-    },
-    {
-        "category": "World · War",
-        "headline": "Ukraine Strikes St. Petersburg Oil and Naval Targets on Day One of Putin Forum.",
-        "deck": "Ukrainian long-range drones hit oil storage facilities and a navy base near Russia's second-largest city as Putin's flagship economic conference opened. President Zelensky confirmed the strikes.",
-        "source": "NYT / BBC",
+        "category": "World · Middle East",
+        "headline": "Hezbollah Rejects U.S.-Brokered Israel-Lebanon Ceasefire; Strikes Continue.",
+        "deck": "Hezbollah's leader rejected a ceasefire deal brokered by the United States between Israel and the Lebanese government, citing exclusion from talks. Cross-border strikes continued Thursday.",
+        "source": "BBC News / NYT",
         "bias": "Center",
         "read": "5 min",
-        "url": "https://www.nytimes.com/2026/06/03/world/europe/ukraine-russia-attack-st-petersburg-putin.html",
-        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ad59/live/7866fc20-5f7a-11f1-89a3-d1f559421220.jpg",
-        "caption": "Drone strikes targeted energy and naval infrastructure near St. Petersburg, June 3."
+        "url": "https://www.bbc.com/news/articles/c052343r812o?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a519/live/c9a989e0-601f-11f1-95e8-2f6b295436fc.jpg",
+        "caption": "Israel-Lebanon border region amid renewed hostilities, June 2026."
+    },
+    {
+        "category": "Politics · Congress",
+        "headline": "House Passes Measure to Halt Iran Military Action; Trump Calls Vote 'Unpatriotic.'",
+        "deck": "The House passed a largely symbolic resolution seeking to halt further U.S. military action against Iran. President Trump criticized the bipartisan vote Wednesday.",
+        "source": "BBC News",
+        "bias": "Center",
+        "read": "4 min",
+        "url": "https://www.bbc.com/news/articles/cn0pl0wvvz0o?at_medium=RSS&at_campaign=rss",
+        "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6465/live/58a61730-600c-11f1-89a3-d1f559421220.jpg",
+        "caption": "Capitol Hill, Washington D.C., following the House Iran vote."
     }
 ],
 
   weather: {
-    "now": 84,
+    "now": 88,
     "condition": "Clear",
-    "feels": 82,
-    "high": 84,
-    "low": 60,
+    "feels": 87,
+    "high": 90,
+    "low": 61,
     "uv": 8,
     "rain": false,
     "wind": "Calm",
-    "sunrise": "5:26a",
-    "sunset": "8:22p",
+    "sunrise": "5:25a",
+    "sunset": "8:23p",
     "hours": [
         {
             "h": "Now",
-            "t": 84,
+            "t": 87,
             "ic": "sun"
         },
         {
             "h": "+2h",
-            "t": 80,
+            "t": 90,
             "ic": "sun"
         },
         {
             "h": "+5h",
-            "t": 68,
+            "t": 85,
             "ic": "sun"
         },
         {
             "h": "+8h",
-            "t": 64,
-            "ic": "sun"
+            "t": 75,
+            "ic": "cloud"
         },
         {
             "h": "+11h",
-            "t": 60,
-            "ic": "sun"
+            "t": 70,
+            "ic": "cloud"
         }
     ],
     "forecast7": [
         {
-            "day": "WED",
-            "high": 84,
-            "low": 60,
-            "ic": "sun",
-            "rain": false
-        },
-        {
             "day": "THU",
-            "high": 88,
-            "low": 58,
+            "high": 90,
+            "low": 61,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "FRI",
-            "high": 89,
-            "low": 62,
+            "high": 95,
+            "low": 63,
             "ic": "cloud",
             "rain": false
         },
         {
             "day": "SAT",
             "high": 92,
-            "low": 72,
+            "low": 69,
             "ic": "rain",
             "rain": true
         },
         {
             "day": "SUN",
-            "high": 79,
-            "low": 63,
+            "high": 89,
+            "low": 70,
             "ic": "rain",
             "rain": true
         },
         {
             "day": "MON",
-            "high": 77,
-            "low": 59,
-            "ic": "rain",
-            "rain": true
+            "high": 74,
+            "low": 62,
+            "ic": "cloud",
+            "rain": false
         },
         {
             "day": "TUE",
-            "high": 87,
-            "low": 63,
+            "high": 85,
+            "low": 62,
             "ic": "cloud",
+            "rain": false
+        },
+        {
+            "day": "WED",
+            "high": 89,
+            "low": 66,
+            "ic": "sun",
             "rain": false
         }
     ],
@@ -662,59 +662,59 @@ const DIGEST = {
   tech: [
     {
         "num": "01",
-        "headline": "Alphabet Raises Record $85 Billion in Stock Sale for Google AI Unit.",
-        "deck": "The offering marks the largest equity raise on record and signals strong institutional appetite for AI-related investment vehicles. Proceeds are earmarked for Google's artificial intelligence business.",
+        "headline": "Apple WWDC 2026: Siri Overhaul and Apple Intelligence Updates Expected This Week.",
+        "deck": "Apple's Worldwide Developers Conference opens with anticipated revisions to Siri's architecture and expanded Apple Intelligence features across its device lineup.",
         "source": "TechCrunch",
-        "read": "4 min",
-        "url": "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/",
+        "read": "5 min",
+        "url": "https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
         "img": ""
     },
     {
         "num": "02",
-        "headline": "As AI Agents Grow More Capable, a Fundamental Promise Comes Into Question.",
-        "deck": "Hands-on testing of Google's Gemini agent Spark shows the tool surfacing personal details users never deliberately shared with it. Reviewers describe the experience as effective but unsettling.",
-        "source": "The Verge",
-        "read": "5 min",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise",
-        "img": ""
+        "headline": "NASA's MAVEN Mars Spacecraft Ends 11-Year Mission in Final Transmission.",
+        "deck": "NASA's MAVEN orbiter, launched in 2013 to study the Martian atmosphere, has concluded its mission after more than a decade of continuous operation. Mission team members described the end as losing a loved one.",
+        "source": "Ars Technica",
+        "read": "6 min",
+        "url": "https://arstechnica.com/space/2026/06/after-11-years-at-mars-nasas-maven-spacecraft-went-out-with-a-whisper/",
+        "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/PIA26304-500x500.jpg"
     },
     {
         "num": "03",
-        "headline": "Meta Spins Out VR Fitness App Supernatural Rather Than Shutting It Down.",
-        "deck": "Meta has divested the popular virtual-reality workout application following layoffs that had placed its future in doubt. Users who organized to protest the closure will keep access to the platform.",
+        "headline": "Meta's Oversight Board Flags Lack of Due Process in Account Ban Decisions.",
+        "deck": "Meta's independent Oversight Board cited insufficient transparency in how the company bans accounts, including concerns about AI's role in enforcement decisions. The board is pushing Meta to disclose clearer violation criteria.",
         "source": "TechCrunch",
-        "read": "3 min",
-        "url": "https://techcrunch.com/2026/06/03/meta-mercifully-spun-out-vr-fitness-game-supernatural-instead-of-just-killing-it/",
+        "read": "4 min",
+        "url": "https://techcrunch.com/2026/06/04/metas-oversight-board-says-account-bans-lack-due-process-transparency/",
         "img": ""
     }
 ],
 
   nycEvents: [
     {
-        "day": "Wed",
-        "num": 3,
-        "title": "Bryant Park Picnic Performances — Summer Season",
-        "blurb": "Free outdoor live music and performance series on the Bryant Park lawn. Bring a blanket; the park's café kiosks are open. Ideal on a clear 84°F evening before sunset at 8:22 p.m.",
-        "where": "Midtown, Manhattan",
-        "time": "12:00 PM – 2:00 PM & evenings",
+        "day": "Thu",
+        "num": 4,
+        "title": "Governors Island Opens for 2026 Season",
+        "blurb": "The car-free island in New York Harbor is open for the season with art installations, picnic lawns, and waterfront views of Lower Manhattan. Ferry runs from Lower Manhattan and Brooklyn Bridge Park.",
+        "where": "Governors Island, New York Harbor",
+        "time": "10:00 AM – 6:00 PM",
+        "price": "Free–$4 ferry",
+        "url": "https://govisland.com"
+    },
+    {
+        "day": "Thu",
+        "num": 4,
+        "title": "Bryant Park Summer Reading Room",
+        "blurb": "Bryant Park's seasonal reading room is stocked with free books and loaner chess sets on the lawn. A shaded midtown refuge well-suited to the forecast heat.",
+        "where": "Bryant Park, Midtown Manhattan",
+        "time": "8:00 AM – 10:00 PM",
         "price": "Free",
         "url": "https://bryantpark.org"
     },
     {
-        "day": "Wed",
-        "num": 3,
-        "title": "Governors Island Opens for Summer 2026",
-        "blurb": "The island's car-free grounds, art installations, and hammock grove are accessible by ferry from Lower Manhattan. June weekday crowds are light; the 10-minute ferry ride costs $4 round-trip.",
-        "where": "Governors Island / Lower Manhattan Ferry at Slip 7",
-        "time": "10:00 AM – 6:00 PM",
-        "price": "$4 ferry",
-        "url": "https://govisland.com"
-    },
-    {
-        "day": "Wed",
-        "num": 3,
+        "day": "Thu",
+        "num": 4,
         "title": "Union Square Greenmarket",
-        "blurb": "Wednesday market features peak-June produce — strawberries, sugar snap peas, and early summer squash — plus bread and dairy vendors. Arrives early for the best selection.",
+        "blurb": "Thursday greenmarket at Union Square features peak-season strawberries, sugar snap peas, and early stone fruit from Hudson Valley farms. One of the largest farmers markets in the city.",
         "where": "Union Square, Manhattan",
         "time": "8:00 AM – 6:00 PM",
         "price": "Free entry",
@@ -724,30 +724,30 @@ const DIGEST = {
 
   worldEvents: [
     {
-        "day": "Wed",
-        "num": 3,
-        "title": "Israel–Lebanon Cease-Fire Under Pressure After Mutual Strikes",
-        "blurb": "Israeli airstrikes killed nine people in Lebanon while Hezbollah fired rockets into northern Israel, straining a partial cease-fire reached Monday. Both sides have exchanged fire since the agreement.",
-        "where": "Lebanon / Northern Israel",
+        "day": "Thu",
+        "num": 4,
+        "title": "Israel-Hezbollah Conflict Escalates After Ceasefire Rejection",
+        "blurb": "Hezbollah rejected a U.S.-brokered ceasefire agreement between Israel and Lebanon, saying it was not party to the deal. Cross-border strikes resumed Thursday, leaving the renewed agreement in doubt.",
+        "where": "Beirut, Lebanon / Northern Israel",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Wed",
-        "num": 3,
-        "title": "UK Protests Over Henry Nowak Case Turn Violent",
-        "blurb": "Eleven police officers were injured in clashes with demonstrators following the murder of Henry Nowak and criticism of how officers treated him before his death. Right-wing politicians have amplified the unrest.",
-        "where": "United Kingdom",
+        "day": "Thu",
+        "num": 4,
+        "title": "Hezbollah Fiber-Optic Drones Expose Gaps in Israeli Air Defenses",
+        "blurb": "Hezbollah has deployed fiber-optic guided drones that have bypassed Israeli electronic countermeasures, forcing military and political leaders to seek new defensive solutions, according to the New York Times.",
+        "where": "Northern Israel",
         "time": "Ongoing",
         "price": "—"
     },
     {
-        "day": "Wed",
-        "num": 3,
-        "title": "Royal Navy Helicopter Crashes During Training Exercise in Devon",
-        "blurb": "Three personnel died when a Royal Navy helicopter came down during a training exercise in Devon, England. The Royal Family, Prime Minister, and naval leadership have offered condolences.",
-        "where": "Devon, England",
-        "time": "June 3, 2026",
+        "day": "Thu",
+        "num": 4,
+        "title": "Ireland Moves to Strengthen Military Amid European Defense Concerns",
+        "blurb": "The Irish government announced plans to expand its military capabilities, departing from its longstanding tradition of neutrality as European nations respond to perceived threats from Russia.",
+        "where": "Dublin, Ireland",
+        "time": "Ongoing",
         "price": "—"
     }
 ],
@@ -756,26 +756,26 @@ const DIGEST = {
     "eat": {
         "title": "On the plate",
         "sub": "June 2026 · seasonal",
-        "copy": "New York's June farmers markets are peaking. Prioritize local strawberries, snap peas, and early summer squash before the heat shortens their window.",
+        "copy": "Hudson Valley and Long Island farms are at full pace. This week's Union Square Greenmarket should have all four of these in quantity.",
         "groups": [
             {
                 "label": "Fruits & Vegetables in Season",
                 "items": [
                     {
                         "b": "Strawberries",
-                        "text": "Peak flavor in June as Hudson Valley harvests ripen. Eat fresh, slice over yogurt, or macerate with a little black pepper for a quick dessert."
+                        "text": "Peak season in the Northeast through mid-June; local berries are significantly sweeter than shipped. Eat fresh with yogurt, blend into smoothies, or macerate with a little lemon juice."
                     },
                     {
                         "b": "Sugar Snap Peas",
-                        "text": "At their crispest and sweetest before July heat sets in. Eat raw with hummus, or toss quickly in a hot pan with garlic and olive oil."
+                        "text": "At their sweetest and crispest in early June before heat sets in. Eat raw as a snack, toss into grain bowls, or lightly sauté with garlic and olive oil."
                     },
                     {
-                        "b": "Zucchini & Summer Squash",
-                        "text": "Early-season squash arrives at greenmarkets now, tender and thin-skinned. Slice thin on a mandoline for a raw salad or grill halves over high heat."
+                        "b": "Zucchini",
+                        "text": "Early summer squash arrives at New York markets in June. Slice thin on a mandoline for a raw salad, grill for char, or shred into fritters."
                     },
                     {
-                        "b": "Arugula",
-                        "text": "Local arugula is at its most peppery and nutrient-dense before summer heat causes bolting. Use as a base for grain bowls or wilted briefly into pasta."
+                        "b": "Cherries",
+                        "text": "New York State sweet cherries come in from the Hudson Valley and Finger Lakes in early June. Eat out of hand, fold into overnight oats, or reduce into a pan sauce for poultry."
                     }
                 ]
             },
@@ -784,15 +784,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Breakfast",
-                        "text": "Greek yogurt parfait layered with sliced fresh strawberries, a drizzle of honey, and toasted oats — quick and high in protein for a warm morning."
+                        "text": "Greek yogurt bowl with sliced fresh strawberries, halved cherries, a drizzle of honey, and a handful of granola."
                     },
                     {
                         "b": "Lunch",
-                        "text": "Farro grain bowl with raw arugula, shaved zucchini ribbons, a soft-boiled egg, lemon-tahini dressing, and a handful of sugar snap peas on the side."
+                        "text": "Farro grain bowl with shaved raw zucchini, sugar snap peas, crumbled feta, fresh mint, and lemon-olive oil dressing."
                     },
                     {
                         "b": "Dinner",
-                        "text": "Grilled chicken thighs over sautéed arugula and garlic, served alongside halved grilled zucchini and a strawberry-arugula salad with balsamic glaze."
+                        "text": "Grilled chicken thighs over a warm farro base, topped with a cherry pan sauce (pitted cherries, balsamic, shallot) and a side of sautéed sugar snap peas."
                     }
                 ]
             }
@@ -800,23 +800,23 @@ const DIGEST = {
     },
     "move": {
         "title": "Move your body",
-        "sub": "June · clear 84°F",
-        "copy": "UV index is 8 today — high. If training outdoors, finish by 9 a.m. or wait until after 6 p.m. Hydrate before, during, and after any session.",
+        "sub": "June · clear 88°F",
+        "copy": "Heat index is near 88°F by mid-morning. Schedule outdoor activity before 9 AM or after 7 PM. Hydrate before, during, and after any session.",
         "groups": [
             {
                 "label": "Gym",
                 "items": [
                     {
                         "b": "Strength",
-                        "text": "Focus on lower-body compound lifts today — back squats, Romanian deadlifts, and walking lunges. Three to four sets of eight to ten reps at moderate load."
+                        "text": "Upper-body pull focus: lat pulldowns, seated cable rows, face pulls, and dumbbell bicep curls. Three to four sets of 10–12 reps. Keep the gym air-conditioned on a 90°F day."
                     },
                     {
                         "b": "Cardio",
-                        "text": "With 84°F heat, move cardio indoors or keep outdoor runs to early morning. A 20-minute incline treadmill walk at 3.5 mph, 8% grade, is effective and lower-impact."
+                        "text": "If running outdoors, go before 8 AM on the Hudson River Greenway where shade and breeze are available. Otherwise use the treadmill or rowing machine indoors; 20–30 minutes at a moderate pace."
                     },
                     {
                         "b": "Recovery",
-                        "text": "After lower-body work, spend 10 minutes on hip flexor and hamstring stretches. Elevate legs against the wall for five minutes post-workout to reduce lower-limb swelling."
+                        "text": "Post-workout: 10 minutes of doorframe chest stretching, hip flexor lunges, and child's pose. Apply a cold compress to the neck and wrists to bring core temperature down quickly in the heat."
                     }
                 ]
             },
@@ -825,11 +825,11 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Morning",
-                        "text": "Sun salutation A and B series (6–8 rounds), transitioning into Warrior I, II, and III to activate the legs and build heat. Hold each standing pose for five breaths."
+                        "text": "15-minute energizing flow: Cat-Cow, Sun Salutation A (3 rounds), Warrior I and II, Triangle Pose, and a seated forward fold. Practice near an open window before the heat peaks."
                     },
                     {
                         "b": "Evening",
-                        "text": "Restorative supine sequence: supported bridge with a block, reclined pigeon, and legs-up-the-wall (Viparita Karani) for 5 minutes. Cools the nervous system before sleep."
+                        "text": "20-minute restorative wind-down: Legs-Up-the-Wall (Viparita Karani) for 5 minutes, supported Supine Twist, Reclined Butterfly, and a 5-minute Savasana with an eye pillow. Ideal after a hot day."
                     }
                 ]
             }
@@ -838,22 +838,22 @@ const DIGEST = {
     "supps": {
         "title": "Supplements",
         "sub": "Daily & cycle-aware",
-        "copy": "Supplements listed below are general guidance. Consult a physician before starting any new supplement regimen.",
+        "copy": "Consult a healthcare provider before starting any new supplement regimen. Doses below reflect general adult guidance.",
         "groups": [
             {
                 "label": "Take Daily",
                 "items": [
                     {
                         "b": "Vitamin D3",
-                        "text": "1,000–2,000 IU with breakfast alongside a fat-containing meal for optimal absorption. Even with sunny June weather, urban indoor time limits synthesis."
+                        "text": "1,000–2,000 IU with breakfast alongside a fat-containing meal for absorption. UV index is 8 today — moderate midday sun exposure also contributes."
                     },
                     {
-                        "b": "Magnesium",
-                        "text": "200–400 mg magnesium glycinate taken 30–60 minutes before bed. Supports sleep quality, muscle recovery, and reduces heat-related cramping."
+                        "b": "Magnesium Glycinate",
+                        "text": "300–400 mg in the evening, 30–60 minutes before bed. Glycinate form is well tolerated and supports sleep quality and muscle recovery."
                     },
                     {
-                        "b": "Omega-3",
-                        "text": "1,000–2,000 mg combined EPA/DHA from fish oil, taken with lunch or dinner to minimize fishy aftertaste and improve absorption with dietary fat."
+                        "b": "Omega-3 (Fish Oil)",
+                        "text": "1,000–2,000 mg EPA+DHA combined, taken with the largest meal of the day to reduce any GI discomfort and improve absorption."
                     }
                 ]
             },
@@ -862,15 +862,15 @@ const DIGEST = {
                 "items": [
                     {
                         "b": "Iron",
-                        "text": "18–27 mg ferrous bisglycinate during menstruation, taken on an empty stomach with vitamin C to enhance absorption. Avoid taking with coffee or calcium."
+                        "text": "During menstruation: 18–25 mg ferrous bisglycinate taken on an empty stomach with vitamin C (e.g., a small glass of orange juice) to boost absorption. Avoid within 2 hours of calcium or coffee."
                     },
                     {
-                        "b": "Ashwagandha",
-                        "text": "300–600 mg KSM-66 extract once daily with food during high-stress periods. Cycle on for 6–8 weeks, then take a 2-week break."
+                        "b": "Ashwagandha (KSM-66)",
+                        "text": "300–600 mg once daily with food during periods of elevated stress. Evidence supports cortisol reduction over a 4–8 week cycle; pause if feeling overly sedated."
                     },
                     {
-                        "b": "B-complex",
-                        "text": "One B-complex tablet with breakfast during the luteal phase (days 15–28) or periods of sustained fatigue. B6 and B12 in particular support mood and energy metabolism."
+                        "b": "B-Complex",
+                        "text": "One B-complex tablet in the morning with food during the luteal phase (days 15–28) or during periods of sustained fatigue. B6 and B12 in particular support mood and energy metabolism."
                     }
                 ]
             }
@@ -880,32 +880,32 @@ const DIGEST = {
 
   discoveries: {
     "feature": {
-        "cat": "Cover discovery · Archaeology",
-        "headline": "Notre-Dame Excavations Reveal Medieval and Roman Layers Beneath Paris.",
-        "deck": "Archaeological digs mandated ahead of redevelopment around the rebuilt cathedral have uncovered stratified remains spanning Roman occupation through the medieval period. Researchers say the site is among the most historically dense urban excavations in France.",
-        "source": "Smithsonian Magazine",
-        "url": "https://www.smithsonianmag.com/smart-news/secrets-from-centuries-of-paris-history-are-emerging-from-archaeological-digs-after-the-notre-dame-cathedral-fire-180988886/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/FdsG5DnICun-ttORiXKX49Dpwy0=/420x240/filters:focal(1500x1000:1501x1001)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/27/aa/27aa2593-9660-43a6-844d-52af3a7fd996/c69a7443_1.jpg",
-        "caption": "Excavation trenches near Notre-Dame cathedral, Paris, 2026."
+        "cat": "Cover discovery · Astrophysics",
+        "headline": "Even Dormant, the Milky Way's Central Black Hole Is Driving Gas Winds Outward.",
+        "deck": "New observations of Sagittarius A* show the supermassive black hole at the galaxy's core is generating outward gas winds despite being in a quiet, low-activity state. The findings challenge assumptions that significant winds require active accretion.",
+        "source": "Science News",
+        "url": "https://www.sciencenews.org/article/milky-way-supermassive-black-hole-wind",
+        "img": "https://www.sciencenews.org/wp-content/uploads/sites/2/2026/06/060326_MJG_SgrAWinds_main.jpg?w=800",
+        "caption": "Artist's rendering of gas winds emanating from Sagittarius A* at the Milky Way's core."
     },
     "more": [
         {
-            "field": "Entomology / Plant Biology",
-            "title": "Bean Plants Release Chemical Signals to Recruit Parasitic Wasps Against Caterpillars.",
-            "deck": "When attacked by caterpillars, bean plants activate an immune receptor that triggers airborne chemical emissions drawing in parasitic wasps as a defensive response.",
-            "url": "https://arstechnica.com/science/2026/06/beans-use-an-immune-receptor-to-call-in-airstrikes-on-caterpillars/"
+            "field": "Entomology",
+            "title": "Queen Bee Development May Depend on Wax, Not Just Royal Jelly.",
+            "deck": "A new study finds that the wax lining of queen cells plays a role in shaping honeybee queen development, challenging the long-held view that royal jelly alone determines royal status.",
+            "url": "https://www.sciencenews.org/article/queen-honeybee-development-wax"
         },
         {
-            "field": "Paleomicrobiology",
-            "title": "Viable Yeasts Recovered from Ötzi the Iceman's 5,300-Year-Old Remains.",
-            "deck": "Laboratory analysis of the Copper Age mummy yielded cold-tolerant yeasts that could be cultured, suggesting portions of the Iceman's microbiome have remained biologically active across millennia.",
-            "url": "https://www.sciencenews.org/article/otzi-iceman-viable-yeasts-microbiome"
+            "field": "Public Health",
+            "title": "Congo Ebola Outbreak Complicated by Unresolved Questions About the Virus.",
+            "deck": "Public health officials responding to a Bundibugyo Ebola outbreak in the DRC say key unknowns about transmission and treatment are slowing response efforts and complicating outbreak trajectory modeling.",
+            "url": "https://www.sciencenews.org/article/ebola-outbreak-congo-unknowns"
         },
         {
-            "field": "Glaciology / Geology",
-            "title": "Researchers Identify Giant Fan-Shaped Geological Structure Hidden Under East Antarctica.",
-            "deck": "An international team using ice-penetrating radar has mapped a vast sedimentary fan formation beneath the East Antarctic Ice Sheet, with potential implications for ice-sheet stability modeling.",
-            "url": "https://phys.org/news/2026-06-giant-fan-east-antarctica.html"
+            "field": "Oceanography",
+            "title": "Buoys Trace Ocean Waves 14,000 km from Antarctic Storms to Alaskan Shores.",
+            "deck": "For the first time, researchers have continuously tracked wave energy generated by Southern Ocean storms all the way to their attenuated form on Alaskan coastlines, spanning 14,000 kilometers.",
+            "url": "https://phys.org/news/2026-06-buoys-track-ocean-km-storms.html"
         }
     ]
 },
@@ -913,30 +913,30 @@ const DIGEST = {
   longreads: [
     {
         "pub": "The Atlantic",
-        "headline": "Silicon Valley Is Hiring Philosophers to Shape the Future of AI.",
-        "deck": "Tech companies are bringing ethicists and philosophers onto staff as AI capabilities expand. The piece examines what that shift means for both the discipline and the industry.",
-        "author": "by Staff Writer, The Atlantic",
+        "headline": "The Iran Problem Trump Can't Defer.",
+        "deck": "A U.S. settlement with Iran that satisfies Washington's interests may fall short of what Israel requires — and the gap between the two positions is narrowing the window for diplomacy.",
+        "author": "by The Atlantic Staff",
         "read": "10 min",
-        "url": "https://www.theatlantic.com/technology/2026/06/ai-companies-hiring-philosophers/687417/?utm_source=feed",
+        "url": "https://www.theatlantic.com/international/2026/06/iran-war-israel-trump/687420/?utm_source=feed",
         "img": ""
     },
     {
         "pub": "Smithsonian Magazine",
-        "headline": "An 80-Year-Old Math Problem Just Got Solved — With Help From AI.",
-        "deck": "Paul Erdős posed the unit distance problem in 1946 and suggested a strategy he thought optimal. An AI model has now identified a superior solution, raising questions about the limits of human mathematical intuition.",
-        "author": "by Staff Writer, Smithsonian",
+        "headline": "Tonga's 2022 Eruption Broke Down Its Own Methane Emissions — and May Point to a Climate Tool.",
+        "deck": "Satellite analysis of the Hunga Tonga eruption plume found that the blast chemically destroyed a portion of the methane it released, a process researchers say could inform future deliberate atmospheric interventions.",
+        "author": "by Smithsonian Staff",
         "read": "8 min",
-        "url": "https://www.smithsonianmag.com/smart-news/mathematicians-puzzled-over-a-famous-problem-for-80-years-now-theyve-used-ai-to-identify-a-clever-solution-180988889/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/wmi_9XL87hcVW2u66Qe8thpTKLA=/420x240/filters:focal(750x500:751x501)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/88/59/885977a1-c31a42e2-8ac9-c39bebe9ded5/erdos4.jpg"
+        "url": "https://www.smithsonianmag.com/smart-news/tongas-enormous-volcanic-eruption-cleaned-up-part-of-its-own-methane-emissions-in-2022-hinting-at-a-way-to-fight-climate-change-180988893/",
+        "img": "https://th-thumbnailer.cdn-si-edu.com/khbtnWVENFn0ukSj88_R_i1ueBw=/420x240/filters:focal(350x197:351x198)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/2b/e2/2be2f060-eba7-43bc-9e80-0c7a4451a0cc/low-res_featured_image_suggestion.png"
     },
     {
-        "pub": "Smithsonian Magazine",
-        "headline": "Google Seeks EPA Approval to Release 32 Million Sterile Mosquitoes in California and Florida.",
-        "deck": "The company's life-sciences unit is pursuing regulatory clearance to deploy sterilized male mosquitoes designed to suppress wild populations that spread dengue and other diseases.",
-        "author": "by Staff Writer, Smithsonian",
-        "read": "7 min",
-        "url": "https://www.smithsonianmag.com/smart-news/google-wants-to-release-32-million-mosquitoes-in-california-and-florida-heres-why-180988892/",
-        "img": "https://th-thumbnailer.cdn-si-edu.com/9zHnwXxeaNQ0NQE43f4RWIzBL8s=/420x240/filters:focal(1061x707:1062x708)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/21/3e/213e6ee0-ae4b-403e-a75e-516653c10772/gettyimages-139289970.jpg"
+        "pub": "The Atlantic",
+        "headline": "How to Save Marriage.",
+        "deck": "Historian Stephanie Coontz argues that understanding marriage's varied and often contradictory history across cultures and centuries is the prerequisite for any honest discussion of its future.",
+        "author": "by Stephanie Coontz",
+        "read": "14 min",
+        "url": "https://www.theatlantic.com/magazine/2026/07/for-better-and-worse-stephanie-coontz/687310/?utm_source=feed",
+        "img": ""
     }
 ]
 };
